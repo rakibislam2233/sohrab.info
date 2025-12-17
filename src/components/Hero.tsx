@@ -1,11 +1,5 @@
 import Image from "next/image";
-import {
-  ArrowRight,
-  PlayCircle,
-  Briefcase,
-  Trophy,
-  TrendingUp,
-} from "lucide-react";
+import { ArrowRight, PlayCircle, Briefcase, Trophy } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -46,14 +40,14 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-16">
               <a
                 href="#"
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-base font-semibold text-primary-foreground bg-primary hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-base text-primary-foreground bg-card  border border-border"
               >
                 <PlayCircle className="w-5 h-5 mr-2" />
                 View Portfolio
               </a>
               <a
                 href="#"
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border-2 border-border text-base font-semibold text-foreground bg-card hover:bg-accent hover:border-primary/50 transition-all"
+                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-border  text-foreground "
               >
                 Download Resume
               </a>
@@ -62,7 +56,7 @@ const Hero = () => {
             {/* Info Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto lg:mx-0">
               {/* Current Role Card */}
-              <div className="group relative p-5 bg-card border-2 border-border rounded-xl hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-md">
+              <div className="group relative p-5 bg-card border border-border rounded-xl  transition-all duration-300 ">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
                     <Briefcase className="w-6 h-6 text-primary" />
@@ -89,7 +83,7 @@ const Hero = () => {
               </div>
 
               {/* Recognition Card */}
-              <div className="group relative p-5 bg-card border-2 border-border rounded-xl hover:border-amber-500/50 transition-all duration-300 shadow-sm hover:shadow-md">
+              <div className="group relative p-5 bg-card border border-border rounded-xl transition-all duration-300">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-amber-500/10 rounded-lg group-hover:bg-amber-500/20 transition-colors">
                     <Trophy className="w-6 h-6 text-amber-500" />
@@ -126,21 +120,8 @@ const Hero = () => {
                 alt="Sohrab Hossan"
                 width={800}
                 height={1000}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                className="w-full h-auto object-cover transition-transform duration-700"
               />
-
-              {/* Experience Badge Overlay */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 bg-background/80 backdrop-blur-md rounded-xl border-2 border-border flex items-center justify-between shadow-lg">
-                <div>
-                  <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
-                    Experience
-                  </p>
-                  <p className="text-foreground font-bold text-lg">5+ Years</p>
-                </div>
-                <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center shadow-md">
-                  <TrendingUp className="w-5 h-5 text-primary-foreground" />
-                </div>
-              </div>
             </div>
           </div>
         </div>
