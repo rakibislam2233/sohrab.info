@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowRight, PlayCircle, Briefcase, Trophy } from "lucide-react";
-
+import heroImage from "@/assets/images/hero-image.png";
 const Hero = () => {
   return (
     <section className="relative pt-12 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
@@ -25,7 +25,7 @@ const Hero = () => {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl md:text-2xl font-medium text-muted-foreground mb-6">
+            <p className="text-xl font-medium text-muted-foreground mb-6">
               Journalist • Business Developer • Scout Leader
             </p>
 
@@ -111,16 +111,16 @@ const Hero = () => {
           {/* Image Section */}
           <div className="lg:col-span-5 mt-12 lg:mt-0 relative">
             {/* Animated Background Blob */}
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-gradient-to-br from-primary to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+            <div className="absolute -top-10 -right-10 w-64 h-64 bg-linear-to-br from-primary to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse"></div>
 
             {/* Image Container */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-border ring-4 ring-border/50">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLKJJq6-U4WTRr0StcTj46vVzVDl_YrPTedhtIV3JploUQGCzSx1Hv22By91ZxH8wgZ2m3hFptV7LZG8Z7eaz7igVVM2hDLrfMp_fhoJCMp0nwoI_Li0pUumLateW7tBjEDMBHyvOMU-qhg4Mc4Ek-8m8WZ9Kzflgj1_AkRUN2SPKAo5_Q2gaqCGlHuwIK6qcSlOcRHVeygynlWJPEMUEVRXgJjiJksNI8nTWXLN5MLkqX3y5OagyxUVyZ6B2q2o-yqBH5QwISx_A"
+                src={heroImage.src}
                 alt="Sohrab Hossan"
                 width={800}
                 height={1000}
-                className="w-full h-auto object-cover transition-transform duration-700"
+                className="w-full h-96 object-cover transition-transform duration-700"
               />
             </div>
           </div>
