@@ -13,8 +13,8 @@ import aboutImage from "@/assets/images/about-image.jpg";
 const AboutSidebar = () => {
   return (
     <div className="lg:col-span-4 space-y-6">
-      <div className="bg-card rounded-2xl p-6 border border-border shadow-xl">
-        <div className="aspect-square w-full rounded-xl overflow-hidden mb-6 relative group">
+      <div className="bg-card rounded-2xl p-6 border border-border ">
+        <div className="aspect-square w-full rounded-xl overflow-hidden mb-6 relative group cursor-pointer">
           <Image
             src={aboutImage.src}
             alt="Sohrab Hossan"

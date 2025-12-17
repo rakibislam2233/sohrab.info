@@ -52,14 +52,14 @@ const ImpactInitiatives = () => {
             <h2 className="text-white text-3xl md:text-4xl font-bold">
               Impact Initiatives
             </h2>
-            <p className="text-text-muted max-w-2xl font-light">
+            <p className="text-[#cbd5e1] max-w-2xl font-light">
               Beyond scouting, my voluntary work spans across critical areas
               including disaster response, public health crises, and seasonal
               community support.
             </p>
           </div>
           <a
-            className="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all"
+            className="text-[#38bdf8] text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all"
             href="#"
           >
             View All Projects →
@@ -67,37 +67,35 @@ const ImpactInitiatives = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {initiatives.map((init, i) => (
+          {initiatives.map((item, i) => (
             <div
               key={i}
-              className="group flex flex-col rounded-2xl bg-card-dark border border-border-dark overflow-hidden transition-all hover:-translate-y-2 hover:shadow-xl hover:shadow-black/40"
+              className="w-full group flex flex-col rounded-2xl bg-[#131C2E] border border-[#1E293B] overflow-hidden transition-all hover:-translate-y-2 hover:shadow-xl hover:shadow-black/40"
             >
-              <div className="relative h-56 w-full overflow-hidden">
-                <Image
-                  src={init.image}
-                  alt={init.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card-dark via-transparent to-transparent opacity-80"></div>
-              </div>
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={500}
+                height={200}
+                className="w-full h-48  transition-transform duration-700 group-hover:scale-110"
+              />
               <div className="flex flex-col flex-1 p-6 gap-4 -mt-10 relative z-10">
                 <div className="flex justify-between items-center">
-                  <h3 className="text-white text-xl font-bold group-hover:text-primary transition-colors">
-                    {init.title}
+                  <h3 className="text-white text-xl font-bold group-hover:text-[#38bdf8] transition-colors">
+                    {item.title}
                   </h3>
-                  <span className="text-[10px] font-bold text-text-muted bg-white/5 px-2 py-1 rounded border border-white/10">
-                    {init.period}
+                  <span className="text-[10px] font-bold text-[#cbd5e1] bg-white/5 px-2 py-1 rounded border border-white/10">
+                    {item.period}
                   </span>
                 </div>
-                <p className="text-text-muted text-sm leading-relaxed line-clamp-3">
-                  {init.desc}
+                <p className="text-[#cbd5e1] text-sm leading-relaxed line-clamp-3">
+                  {item.desc}
                 </p>
-                <div className="mt-auto pt-4 border-t border-border-dark flex flex-wrap gap-2">
-                  {init.tags.map((tag, j) => (
+                <div className="mt-auto pt-4 border-t border-[#1E293B] flex flex-wrap gap-2">
+                  {item.tags.map((tag, j) => (
                     <span
                       key={j}
-                      className="text-[10px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20"
+                      className="text-[10px] font-bold text-[#38bdf8] bg-[#38bdf8]/10 px-3 py-1 rounded-full border border-[#38bdf8]/20"
                     >
                       {tag}
                     </span>

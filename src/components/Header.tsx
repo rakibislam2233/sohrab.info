@@ -43,12 +43,15 @@ const Header = () => {
             className="flex items-center gap-2 cursor-pointer group"
           >
             <div className="relative w-8 h-8 md:w-10 md:h-10">
-              <div className="absolute inset-0 bg-linear-to-br from-blue-500 to-blue-700 rounded-full blur-md opacity-50 group-hover:opacity-70 transition-opacity"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full blur-md opacity-50 group-hover:opacity-70 transition-opacity"></div>
               <div className="absolute inset-0 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg md:text-xl shadow-lg shadow-blue-500/30 group-hover:shadow-blue-500/50 group-hover:scale-105 transition-all duration-300">
                 S
               </div>
               <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-1 bg-blue-400 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
+            <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              Sohrab Hossan
+            </span>
           </Link>
 
           {/* Desktop Nav */}
