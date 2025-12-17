@@ -1,21 +1,20 @@
+import GalleryCTA from "@/components/pages/Gallery/GalleryCTA";
+import GalleryFilters from "@/components/pages/Gallery/GalleryFilters";
+import GalleryHero from "@/components/pages/Gallery/GalleryHero";
+import LoadMoreButton from "@/components/pages/Gallery/LoadMoreButton";
+import PhotoGrid from "@/components/pages/Gallery/PhotoGrid";
+
 const GalleryPage = () => {
   return (
-    <div className="pt-32 pb-20 min-h-screen">
+    <main className="relative z-10 pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">
-            Photo <span className="text-blue-600">Gallery</span>
-          </h1>
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            A collection of moments from my professional and community work.
-          </p>
-          
-          <div className="mt-12 p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
-            <p className="text-slate-600 dark:text-slate-400 text-lg">This page is under construction.</p>
-          </div>
-        </div>
+        <GalleryHero />
+        <GalleryFilters />
+        <PhotoGrid />
+        <LoadMoreButton />
+        <GalleryCTA />
       </div>
-    </div>
+    </main>
   );
 };
 

@@ -5,7 +5,7 @@ const GalleryHero = () => {
         <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
         <span className="tracking-wide uppercase">Portfolio Gallery</span>
       </div>
-      <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight mb-8 leading-tight">
+      <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight mb-8 leading-tight">
         Visual{" "}
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-300">
           Chronicles
