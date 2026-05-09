@@ -13,25 +13,24 @@ export default function Contact() {
         themeColor="bg-[#fff0f6]"
         textColor="text-[#7a1c4a]"
       />
-      <div className="container mx-auto px-6 mt-24">
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <div className="container mx-auto px-6 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info */}
-          <div className="space-y-12">
+          <div className="space-y-6">
             <ContactMethod 
-              icon={<Mail className="w-6 h-6 text-pink-600" />} 
+              icon={<Mail className="w-5 h-5 text-pink-600" />} 
               label="Email" 
               value="sohrabhossan@gmail.com" 
               href="mailto:sohrabhossan@gmail.com"
             />
             <ContactMethod 
-              icon={<Phone className="w-6 h-6 text-blue-600" />} 
+              icon={<Phone className="w-5 h-5 text-blue-600" />} 
               label="Phone" 
               value="+880 1704 296649" 
               href="tel:+8801704296649"
             />
             <ContactMethod 
-              icon={<MapPin className="w-6 h-6 text-emerald-600" />} 
+              icon={<MapPin className="w-5 h-5 text-emerald-600" />} 
               label="Location" 
               value="Rampura, Dhaka, Bangladesh" 
               href="https://maps.google.com/?q=Rampura,Dhaka"
@@ -39,33 +38,33 @@ export default function Contact() {
           </div>
 
           {/* Contact Form Placeholder */}
-          <div className="bg-[#fafafa] p-10 rounded-3xl border border-gray-100">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-[#fafafa] p-6 rounded border border-gray-100">
+            <form className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input 
                   type="text" 
                   placeholder="Name" 
-                  className="w-full bg-white border border-gray-100 rounded-2xl py-4 px-6 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all"
+                  className="w-full bg-white border border-gray-100 rounded py-3 px-4 focus:outline-none focus:ring-1 focus:ring-pink-500 transition-all text-sm"
                 />
                 <input 
                   type="email" 
                   placeholder="Email" 
-                  className="w-full bg-white border border-gray-100 rounded-2xl py-4 px-6 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all"
+                  className="w-full bg-white border border-gray-100 rounded py-3 px-4 focus:outline-none focus:ring-1 focus:ring-pink-500 transition-all text-sm"
                 />
               </div>
               <input 
                 type="text" 
                 placeholder="Subject" 
-                className="w-full bg-white border border-gray-100 rounded-2xl py-4 px-6 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all"
+                className="w-full bg-white border border-gray-100 rounded py-3 px-4 focus:outline-none focus:ring-1 focus:ring-pink-500 transition-all text-sm"
               />
               <textarea 
                 placeholder="Message" 
-                rows={5}
-                className="w-full bg-white border border-gray-100 rounded-2xl py-4 px-6 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all resize-none"
+                rows={4}
+                className="w-full bg-white border border-gray-100 rounded py-3 px-4 focus:outline-none focus:ring-1 focus:ring-pink-500 transition-all resize-none text-sm"
               ></textarea>
-              <button className="w-full bg-black hover:bg-gray-800 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-colors">
+              <button className="w-full bg-black hover:bg-gray-800 text-white py-3 rounded font-black uppercase tracking-widest text-[10px] flex items-center justify-center gap-2 transition-colors">
                 Send Message
-                <Send className="w-4 h-4" />
+                <Send className="w-3.5 h-3.5" />
               </button>
             </form>
           </div>
@@ -77,13 +76,13 @@ export default function Contact() {
 
 function ContactMethod({ icon, label, value, href }: { icon: React.ReactNode, label: string, value: string, href: string }) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 group">
-      <div className="w-14 h-14 bg-[#fafafa] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+      <div className="w-10 h-10 bg-[#fafafa] rounded flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-gray-100">
         {icon}
       </div>
       <div>
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{label}</p>
-        <p className="text-xl font-bold text-black">{value}</p>
+        <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">{label}</p>
+        <p className="text-lg font-bold text-black">{value}</p>
       </div>
     </a>
   );

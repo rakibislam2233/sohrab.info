@@ -13,10 +13,10 @@ export default function ScoutingFocus() {
   return (
     <section className="py-12 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
           <Reveal>
             <div className="relative">
-              <div className="aspect-4/5 relative rounded overflow-hidden bg-gray-100 border border-gray-100">
+              <div className="aspect-square relative rounded overflow-hidden bg-gray-100 border border-gray-100 shadow-sm max-w-sm mx-auto lg:mx-0">
                 <Image 
                   src="https://lh3.googleusercontent.com/sitesv/AA5AbUA49r2u2zriZ8SwgDWca3Pn_Ssq5qcxjyI5Z-VRjqPfVFnO9oticCL6Fo_fYESwiC436s6hMvT09u2L7FVd7K9ke3c0l8YjAVBas7JTEC_ssTNMsAF-gVqx0m6fCpuJNjgi8LbkDyPtJJpSg6ueoJ0FKF2ZF4JAZHixVLF1XrocQMM3_BzTRjp-=w16383"
                   alt="Scouting Leadership"
@@ -29,7 +29,7 @@ export default function ScoutingFocus() {
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                className="absolute -right-4 bottom-10 bg-white p-4 rounded text-black shadow-lg border border-gray-100 hidden md:block"
+                className="absolute -right-4 bottom-6 bg-white p-4 rounded text-black shadow-lg border border-gray-100 hidden md:block z-10"
               >
                 <div className="grid grid-cols-3 gap-6">
                   {scoutStats.map((stat, i) => (

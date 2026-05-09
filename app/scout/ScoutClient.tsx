@@ -51,21 +51,72 @@ export default function ScoutClient() {
         textColor="text-[#2d4a31]"
       />
       <div className="container mx-auto px-6 mt-12">
-        {/* Masonry Grid */}
-        <div className="mb-16">
+        {/* Featured Video Section - "Filmed instead" design */}
+        <div className="mb-20">
+          <Reveal>
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-8">
+              <div className="max-w-xl">
+                <h2 className="text-2xl md:text-4xl font-black mb-2 italic tracking-tight">Filmed instead.</h2>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Moments of leadership, skill, and brotherhood, preserved in motion.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <div className="relative aspect-video rounded overflow-hidden group cursor-pointer bg-gray-50 border border-gray-100 shadow-sm">
+              <Image 
+                src="https://lh3.googleusercontent.com/sitesv/AA5AbUA49r2u2zriZ8SwgDWca3Pn_Ssq5qcxjyI5Z-VRjqPfVFnO9oticCL6Fo_fYESwiC436s6hMvT09u2L7FVd7K9ke3c0l8YjAVBas7JTEC_ssTNMsAF-gVqx0m6fCpuJNjgi8LbkDyPtJJpSg6ueoJ0FKF2ZF4JAZHixVLF1XrocQMM3_BzTRjp-=w16383"
+                alt="Leadership Spotlight"
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+              />
+              
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
+              
+              <div className="absolute top-4 left-4 flex gap-2">
+                <span className="px-3 py-1 bg-blue-500/20 backdrop-blur-md border border-blue-500/30 text-blue-500 text-[8px] font-black uppercase tracking-[0.2em] rounded">Scouting</span>
+                <span className="px-3 py-1 bg-white/40 backdrop-blur-md border border-white/20 text-black text-[8px] font-black uppercase tracking-[0.2em] rounded">Leadership</span>
+              </div>
+
+              <div className="absolute top-4 right-4 px-2 py-0.5 bg-white/60 backdrop-blur-md rounded text-[10px] font-mono font-bold tracking-widest text-black">
+                08:20
+              </div>
+
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border border-white/30 shadow-2xl">
+                  <Play className="w-6 h-6 text-white fill-white ml-0.5" />
+                </div>
+              </div>
+
+              <div className="absolute bottom-6 left-6 right-6">
+                <h3 className="text-xl md:text-3xl font-black mb-2 text-white group-hover:text-blue-400 transition-colors leading-tight tracking-tight">
+                  Rover Scout Leadership Camp 2020
+                </h3>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Action Moments - Beautiful varied grid */}
+        <div className="mb-20">
           <Reveal>
             <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
               <Camera className="text-blue-600" size={20} />
               Action Moments
             </h2>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
             {galleryImages.map((img, i) => (
-              <Reveal key={i} delay={i * 0.1}>
+              <Reveal key={i} delay={i * 0.1} className={
+                i === 0 ? "md:col-span-7" : 
+                i === 1 ? "md:col-span-5" : 
+                i === 2 ? "md:col-span-5" : 
+                "md:col-span-7"
+              }>
                 <div
-                  className={`relative overflow-hidden rounded cursor-pointer group ${
-                    i === 1 ? "md:row-span-2 aspect-3/4" : "aspect-square"
-                  }`}
+                  className={`relative overflow-hidden rounded cursor-pointer group border border-gray-100 aspect-16/10`}
                   onClick={() => setLightbox({ isOpen: true, index: i })}
                 >
                   <Image

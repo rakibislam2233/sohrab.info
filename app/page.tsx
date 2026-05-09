@@ -16,12 +16,12 @@ export default async function Home() {
     <main>
       <Hero />
       
-      <section className="py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-6">
           <Reveal>
-            <div className="max-w-2xl mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Latest Journalism</h2>
-              <p className="text-lg text-gray-500">
+            <div className="max-w-xl mb-8">
+              <h2 className="text-2xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter">Latest Journalism</h2>
+              <p className="text-sm text-gray-500 font-medium">
                 Reporting on the stories that shape our society, with a focus on education and agriculture.
               </p>
             </div>
