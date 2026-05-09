@@ -24,22 +24,22 @@ const works = [
 export default async function VoluntaryWorkSection() {
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 bg-white">
       <div className="container mx-auto px-6">
         <Reveal>
-          <div className="max-w-2xl mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Voluntary Work</h2>
-            <p className="text-lg text-gray-500">
+          <div className="max-w-xl mb-8">
+            <h2 className="text-2xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter">Voluntary Work</h2>
+            <p className="text-sm text-gray-500 font-medium">
               Giving back to the community through environmental and humanitarian initiatives.
             </p>
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {works.map((work, index) => (
             <Reveal key={work.id} delay={index * 0.1}>
               <div className="group">
-                <div className="relative aspect-video mb-8 overflow-hidden rounded-3xl bg-gray-100">
+                <div className="relative aspect-video mb-4 overflow-hidden rounded bg-gray-100 border border-gray-100">
                   {work.image && (
                     <Image
                       src={work.image}
@@ -48,16 +48,16 @@ export default async function VoluntaryWorkSection() {
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   )}
-                  <div className="absolute top-6 left-6">
-                    <span className="bg-white/90 backdrop-blur-sm text-black px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-                      <Heart className="w-3 h-3 text-red-500" />
+                  <div className="absolute top-3 left-3">
+                    <span className="bg-white/90 backdrop-blur-sm text-black px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5 border border-gray-100">
+                      <Heart className="w-2.5 h-2.5 text-red-500" />
                       Social Service
                     </span>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-black mb-4">{work.title}</h3>
-                <p className="text-gray-500 leading-relaxed">{work.description}</p>
-                <div className="mt-4 text-sm font-bold text-gray-400">
+                <h3 className="text-lg font-bold text-black mb-2">{work.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{work.description}</p>
+                <div className="mt-2 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
                   {work.organization} • {new Date(work.date).getFullYear()}
                 </div>
               </div>

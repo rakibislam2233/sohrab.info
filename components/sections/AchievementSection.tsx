@@ -28,27 +28,27 @@ const achievements = [
 export default async function AchievementSection() {
 
   return (
-    <section className="py-24 bg-[#fafafa]">
+    <section className="py-12 bg-[#fafafa]">
       <div className="container mx-auto px-6">
         <Reveal>
-          <div className="max-w-2xl mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Key Achievements</h2>
-            <p className="text-lg text-gray-500">
+          <div className="max-w-xl mb-8">
+            <h2 className="text-2xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter">Key Achievements</h2>
+            <p className="text-sm text-gray-500 font-medium">
               Recognition for professional excellence in journalism and dedicated service in scouting.
             </p>
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {achievements.map((achievement, index) => (
             <Reveal key={achievement.id} delay={index * 0.1}>
-              <div className="bg-white p-8 rounded-3xl border border-gray-100 flex flex-col h-full">
-                <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-6">
-                  <Award className="w-6 h-6 text-amber-600" />
+              <div className="bg-white p-6 rounded border border-gray-100 flex flex-col h-full">
+                <div className="w-10 h-10 bg-amber-50 rounded flex items-center justify-center mb-4">
+                  <Award className="w-5 h-5 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-black mb-3">{achievement.title}</h3>
-                <p className="text-gray-500 text-sm mb-6 grow">{achievement.description}</p>
-                <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-widest">
+                <h3 className="text-lg font-bold text-black mb-1">{achievement.title}</h3>
+                <p className="text-gray-500 text-sm mb-4 grow">{achievement.description}</p>
+                <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-400">
                   <CheckCircle className="w-3 h-3 text-emerald-500" />
                   {achievement.issuedBy}
                 </div>
