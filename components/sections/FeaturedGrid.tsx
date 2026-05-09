@@ -1,33 +1,52 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import Reveal from '../ui/Reveal'
+import Image from 'next/image';
+import Link from 'next/link';
+import Reveal from '../ui/Reveal';
+import { prisma } from '@/lib/prisma';
+import { Newspaper } from 'lucide-react';
 
-const mock = Array.from({length:3}).map((_,i)=>({
-  id: i+1,
-  title: ['Musical improvisation is the spontaneous music','Customizing your brand and design settings','Apps & integrations'][i],
-  excerpt: 'Short excerpt about the article to entice readers and match the editorial tone.',
-  cover: `https://picsum.photos/seed/feat${i}/600/500`,
-  slug: `article-${i+1}`
-}))
+export default async function FeaturedGrid() {
+  const articles = await prisma.article.findMany({
+    where: { isPublished: true },
+    orderBy: { publishedAt: 'desc' },
+    take: 3,
+  });
 
-export default function FeaturedGrid(){
   return (
-    <div className="grid md:grid-cols-3 gap-8">
-      {mock.map((item, index) => (
-        <Reveal key={item.id} delay={index * 0.08}>
-          <article className="rounded-card p-6 relative">
-            <div className="absolute -left-6 top-6">
-              <span className="vertical-label">Journalism</span>
-            </div>
-            <div className="mb-4 rounded overflow-hidden">
-              <Image src={item.cover} alt={item.title} width={600} height={400} className="w-full h-56 object-cover rounded" />
-            </div>
-            <h3 className="font-serif text-2xl mb-2">{item.title}</h3>
-            <p className="text-sm text-gray-600 mb-4">{item.excerpt}</p>
-            <Link href={`/journalism/${item.slug}`} className="inline-block bg-blush text-white px-4 py-2 rounded-full">Read More</Link>
-          </article>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {articles.map((article, index) => (
+        <Reveal key={article.id} delay={index * 0.1}>
+          <Link href={`/journalism/${article.slug}`} className="group block">
+            <article className="h-full border-b md:border-b-0 md:border-r last:border-0 border-gray-100 pr-0 md:pr-10 pb-10 md:pb-0">
+              <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-pink-600 mb-4">
+                <Newspaper className="w-3 h-3" />
+                {article.category}
+              </div>
+              
+              <div className="relative aspect-[16/10] mb-6 overflow-hidden bg-gray-100 rounded-lg">
+                <Image 
+                  src={article.coverImage} 
+                  alt={article.title} 
+                  fill 
+                  className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+              </div>
+              
+              <h3 className="font-serif text-2xl md:text-3xl leading-tight mb-4 group-hover:text-pink-600 transition-colors">
+                {article.title}
+              </h3>
+              
+              <p className="text-gray-500 leading-relaxed line-clamp-3 mb-6">
+                {article.excerpt}
+              </p>
+              
+              <div className="flex items-center text-sm font-semibold gap-2 group-hover:translate-x-2 transition-transform">
+                Read Story
+                <span className="text-xl">→</span>
+              </div>
+            </article>
+          </Link>
         </Reveal>
       ))}
     </div>
-  )
+  );
 }
