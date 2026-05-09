@@ -20,7 +20,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className="fixed top-12 left-0 right-0 z-50 flex justify-center px-4">
+    <div className="fixed top-8 left-0 right-0 z-50 flex justify-center px-4">
       <motion.nav 
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

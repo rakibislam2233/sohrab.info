@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import { Heart, Calendar, Building2, Camera } from "lucide-react";
+import { Calendar, Building2, Camera } from "lucide-react";
 import Image from "next/image";
 import Reveal from "../../components/ui/Reveal";
 import ImageLightbox from "../../components/ui/ImageLightbox";
