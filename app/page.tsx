@@ -5,6 +5,9 @@ import Hero from "../components/sections/Hero";
 import HomeHighlights from "../components/sections/HomeHighlights";
 import AchievementSection from "../components/sections/AchievementSection";
 import VoluntaryWorkSection from "../components/sections/VoluntaryWorkSection";
+import NewsMediaTimeline from "../components/sections/NewsMediaTimeline";
+import ScoutingFocus from "../components/sections/ScoutingFocus";
+import TravelHighlights from "../components/sections/TravelHighlights";
 import Reveal from "../components/ui/Reveal";
 
 export default async function Home() {
@@ -27,8 +30,11 @@ export default async function Home() {
       </section>
 
       <HomeHighlights />
+      <ScoutingFocus />
+      <TravelHighlights />
       <AchievementSection />
       <VoluntaryWorkSection />
+      <NewsMediaTimeline />
       <GallerySection />
       <Footer />
     </main>

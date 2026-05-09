@@ -1,25 +1,39 @@
-import { prisma } from "@/lib/prisma";
+import Reveal from "../../components/ui/Reveal";
+import PageBanner from "../../components/ui/PageBanner";
 import { Metadata } from "next";
-import Image from "next/image";
 import { Users, Award, Calendar } from "lucide-react";
 
 export const metadata: Metadata = { title: "Leadership — Sohrab Hossan" };
 
+const scoutActivities = [
+  {
+    id: '1',
+    title: 'Rover Scout Leader',
+    description: 'Serving as the primary lead for the Thakurgaon Govt. College Rover Scout Group, responsible for strategic planning and unit coordination.',
+    eventDate: '2020-08-16',
+    location: 'Thakurgaon Govt. College',
+    rank: 'Rover Scout Leader'
+  },
+  {
+    id: '2',
+    title: 'Team Coordinator',
+    description: 'Coordinating large-scale volunteer teams for national health campaigns and disaster relief efforts in the Northern region.',
+    eventDate: '2020-05-06',
+    location: 'Thakurgaon District Administration',
+    rank: 'Coordinator'
+  }
+];
+
 export default async function LeadershipPage() {
-  const scoutActivities = await prisma.scoutActivity.findMany({
-    where: { rank: { not: null } },
-    orderBy: { eventDate: "desc" },
-  });
 
   return (
-    <main className="min-h-screen bg-white pt-32 pb-20">
-      <div className="container mx-auto px-6">
-        <div className="max-w-3xl mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-black mb-6">Leadership</h1>
-          <p className="text-xl text-gray-500">
-            Dedicated to fostering team spirit and community development through organizational leadership roles.
-          </p>
-        </div>
+    <main className="min-h-screen bg-white pt-0 pb-20">
+      <PageBanner 
+        title="Leadership" 
+        subtitle="Leading teams with integrity, vision, and a commitment to social progress."
+        image="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1600"
+      />
+      <div className="container mx-auto px-6 mt-24">
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {scoutActivities.map((activity) => (

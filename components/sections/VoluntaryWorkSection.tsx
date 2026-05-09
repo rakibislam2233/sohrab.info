@@ -1,13 +1,27 @@
-import { prisma } from "@/lib/prisma";
 import Reveal from "../ui/Reveal";
 import Image from "next/image";
 import { Heart } from "lucide-react";
 
+const works = [
+  {
+    id: '1',
+    title: 'Winter Relief Distribution',
+    description: 'Organized and participated in a large-scale blanket distribution for the elderly and underprivileged people in Thakurgaon during the extreme cold.',
+    organization: 'Thakurgaon Govt. College Rover Scout Group',
+    date: '2020-01-14',
+    image: 'https://lh3.googleusercontent.com/sitesv/AA5AbUBC3eDX-izt7AFNwcnl1yMjiL0xDONAbxgxWGftORflHuqlp2xxN7gkS0rIDBYyNxLBuqVAMsgZfIUNZjyIkNNoBgHl4l24jRbRA2rsdO8pjq0I2plYhpTCkZmOiDzMns1Onp4ttUy2fxKF2Kqu9u3m-gb5ygDrZWVyR0tYEbeI4LCq9kJO0aNtZx1foPBrj_Z-HNL9r1uCkK02eOzcaco_OFEUmoj8vuCW3k=w1280',
+  },
+  {
+    id: '2',
+    title: 'Environmental Service Campaign',
+    description: 'Actively involved in tree plantation campaigns across Thakurgaon district to promote ecological balance and sustainability.',
+    organization: 'Bangladesh Scouts',
+    date: '2020-07-20',
+    image: 'https://lh3.googleusercontent.com/sitesv/AA5AbUAVxk0gLpJKeeGL2iOivcsWizHT8T1crl7Fcet-S6SnwX4VJT8G3HWv8OQLBjhT6y3DYBO0aVfu_xrbJ00VCy8_WlZhucnOj7A0Fe_H0Ar7afV4hRMq_PkbOFrOnf3f1dQI7mdy-aPAggfoULnaJsxfclii6vwA3AFEQHFBy5-m7vqHjq4RMS_a0wOy4R_SppZI18NUwH2CUT75_CvNuUGUscvAJEw8czpI=w1280',
+  },
+];
+
 export default async function VoluntaryWorkSection() {
-  const works = await prisma.voluntaryWork.findMany({
-    take: 2,
-    orderBy: { date: "desc" },
-  });
 
   return (
     <section className="py-24 bg-white">

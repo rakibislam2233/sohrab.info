@@ -1,12 +1,31 @@
-import { prisma } from "@/lib/prisma";
 import Reveal from "../ui/Reveal";
 import { Award, CheckCircle } from "lucide-react";
 
+const achievements = [
+  {
+    id: '1',
+    title: 'National Service Award',
+    description: 'Highest recognition from Bangladesh Scouts for outstanding voluntary service during the National Vitamin A plus campaign and pandemic relief.',
+    issuedBy: 'Bangladesh Scouts',
+    issuedDate: '2020-08-16',
+  },
+  {
+    id: '2',
+    title: 'Best Unit Leader Award',
+    description: 'Recognized for exceptional leadership and coordination of the Thakurgaon Govt. College Rover Scout Group.',
+    issuedBy: 'Thakurgaon Govt. College',
+    issuedDate: '2020-01-20',
+  },
+  {
+    id: '3',
+    title: 'COVID-19 Frontline Recognition',
+    description: 'Awarded for selfless dedication in awareness campaigns and relief distribution during the global pandemic.',
+    issuedBy: 'District Administration, Thakurgaon',
+    issuedDate: '2020-05-10',
+  },
+];
+
 export default async function AchievementSection() {
-  const achievements = await prisma.achievement.findMany({
-    take: 3,
-    orderBy: { issuedDate: "desc" },
-  });
 
   return (
     <section className="py-24 bg-[#fafafa]">

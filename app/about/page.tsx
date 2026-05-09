@@ -1,16 +1,24 @@
-import { prisma } from "@/lib/prisma";
 import { Metadata } from "next";
 import Image from "next/image";
-import { Newspaper, Users, Compass, Heart } from "lucide-react";
+import { Newspaper, Users, Heart } from "lucide-react";
+import PageBanner from "../../components/ui/PageBanner";
 
 export const metadata: Metadata = { title: "About Me — Sohrab Hossan" };
 
-export default async function AboutPage() {
-  const personalInfo = await prisma.personalInfo.findUnique({ where: { id: "primary" } });
+const personalInfo = {
+  bio: "Journalist, Scout Leader, and Social Worker dedicated to community development and humanitarian service in Thakurgaon. With over 8 years of experience in leadership and field reporting, I strive to bridge the gap between information and action.",
+  avatar: "https://lh3.googleusercontent.com/sitesv/AA5AbUA8r1-w-qKkLg6V0U2-M1G-v39_z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z=w1280"
+};
 
+export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white pt-32 pb-20">
-      <div className="container mx-auto px-6">
+    <main className="min-h-screen bg-white pt-0 pb-20">
+      <PageBanner 
+        title="My Story" 
+        subtitle="A journey through journalism, leadership, and humanitarian service."
+        image={personalInfo.avatar}
+      />
+      <div className="container mx-auto px-6 mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
             <h1 className="text-5xl md:text-6xl font-bold text-black mb-8">MD. Sohrab Hossan</h1>

@@ -1,84 +1,126 @@
-import { Calendar, Newspaper } from "lucide-react";
-import type { Metadata } from "next";
+"use client"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Calendar, Newspaper, Play, Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { prisma } from "../../lib/prisma";
+import PageBanner from "../../components/ui/PageBanner";
+import Reveal from "../../components/ui/Reveal";
+import ImageLightbox from "../../components/ui/ImageLightbox";
 
-export const dynamic = "force-dynamic";
+const articles = [
+  { id: '1', title: 'Transformation of Primary Education', slug: 'primary-education', category: 'Education', publishedAt: '2023-11-10', image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=1000' },
+  { id: '2', title: 'Commercial Mango Farming Success', slug: 'mango-farming', category: 'Agriculture', publishedAt: '2023-09-15', image: 'https://images.unsplash.com/photo-1553134839-89d81d421da1?auto=format&fit=crop&q=80&w=1000' },
+  { id: '3', title: 'Relief Distribution to 4,700 Families', slug: 'relief-2020', category: 'Social', publishedAt: '2020-05-06', image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1000' },
+];
 
-export async function generateMetadata(): Promise<Metadata> {
-  return { title: "Journalism — Sohrab Hossan" };
-}
+const galleryImages = [
+  "https://lh3.googleusercontent.com/sitesv/AA5AbUCY_v3Y0eY8m74xK4Y93m5I_v39_z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z=w1280",
+  "https://lh3.googleusercontent.com/sitesv/AA5AbUBC3eDX-izt7AFNwcnl1yMjiL0xDONAbxgxWGftORflHuqlp2xxN7gkS0rIDBYyNxLBuqVAMsgZfIUNZjyIkNNoBgHl4l24jRbRA2rsdO8pjq0I2plYhpTCkZmOiDzMns1Onp4ttUy2fxKF2Kqu9u3m-gb5ygDrZWVyR0tYEbeI4LCq9kJO0aNtZx1foPBrj_Z-HNL9r1uCkK02eOzcaco_OFEUmoj8vuCW3k=w1280",
+  "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=80&w=1000",
+  "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=1000",
+  "https://images.unsplash.com/photo-1476242906366-d8eb64c2f661?auto=format&fit=crop&q=80&w=1000",
+  "https://images.unsplash.com/photo-1585829365234-7547076d338e?auto=format&fit=crop&q=80&w=1000"
+];
 
-export default async function JournalismPage() {
-  const articles = await prisma.article.findMany({
-    where: { isPublished: true },
-    orderBy: { publishedAt: "desc" },
-    take: 12,
-  });
+export default function JournalismPage() {
+  const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 });
 
   return (
-    <main className="min-h-screen bg-white pt-32 pb-20">
-      <div className="container mx-auto px-6">
-        <div className="max-w-3xl mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-black mb-6">
-            Journalism
-          </h1>
-          <p className="text-xl text-gray-500">
-            Professional reporting and feature writing with a focus on
-            agriculture, education, and current affairs in Bangladesh.
-          </p>
-        </div>
+    <main className="min-h-screen bg-white pt-0 pb-20">
+      <PageBanner 
+        title="Journalism" 
+        subtitle="Professional reporting and field journalism with a focus on agriculture and community impact."
+        image="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=1600"
+      />
+      <div className="container mx-auto px-6 mt-24">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {articles.map((a) => (
-            <Link
-              key={a.id}
-              href={`/journalism/${a.slug}`}
-              className="group block"
-            >
-              <article className="h-full flex flex-col">
-                <div className="relative aspect-16/10 mb-6 overflow-hidden rounded-2xl bg-gray-100">
+        {/* Featured Video Placeholder */}
+        <Reveal delay={0.2}>
+          <div className="relative aspect-video mb-32 rounded-[40px] overflow-hidden group bg-gray-100">
+            <Image 
+              src="https://images.unsplash.com/photo-1585829365234-7547076d338e?auto=format&fit=crop&q=80&w=1600"
+              alt="Featured Report"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <button className="w-24 h-24 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                <Play className="w-8 h-8 text-black fill-black ml-1" />
+              </button>
+            </div>
+            <div className="absolute bottom-10 left-10 text-white">
+              <span className="text-xs font-bold uppercase tracking-widest bg-pink-600 px-4 py-2 rounded-full mb-4 inline-block">Featured Report</span>
+              <h2 className="text-3xl font-bold">The Future of Agriculture in Thakurgaon</h2>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Dynamic Grid Layout */}
+        <div className="mb-32">
+          <Reveal>
+            <h2 className="text-3xl font-bold mb-12 flex items-center gap-4">
+              <ImageIcon className="text-pink-600" />
+              Field Gallery
+            </h2>
+          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {galleryImages.map((img, i) => (
+              <Reveal key={i} delay={i * 0.1}>
+                <div 
+                  className={`relative overflow-hidden rounded-3xl cursor-pointer group ${
+                    i === 0 ? "md:col-span-2 md:row-span-2 aspect-4/5" : "aspect-square"
+                  }`}
+                  onClick={() => setLightbox({ isOpen: true, index: i })}
+                >
                   <Image
-                    src={a.coverImage}
-                    alt={a.title}
+                    src={img}
+                    alt="Journalism moment"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-pink-600 text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-2">
-                      <Newspaper className="w-3 h-3" />
-                      {a.category}
-                    </span>
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="text-white text-sm font-bold uppercase tracking-widest">View Image</span>
                   </div>
                 </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
 
-                <div className="flex items-center gap-2 text-xs text-gray-400 mb-3 font-medium">
-                  <Calendar className="w-3 h-3" />
-                  {new Date(a.publishedAt).toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
-                </div>
-
-                <h3 className=" text-2xl leading-tight mb-4 group-hover:text-pink-600 transition-colors">
-                  {a.title}
-                </h3>
-
-                <p className="text-gray-500 leading-relaxed line-clamp-3 mb-6">
-                  {a.excerpt}
-                </p>
-
-                <div className="mt-auto flex items-center text-sm font-bold gap-2 group-hover:translate-x-2 transition-transform">
-                  Read Story
-                  <span className="text-xl">→</span>
-                </div>
-              </article>
-            </Link>
-          ))}
+        {/* News Articles */}
+        <div>
+          <Reveal>
+            <h2 className="text-3xl font-bold mb-12 flex items-center gap-4">
+              <Newspaper className="text-pink-600" />
+              Featured Articles
+            </h2>
+          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {articles.map((a, i) => (
+              <Reveal key={a.id} delay={i * 0.1}>
+                <Link href={`/journalism/${a.slug}`} className="group block">
+                  <div className="relative aspect-16/10 mb-6 overflow-hidden rounded-3xl bg-gray-100">
+                    <Image src={a.image} alt={a.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <div className="flex items-center gap-4 text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">
+                    <span className="text-pink-600">{a.category}</span>
+                    <span>{a.publishedAt}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold group-hover:text-pink-600 transition-colors leading-tight">{a.title}</h3>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
+
+      <ImageLightbox 
+        images={galleryImages} 
+        isOpen={lightbox.isOpen} 
+        initialIndex={lightbox.index} 
+        onClose={() => setLightbox({ ...lightbox, isOpen: false })} 
+      />
     </main>
   );
 }
