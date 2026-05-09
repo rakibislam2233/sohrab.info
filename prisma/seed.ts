@@ -1,7 +1,38 @@
+import dotenv from 'dotenv'
+dotenv.config({ path: '../.env' })
+
+import { PrismaPg } from '@prisma/adapter-pg'
 import { PrismaClient } from '@prisma/client'
 import bcrypt from 'bcryptjs'
 
-const prisma = new PrismaClient()
+let connectionString = process.env.SUPABASE_DATABASE_URL ?? process.env.DATABASE_URL
+if (!connectionString) {
+  // try reading .env.local or .env manually
+  try {
+    const fs = await import('fs')
+    const path = await import('path')
+    const root = process.cwd()
+    const envFiles = ['.env.local', '.env']
+    for (const f of envFiles) {
+      const p = path.join(root, f)
+      if (fs.existsSync(p)) {
+        const content = fs.readFileSync(p, 'utf8')
+        const match = content.match(/DATABASE_URL=(.*)/)
+        if (match) {
+          connectionString = match[1].trim().replace(/^\"|\"$/g, '')
+          break
+        }
+      }
+    }
+  } catch (e) {
+    // ignore
+  }
+}
+console.log('Using connectionString:', JSON.stringify(connectionString))
+console.log('Using connectionString:', JSON.stringify(connectionString))
+const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) })
+
+// prisma instance configured with PrismaPg adapter
 
 async function main(){
   const password = await bcrypt.hash('ChangeMe123!', 10)
@@ -65,6 +96,26 @@ async function main(){
       category: i%2? 'Travel' : 'Journalism'
     }})
   }
+
+  // Personal info
+  await prisma.personalInfo.upsert({
+    where: { id: 'primary' },
+    update: {
+      name: 'Sohrab Hossan',
+      title: 'Full Stack Developer & Writer',
+      bio: 'I build delightful web experiences. This is demo seed data — edit it from the admin panel.',
+      avatar: 'https://picsum.photos/seed/avatar/400/400',
+      socials: ['https://twitter.com/example','https://github.com/example','https://linkedin.com/in/example']
+    },
+    create: {
+      id: 'primary',
+      name: 'Sohrab Hossan',
+      title: 'Full Stack Developer & Writer',
+      bio: 'I build delightful web experiences. This is demo seed data — edit it from the admin panel.',
+      avatar: 'https://picsum.photos/seed/avatar/400/400',
+      socials: ['https://twitter.com/example','https://github.com/example','https://linkedin.com/in/example']
+    }
+  })
 
   console.log('Seed finished')
 }

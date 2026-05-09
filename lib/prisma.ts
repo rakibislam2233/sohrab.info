@@ -6,7 +6,7 @@ declare global {
   var prisma: PrismaClient | undefined
 }
 
-const connectionString = process.env.DATABASE_URL
+const connectionString = process.env.SUPABASE_DATABASE_URL ?? process.env.DATABASE_URL
 
 export const prisma = global.prisma ?? new PrismaClient({
   adapter: new PrismaPg({ connectionString }),
