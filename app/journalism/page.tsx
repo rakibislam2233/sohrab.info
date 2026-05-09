@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, Newspaper, Play, Image as ImageIcon } from "lucide-react";
+import { Calendar, Newspaper, Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import PageBanner from "../../components/ui/PageBanner";

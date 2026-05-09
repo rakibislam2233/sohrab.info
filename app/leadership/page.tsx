@@ -1,7 +1,7 @@
 import Reveal from "../../components/ui/Reveal";
 import PageBanner from "../../components/ui/PageBanner";
 import { Metadata } from "next";
-import { Users, Award, Calendar, Play } from "lucide-react";
+import { Users, Award, Calendar } from "lucide-react";
 import Image from "next/image";
 
 export const metadata: Metadata = { title: "Leadership — Sohrab Hossan" };

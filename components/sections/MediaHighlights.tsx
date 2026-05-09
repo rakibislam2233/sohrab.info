@@ -1,7 +1,6 @@
 "use client"
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Play, ArrowRight, Video } from "lucide-react";
 import Reveal from "../ui/Reveal";
 
 const galleryImages = [
@@ -11,33 +10,6 @@ const galleryImages = [
   "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&q=80&w=1000",
   "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&q=80&w=1000",
   "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=1000"
-];
-
-const videos = [
-  { 
-    id: 1, 
-    title: "Boga Lake Tour Vlog | Exploring the Beauty of Bandarban", 
-    category: "LAKE", 
-    duration: "10:41", 
-    thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1600",
-    isFeatured: true 
-  },
-  { 
-    id: 2, 
-    title: "The Keokradong | Exploring the Highest Peak", 
-    category: "MOUNTAIN", 
-    duration: "22:13", 
-    thumbnail: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000",
-    isFeatured: false 
-  },
-  { 
-    id: 3, 
-    title: "Sonargaon | A Day Trip to the Ancient Capital", 
-    category: "HISTORY", 
-    duration: "11:46", 
-    thumbnail: "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&q=80&w=1000",
-    isFeatured: false 
-  }
 ];
 
 export default function MediaHighlights() {

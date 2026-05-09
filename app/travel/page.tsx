@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Compass, MapPin, Calendar, Play, Camera } from "lucide-react";
+import { Compass, MapPin, Calendar, Camera } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../../components/ui/Reveal";

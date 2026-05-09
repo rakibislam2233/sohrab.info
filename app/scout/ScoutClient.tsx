@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Users, MapPin, Calendar, Play, Camera } from "lucide-react";
+import { Users, MapPin, Calendar, Camera } from "lucide-react";
 import Reveal from "../../components/ui/Reveal";
 import ImageLightbox from "../../components/ui/ImageLightbox";
 import PageBanner from "../../components/ui/PageBanner";
