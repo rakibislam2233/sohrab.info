@@ -34,26 +34,53 @@ export default function TravelPage() {
       />
       <div className="container mx-auto px-6 mt-24">
 
-        {/* Featured Travel Video */}
-        <Reveal delay={0.2}>
-          <div className="relative aspect-video mb-32 rounded-[40px] overflow-hidden group bg-gray-100">
-            <Image 
-              src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&q=80&w=1600"
-              alt="Travel Highlights"
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-              <button className="w-24 h-24 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-2xl">
-                <Play className="w-8 h-8 text-black fill-black ml-1" />
-              </button>
+        {/* Featured Video Section - "Filmed instead" design */}
+        <div className="mb-32">
+          <Reveal>
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+              <div className="max-w-2xl">
+                <h2 className="text-4xl md:text-6xl font-black mb-6 italic tracking-tight">Filmed instead.</h2>
+                <p className="text-gray-500 text-xl leading-relaxed">
+                  The world in motion. Raw, unscripted moments from the heart of the journey.
+                </p>
+              </div>
             </div>
-            <div className="absolute bottom-10 left-10 text-white">
-              <span className="text-xs font-bold bg-pink-600 px-4 py-2 rounded-full mb-4 inline-block">Travel Highlight</span>
-              <h2 className="text-3xl font-bold">A Journey to the Ancient Mango Tree</h2>
+          </Reveal>
+
+          <Reveal>
+            <div className="relative aspect-video rounded-[40px] overflow-hidden group cursor-pointer bg-gray-50 border border-gray-100 shadow-sm">
+              <Image 
+                src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&q=80&w=1600"
+                alt="Travel Highlights"
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+              />
+              
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
+              
+              <div className="absolute top-8 left-8 flex gap-3">
+                <span className="px-4 py-1.5 bg-pink-500/20 backdrop-blur-md border border-pink-500/30 text-pink-500 text-[10px] font-black uppercase tracking-[0.2em] rounded-full">Travel</span>
+                <span className="px-4 py-1.5 bg-white/40 backdrop-blur-md border border-white/20 text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full">Exploration</span>
+              </div>
+
+              <div className="absolute top-8 right-8 px-3 py-1 bg-white/60 backdrop-blur-md rounded-lg text-xs font-mono font-bold tracking-widest text-black">
+                05:12
+              </div>
+
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-24 h-24 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border border-white/30 shadow-2xl">
+                  <Play className="w-8 h-8 text-white fill-white ml-1" />
+                </div>
+              </div>
+
+              <div className="absolute bottom-10 left-10 right-10">
+                <h3 className="text-3xl md:text-5xl font-black mb-4 text-white group-hover:text-pink-400 transition-colors leading-tight">
+                  A Journey to the Ancient Mango Tree
+                </h3>
+              </div>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
 
         {/* Masonry Grid */}
         <div className="mb-32">

@@ -32,26 +32,53 @@ export default function ScoutClient() {
       />
       <div className="container mx-auto px-6 mt-24">
 
-        {/* Featured Video */}
-        <Reveal delay={0.2}>
-          <div className="relative aspect-video mb-32 rounded-[40px] overflow-hidden group bg-gray-100">
-            <Image 
-              src="https://lh3.googleusercontent.com/sitesv/AA5AbUA49r2u2zriZ8SwgDWca3Pn_Ssq5qcxjyI5Z-VRjqPfVFnO9oticCL6Fo_fYESwiC436s6hMvT09u2L7FVd7K9ke3c0l8YjAVBas7JTEC_ssTNMsAF-gVqx0m6fCpuJNjgi8LbkDyPtJJpSg6ueoJ0FKF2ZF4JAZHixVLF1XrocQMM3_BzTRjp-=w16383"
-              alt="Leadership Video"
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-              <button className="w-24 h-24 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-2xl">
-                <Play className="w-8 h-8 text-black fill-black ml-1" />
-              </button>
+        {/* Featured Video Section - "Filmed instead" design */}
+        <div className="mb-32">
+          <Reveal>
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+              <div className="max-w-2xl">
+                <h2 className="text-4xl md:text-6xl font-black mb-6 italic tracking-tight">Filmed instead.</h2>
+                <p className="text-gray-500 text-xl leading-relaxed">
+                  Moments of leadership, skill, and brotherhood, preserved in motion.
+                </p>
+              </div>
             </div>
-            <div className="absolute bottom-10 left-10 text-white">
-              <span className="text-xs font-bold bg-blue-600 px-4 py-2 rounded-full mb-4 inline-block">Leadership Spotlight</span>
-              <h2 className="text-3xl font-bold">Rover Scout Leadership Camp 2020</h2>
+          </Reveal>
+
+          <Reveal>
+            <div className="relative aspect-video rounded-[40px] overflow-hidden group cursor-pointer bg-gray-50 border border-gray-100 shadow-sm">
+              <Image 
+                src="https://lh3.googleusercontent.com/sitesv/AA5AbUA49r2u2zriZ8SwgDWca3Pn_Ssq5qcxjyI5Z-VRjqPfVFnO9oticCL6Fo_fYESwiC436s6hMvT09u2L7FVd7K9ke3c0l8YjAVBas7JTEC_ssTNMsAF-gVqx0m6fCpuJNjgi8LbkDyPtJJpSg6ueoJ0FKF2ZF4JAZHixVLF1XrocQMM3_BzTRjp-=w16383"
+                alt="Leadership Spotlight"
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+              />
+              
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
+              
+              <div className="absolute top-8 left-8 flex gap-3">
+                <span className="px-4 py-1.5 bg-blue-500/20 backdrop-blur-md border border-blue-500/30 text-blue-500 text-[10px] font-black uppercase tracking-[0.2em] rounded-full">Scouting</span>
+                <span className="px-4 py-1.5 bg-white/40 backdrop-blur-md border border-white/20 text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full">Leadership</span>
+              </div>
+
+              <div className="absolute top-8 right-8 px-3 py-1 bg-white/60 backdrop-blur-md rounded-lg text-xs font-mono font-bold tracking-widest text-black">
+                08:20
+              </div>
+
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-24 h-24 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border border-white/30 shadow-2xl">
+                  <Play className="w-8 h-8 text-white fill-white ml-1" />
+                </div>
+              </div>
+
+              <div className="absolute bottom-10 left-10 right-10">
+                <h3 className="text-3xl md:text-5xl font-black mb-4 text-white group-hover:text-blue-400 transition-colors leading-tight">
+                  Rover Scout Leadership Camp 2020
+                </h3>
+              </div>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
 
         {/* Masonry Grid */}
         <div className="mb-32">
