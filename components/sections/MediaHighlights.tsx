@@ -42,16 +42,16 @@ const videos = [
 
 export default function MediaHighlights() {
   return (
-    <section className="bg-white py-16 text-black">
+    <section className="bg-white py-12 text-black">
       <div className="container mx-auto px-6">
         
         {/* Gallery Grid */}
-        <div className="mb-20">
+        <div className="mb-12">
           <Reveal>
-            <div className="flex justify-between items-end mb-8">
+            <div className="flex justify-between items-end mb-6">
               <div>
-                <h2 className="text-2xl md:text-4xl font-black mb-2 uppercase tracking-tighter">Action Moments</h2>
-                <p className="text-gray-500 text-sm">Capturing stories through the lens.</p>
+                <h2 className="text-2xl md:text-4xl font-black mb-1 uppercase tracking-tighter">Action Moments</h2>
+                <p className="text-gray-400 text-[10px] font-black uppercase tracking-widest">Capturing stories through the lens.</p>
               </div>
             </div>
           </Reveal>
@@ -73,17 +73,17 @@ export default function MediaHighlights() {
         {/* Video Section */}
         <div>
           <Reveal>
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-6">
               <div className="max-w-xl">
-                <h2 className="text-2xl md:text-4xl font-black mb-4 italic tracking-tight">Filmed instead.</h2>
-                <p className="text-gray-500 text-base leading-relaxed">
+                <h2 className="text-2xl md:text-4xl font-black mb-2 italic tracking-tight">Filmed instead.</h2>
+                <p className="text-gray-400 text-sm font-medium leading-relaxed">
                   Some places are better understood in motion. A few of those made it to the edit.
                 </p>
               </div>
-              <button className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded hover:bg-black hover:text-white transition-all group">
-                <Video size={16} />
-                <span className="text-xs font-bold uppercase tracking-widest">Watch more on YouTube</span>
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              <button className="flex items-center gap-2 px-3 py-1.5 border border-gray-100 rounded hover:bg-black hover:text-white transition-all group">
+                <Video size={14} />
+                <span className="text-[8px] font-black uppercase tracking-widest">Watch more on YouTube</span>
+                <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </Reveal>
@@ -100,8 +100,8 @@ export default function MediaHighlights() {
                     <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
                     
                     <div className="absolute top-4 left-4 flex gap-2">
-                      <span className="px-3 py-1 bg-amber-500/20 backdrop-blur-md border border-amber-500/30 text-amber-500 text-[9px] font-black uppercase tracking-[0.2em] rounded">Featured</span>
-                      <span className="px-3 py-1 bg-white/40 backdrop-blur-md border border-white/20 text-black text-[9px] font-black uppercase tracking-[0.2em] rounded">{video.category}</span>
+                      <span className="px-3 py-1 bg-amber-500/20 backdrop-blur-md border border-amber-500/30 text-amber-500 text-[8px] font-black uppercase tracking-[0.2em] rounded">Featured</span>
+                      <span className="px-3 py-1 bg-white/40 backdrop-blur-md border border-white/20 text-black text-[8px] font-black uppercase tracking-[0.2em] rounded">{video.category}</span>
                     </div>
 
                     <div className="absolute top-4 right-4 px-2 py-0.5 bg-white/60 backdrop-blur-md rounded text-[10px] font-mono font-bold tracking-widest text-black">
@@ -109,18 +109,18 @@ export default function MediaHighlights() {
                     </div>
 
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border border-white/30 shadow-2xl">
-                        <Play className="w-6 h-6 text-white fill-white ml-0.5" />
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded flex items-center justify-center group-hover:scale-110 transition-transform border border-white/30 shadow-2xl">
+                        <Play className="w-5 h-5 text-white fill-white ml-0.5" />
                       </div>
                     </div>
 
                     <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="text-xl md:text-3xl font-black mb-2 text-white group-hover:text-amber-400 transition-colors leading-tight">
+                      <h3 className="text-xl md:text-2xl font-black mb-2 text-white group-hover:text-amber-400 transition-colors leading-tight tracking-tight">
                         {video.title}
                       </h3>
-                      <div className="flex items-center gap-3 text-white/60 text-[10px] font-bold tracking-widest uppercase">
+                      <div className="flex items-center gap-2 text-white/60 text-[8px] font-black tracking-widest uppercase">
                         <span>Sohrab Hossan</span>
-                        <div className="w-1 h-1 rounded-full bg-white/30" />
+                        <div className="w-1 h-1 rounded bg-white/30" />
                         <span>2023</span>
                       </div>
                     </div>
@@ -146,13 +146,13 @@ export default function MediaHighlights() {
                     </div>
 
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border border-white/30 opacity-0 group-hover:opacity-100">
+                      <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded flex items-center justify-center group-hover:scale-110 transition-transform border border-white/30 opacity-0 group-hover:opacity-100">
                         <Play className="w-4 h-4 text-white fill-white ml-0.5" />
                       </div>
                     </div>
 
                     <div className="absolute bottom-4 left-4 right-4">
-                      <h4 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors leading-tight">
+                      <h4 className="text-sm font-bold text-white group-hover:text-amber-400 transition-colors leading-tight tracking-tight">
                         {video.title}
                       </h4>
                     </div>

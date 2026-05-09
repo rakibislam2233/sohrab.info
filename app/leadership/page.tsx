@@ -70,7 +70,7 @@ export default async function LeadershipPage() {
               </div>
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border border-white/30 shadow-2xl">
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded flex items-center justify-center group-hover:scale-110 transition-transform border border-white/30 shadow-2xl">
                   <Play className="w-6 h-6 text-white fill-white ml-0.5" />
                 </div>
               </div>
