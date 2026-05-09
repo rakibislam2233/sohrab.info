@@ -12,7 +12,6 @@ export async function POST(req: Request){
     const body = await req.json()
     const data = body.data as string
     if(!data) return NextResponse.json({ error: 'No data' }, { status: 400 })
-    // data is a data URI like data:image/png;base64,xxxx
     const result = await cloudinary.v2.uploader.upload(data, { folder: 'sohrab' })
     return NextResponse.json({ url: result.secure_url })
   }catch(err){
