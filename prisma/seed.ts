@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
-dotenv.config({ path: '../.env' })
+dotenv.config({ path: '.env.local' })
+dotenv.config({ path: '.env' })
 
 import { PrismaPg } from '@prisma/adapter-pg'
 import { PrismaClient } from '@prisma/client'
@@ -28,13 +29,23 @@ if (!connectionString) {
     // ignore
   }
 }
-console.log('Using connectionString:', JSON.stringify(connectionString))
-console.log('Using connectionString:', JSON.stringify(connectionString))
+
+if (!connectionString) {
+  throw new Error('Missing SUPABASE_DATABASE_URL or DATABASE_URL for seed script')
+}
+
 const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) })
 
 // prisma instance configured with PrismaPg adapter
 
 async function main(){
+  // Make seed idempotent by clearing demo tables before inserting fresh data.
+  await prisma.galleryPhoto.deleteMany()
+  await prisma.achievement.deleteMany()
+  await prisma.scoutActivity.deleteMany()
+  await prisma.travelStory.deleteMany()
+  await prisma.article.deleteMany()
+
   const password = await bcrypt.hash('ChangeMe123!', 10)
   await prisma.admin.upsert({
     where: { email: 'admin@sohrab.info' },

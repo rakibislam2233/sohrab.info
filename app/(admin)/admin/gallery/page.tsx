@@ -19,7 +19,10 @@ export default async function AdminGallery(){
             <Image src={i.imageUrl} alt={i.caption || 'photo'} width={400} height={300} className="object-cover w-full h-40" />
             <div className="p-3 flex items-center justify-between gap-3 text-sm">
               <span className="truncate">{i.category}</span>
-              <DeleteButton endpoint="/api/admin/gallery" id={i.id} />
+              <div className="flex items-center gap-2">
+                <Link href={`/admin/gallery/edit/${i.id}`} className="px-3 py-1 rounded-full text-sm bg-black text-white">Edit</Link>
+                <DeleteButton endpoint="/api/admin/gallery" id={i.id} />
+              </div>
             </div>
           </div>
         ))}

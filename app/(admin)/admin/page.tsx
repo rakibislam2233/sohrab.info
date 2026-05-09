@@ -37,6 +37,7 @@ export default async function AdminDashboard(){
       <div className="mt-4 grid grid-cols-2 gap-4">
         <Link href="/admin/gallery" className="rounded-card p-4">Gallery ({galleryCount})</Link>
         <Link href="/admin/achievements" className="rounded-card p-4">Achievements</Link>
+        <Link href="/admin/personal" className="rounded-card p-4">Personal Info</Link>
       </div>
     </main>
   )
