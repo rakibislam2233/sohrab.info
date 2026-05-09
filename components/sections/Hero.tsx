@@ -42,7 +42,7 @@ export default function Hero() {
               animate={{ rotate: 6, scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               whileHover={{ rotate: 0, scale: 1.05 }}
-              className="bg-white p-4 pb-12 shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-sm border border-gray-100 relative z-10"
+              className="bg-white p-4 pb-12 rounded-sm border border-gray-100 relative z-10"
             >
               <div className="relative w-72 h-80 overflow-hidden bg-gray-100">
                 <Image
@@ -110,7 +110,7 @@ function FloatingTag({ icon, text, className, delay }: { icon: React.ReactNode, 
           delay: delay
         }
       }}
-      className={`absolute z-20 flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm border border-gray-100 shadow-sm rounded-2xl text-[12px] font-bold text-gray-700 ${className}`}
+      className={`absolute z-20 flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm border border-gray-100 rounded-2xl text-[12px] font-bold text-gray-700 ${className}`}
     >
       {icon}
       {text}

@@ -57,30 +57,30 @@ async function main(){
   // Real Articles based on Journalism experience
   const articlesData = [
     {
-      title: 'Modern Rice Cultivation in Thakurgaon',
-      slug: 'modern-rice-cultivation-thakurgaon',
-      excerpt: 'Exploring how modern techniques are transforming agriculture in Northern Bangladesh.',
-      content: '<p>Agriculture is the backbone of Thakurgaon...</p>',
-      coverImage: 'https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?auto=format&fit=crop&q=80&w=1000',
+      title: 'Transformation of Primary Education in Thakurgaon',
+      slug: 'primary-education-thakurgaon',
+      excerpt: 'How local schools are adapting to new curriculum and digital learning environments.',
+      content: '<p>As the Staff Reporter for the Education Desk at Protidiner Bangladesh, I have observed...</p>',
+      coverImage: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=1000',
+      category: 'Education',
+      isPublished: true
+    },
+    {
+      title: 'Agricultural Success: Commercial Mango Farming',
+      slug: 'mango-farming-success',
+      excerpt: 'Thakurgaon farmers find new prosperity through commercial mango orchards.',
+      content: '<p>The agricultural landscape of Northern Bangladesh is shifting...</p>',
+      coverImage: 'https://images.unsplash.com/photo-1553134839-89d81d421da1?auto=format&fit=crop&q=80&w=1000',
       category: 'Agriculture',
       isPublished: true
     },
     {
-      title: 'The Pilkhana Tragedy: A Decade Later',
-      slug: 'pilkhana-tragedy-anniversary',
-      excerpt: 'Reflecting on the impact of the 2009 tragedy on the nation and the families left behind.',
-      content: '<p>A deep dive into the historical significance...</p>',
-      coverImage: 'https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=80&w=1000',
+      title: 'Current State of Local Governance in Thakurgaon',
+      slug: 'local-governance-thakurgaon',
+      excerpt: 'Analyzing the impact of recent policy changes on rural community development.',
+      content: '<p>Reporting from the heart of Thakurgaon...</p>',
+      coverImage: 'https://images.unsplash.com/photo-1541872703-74c5e443d1f5?auto=format&fit=crop&q=80&w=1000',
       category: 'Current Affairs',
-      isPublished: true
-    },
-    {
-      title: 'Commercial Dragon Fruit Cultivation Success',
-      slug: 'dragon-fruit-success-story',
-      excerpt: 'How local farmers are finding profitability in exotic fruit farming.',
-      content: '<p>Thakurgaon farmers are leading the way...</p>',
-      coverImage: 'https://images.unsplash.com/photo-1527333656061-ca7adf608ae1?auto=format&fit=crop&q=80&w=1000',
-      category: 'Agriculture',
       isPublished: true
     }
   ]
@@ -92,14 +92,14 @@ async function main(){
   // Travel Stories
   const travelData = [
     {
-      title: 'Exploring the Hidden Gems of Thakurgaon',
-      slug: 'thakurgaon-hidden-gems',
+      title: 'Thakurgaon Hidden Gems: Baliadangi Suryapuri Mango Tree',
+      slug: 'baliadangi-mango-tree',
       destination: 'Thakurgaon, Bangladesh',
-      excerpt: 'A journey through the historical sites and natural beauty of my hometown.',
-      content: '<p>From the Baliadangi Suryapuri Mango Tree to ancient temples...</p>',
+      excerpt: 'Visiting the largest and oldest mango tree in South Asia.',
+      content: '<p>A majestic natural wonder that draws thousands of tourists...</p>',
       coverImage: 'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&q=80&w=1000',
       images: ['https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&q=80&w=800'],
-      travelDate: new Date('2023-12-01'),
+      travelDate: new Date('2023-11-15'),
       isPublished: true
     }
   ]
@@ -108,21 +108,22 @@ async function main(){
     await prisma.travelStory.create({ data })
   }
 
-  // Scout Activities
+  // Scout Activities & Leadership
   const scoutData = [
     {
-      title: 'National Scout Training Program',
-      description: 'Participated in advanced leadership training for young scout leaders.',
+      title: 'Rover Scout Leader - Team Coordinator',
+      description: 'Leading the Thakurgaon Govt. College Rover Scout Group in regional events and social initiatives.',
       image: 'https://images.unsplash.com/photo-1563212891-94931a742f9e?auto=format&fit=crop&q=80&w=800',
-      eventDate: new Date('2023-05-15'),
-      location: 'National Scout Training Center, Gazipur'
+      eventDate: new Date('2023-08-20'),
+      location: 'Thakurgaon Govt. College',
+      rank: 'Rover Scout Leader'
     },
     {
-      title: 'Messengers of Peace Workshop',
-      description: 'Promoting peace and harmony through scouting initiatives.',
+      title: 'National Level Scout Workshop',
+      description: 'Participated as a mentor in the Messengers of Peace workshop for emerging scout leaders.',
       image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800',
-      eventDate: new Date('2024-01-10'),
-      location: 'Thakurgaon'
+      eventDate: new Date('2024-02-05'),
+      location: 'Gazipur'
     }
   ]
 
@@ -130,27 +131,49 @@ async function main(){
     await prisma.scoutActivity.create({ data })
   }
 
+  // Voluntary Work
+  const voluntaryData = [
+    {
+      title: 'Regional Tree Plantation Campaign',
+      description: 'Organized and executed a large-scale tree plantation drive in Thakurgaon to promote environmental sustainability.',
+      organization: 'Bangladesh Scouts',
+      date: new Date('2023-06-10'),
+      image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      title: 'Winter Relief Distribution',
+      description: 'Distributed blankets and essential winter supplies to underprivileged families in the Northern regions.',
+      organization: 'Prothom Alo Bondhushava',
+      date: new Date('2023-12-20'),
+      image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800'
+    }
+  ]
+
+  for (const data of voluntaryData) {
+    await prisma.voluntaryWork.create({ data })
+  }
+
   // Achievements
   const achievementsData = [
     {
+      title: 'Best Journalist Award 2023',
+      description: 'Recognized for outstanding reporting on educational development and social issues.',
+      issuedBy: 'Thakurgaon Press Club',
+      issuedDate: new Date('2023-05-10'),
+      category: 'Journalism'
+    },
+    {
       title: 'National Service Award',
-      description: 'Awarded by Bangladesh Scouts for outstanding volunteer work and relief distribution.',
+      description: 'Highest recognition for volunteer service within the Bangladesh Scouts movement.',
       issuedBy: 'Bangladesh Scouts',
-      issuedDate: new Date('2022-10-20'),
+      issuedDate: new Date('2022-12-15'),
       category: 'Scout'
     },
     {
-      title: 'Best Rover Scout (Division Level)',
-      description: 'Recognized for exceptional commitment and leadership in the Rover Scout movement.',
-      issuedBy: 'Bangladesh Scouts (Rangpur Division)',
-      issuedDate: new Date('2021-12-15'),
-      category: 'Scout'
-    },
-    {
-      title: 'Best Team Award',
-      description: 'Won three times nationally with the Prothom Alo Bondhushava team.',
-      issuedBy: 'Prothom Alo Bondhushava',
-      issuedDate: new Date('2023-08-01'),
+      title: 'Best Team Coordinator',
+      description: 'Awarded for exceptional leadership in coordinating regional scouting events.',
+      issuedBy: 'Rover Region, Bangladesh Scouts',
+      issuedDate: new Date('2023-03-20'),
       category: 'Leadership'
     }
   ]
@@ -160,10 +183,10 @@ async function main(){
   }
 
   // Gallery
-  for(let i=1;i<=10;i++){
+  for(let i=1;i<=12;i++){
     await prisma.galleryPhoto.create({ data: {
-      imageUrl: `https://images.unsplash.com/photo-${1500000000000 + i*1000}?auto=format&fit=crop&q=80&w=800`,
-      caption: `Activity Moment ${i}`,
+      imageUrl: `https://images.unsplash.com/photo-${1500000000000 + i*5000}?auto=format&fit=crop&q=80&w=800`,
+      caption: `Field Activity Moment ${i}`,
       category: i%3 === 0 ? 'Travel' : (i%3 === 1 ? 'Journalism' : 'Scout')
     }})
   }
@@ -173,8 +196,8 @@ async function main(){
     where: { id: 'primary' },
     update: {
       name: 'Sohrab Hossan',
-      title: 'Staff Reporter & Scout Leader',
-      bio: 'A passionate storyteller and committed scout leader from Bangladesh. Staff Reporter at Protidiner Bangladesh and Young Scout Leader at Bangladesh Scouts.',
+      title: 'Staff Reporter @ Protidiner Bangladesh | Scout Leader',
+      bio: 'Professional journalist assigned to the Education Desk. Dedicated Rover Scout Leader at Thakurgaon Govt. College and committed social volunteer. Passionate about storytelling, leadership, and humanitarian service.',
       avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400',
       socials: [
         'https://www.facebook.com/share/155DH45GhJ/',
@@ -186,8 +209,8 @@ async function main(){
     create: {
       id: 'primary',
       name: 'Sohrab Hossan',
-      title: 'Staff Reporter & Scout Leader',
-      bio: 'A passionate storyteller and committed scout leader from Bangladesh. Staff Reporter at Protidiner Bangladesh and Young Scout Leader at Bangladesh Scouts.',
+      title: 'Staff Reporter @ Protidiner Bangladesh | Scout Leader',
+      bio: 'Professional journalist assigned to the Education Desk. Dedicated Rover Scout Leader at Thakurgaon Govt. College and committed social volunteer. Passionate about storytelling, leadership, and humanitarian service.',
       avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400',
       socials: [
         'https://www.facebook.com/share/155DH45GhJ/',

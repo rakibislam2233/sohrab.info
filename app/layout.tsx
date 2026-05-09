@@ -2,15 +2,13 @@ import type { Metadata } from "next";
 import React from "react";
 import Navbar from "../components/Navbar";
 import "./globals.css";
-import { Noto_Sans, Playfair_Display } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { Nunito } from "next/font/google";
 
-const playfairDisplayHeading = Playfair_Display({
+const notoSans = Nunito({
   subsets: ["latin"],
-  variable: "--font-heading",
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-sans",
 });
-
-const notoSans = Noto_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Sohrab Hossan — Journalist · Traveller · Scout",
@@ -24,14 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={cn(
-        "font-sans",
-        notoSans.variable,
-        playfairDisplayHeading.variable,
-      )}
-    >
+    <html lang="en" className={notoSans.className}>
       <body>
         <Navbar />
         <div>{children}</div>

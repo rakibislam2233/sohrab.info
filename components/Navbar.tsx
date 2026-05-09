@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Button } from "./ui/Button";
 import { motion } from "framer-motion";
 
 export default function Navbar() {
@@ -20,7 +19,7 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`flex items-center justify-between w-full max-w-2xl px-6 py-2 rounded-full border border-white/20 shadow-lg backdrop-blur-md bg-white/80 transition-all duration-300`}
+        className={`flex items-center justify-between w-full max-w-4xl px-6 py-2 rounded-full border border-white/20 backdrop-blur-md bg-white/80 transition-all duration-300`}
       >
         {/* Logo */}
         <Link href="/" className="font-bold text-xl tracking-tight text-black flex items-center gap-2">
@@ -29,20 +28,26 @@ export default function Navbar() {
 
         {/* Menu Items */}
         <nav className="hidden md:flex items-center gap-6 text-[13px] font-medium text-gray-500">
-          <Link href="/work" className="hover:text-black transition-colors">
-            Work
+          <Link href="/about" className="hover:text-black transition-colors">
+            About
           </Link>
-          <Link href="/experience" className="hover:text-black transition-colors">
-            Experience
+          <Link href="/journalism" className="hover:text-black transition-colors">
+            Journalism
           </Link>
-          <Link href="/off-hours" className="hover:text-black transition-colors">
-            Off hours
+          <Link href="/travel" className="hover:text-black transition-colors">
+            Travel
           </Link>
-          <Link href="/youtube" className="hover:text-black transition-colors">
-            YouTube
+          <Link href="/scout" className="hover:text-black transition-colors">
+            Scouting
           </Link>
-          <Link href="/guestbook" className="hover:text-black transition-colors">
-            Guestbook
+          <Link href="/leadership" className="hover:text-black transition-colors">
+            Leadership
+          </Link>
+          <Link href="/achievements" className="hover:text-black transition-colors">
+            Achievements
+          </Link>
+          <Link href="/voluntary-work" className="hover:text-black transition-colors">
+            Voluntary
           </Link>
         </nav>
 

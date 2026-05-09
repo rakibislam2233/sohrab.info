@@ -1,13 +1,13 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import Reveal from '../ui/Reveal';
-import { prisma } from '@/lib/prisma';
-import { Newspaper } from 'lucide-react';
+import { prisma } from "@/lib/prisma";
+import { Newspaper } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import Reveal from "../ui/Reveal";
 
 export default async function FeaturedGrid() {
   const articles = await prisma.article.findMany({
     where: { isPublished: true },
-    orderBy: { publishedAt: 'desc' },
+    orderBy: { publishedAt: "desc" },
     take: 3,
   });
 
@@ -21,24 +21,24 @@ export default async function FeaturedGrid() {
                 <Newspaper className="w-3 h-3" />
                 {article.category}
               </div>
-              
+
               <div className="relative aspect-[16/10] mb-6 overflow-hidden bg-gray-100 rounded-lg">
-                <Image 
-                  src={article.coverImage} 
-                  alt={article.title} 
-                  fill 
-                  className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                <Image
+                  src={article.coverImage}
+                  alt={article.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
-              
-              <h3 className="font-serif text-2xl md:text-3xl leading-tight mb-4 group-hover:text-pink-600 transition-colors">
+
+              <h3 className="text-2xl md:text-3xl leading-tight mb-4 group-hover:text-pink-600 transition-colors">
                 {article.title}
               </h3>
-              
+
               <p className="text-gray-500 leading-relaxed line-clamp-3 mb-6">
                 {article.excerpt}
               </p>
-              
+
               <div className="flex items-center text-sm font-semibold gap-2 group-hover:translate-x-2 transition-transform">
                 Read Story
                 <span className="text-xl">→</span>

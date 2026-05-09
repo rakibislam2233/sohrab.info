@@ -47,10 +47,7 @@ body,
   height: 100%;
 }
 
-body {
-  font-family: "DM Sans", system-ui, sans-serif;
-  color: #222;
-}
+
 
 .container {
   max-width: 1200px;

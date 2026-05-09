@@ -44,8 +44,8 @@ export default function HomeHighlights() {
           {blocks.map((block, index) => (
             <Reveal key={block.title} delay={index * 0.1}>
               <Link href={block.href} className="group block h-full">
-                <div className={`h-full p-10 rounded-3xl transition-all duration-300 border border-transparent hover:border-gray-200 hover:shadow-xl hover:-translate-y-2 ${block.color}`}>
-                  <div className="bg-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-sm mb-8">
+                <div className={`h-full p-10 rounded-3xl transition-all duration-300 border border-transparent hover:border-gray-200 hover:-translate-y-2 ${block.color}`}>
+                  <div className="bg-white w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
                     {block.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-black mb-4">{block.title}</h3>
