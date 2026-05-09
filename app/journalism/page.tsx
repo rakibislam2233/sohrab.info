@@ -1,12 +1,11 @@
 "use client"
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Calendar, Newspaper, Image as ImageIcon } from "lucide-react";
+import { Image as ImageIcon, Newspaper } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import ImageLightbox from "../../components/ui/ImageLightbox";
 import PageBanner from "../../components/ui/PageBanner";
 import Reveal from "../../components/ui/Reveal";
-import ImageLightbox from "../../components/ui/ImageLightbox";
 
 const articles = [
   { id: '1', title: 'Transformation of Primary Education', slug: 'primary-education', category: 'Education', publishedAt: '2023-11-10', image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=1000' },
@@ -34,11 +33,11 @@ export default function JournalismPage() {
         themeColor="bg-[#fff0f0]"
         textColor="text-[#721c24]"
       />
-      <div className="container mx-auto px-6 mt-12">
+      <div className="container mx-auto px-4 sm:px-6 mt-10 sm:mt-12">
         {/* Dynamic Grid Layout */}
-        <div className="mb-16">
+        <div className="mb-12 sm:mb-16">
           <Reveal>
-            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-lg sm:text-xl font-bold mb-5 sm:mb-6 flex items-center gap-3">
               <ImageIcon className="text-pink-600" size={20} />
               Field Gallery
             </h2>
@@ -71,21 +70,21 @@ export default function JournalismPage() {
         </div>
 
         {/* News Articles */}
-        <div className="mb-16">
+        <div className="mb-12 sm:mb-16">
           <Reveal>
-            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-lg sm:text-xl font-bold mb-5 sm:mb-6 flex items-center gap-3">
               <Newspaper className="text-pink-600" size={20} />
               Featured Articles
             </h2>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
             {articles.map((a, i) => (
               <Reveal key={a.id} delay={i * 0.1}>
                 <Link href={`/journalism/${a.slug}`} className="group block">
                   <div className="relative aspect-16/10 mb-3 overflow-hidden rounded bg-gray-100 border border-gray-100">
                     <Image src={a.image} alt={a.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
-                  <div className="flex items-center gap-4 text-[8px] font-black uppercase tracking-widest text-gray-400 mb-2">
+                  <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[8px] font-black uppercase tracking-widest text-gray-400 mb-2">
                     <span className="text-pink-600">{a.category}</span>
                     <span>{a.publishedAt}</span>
                   </div>

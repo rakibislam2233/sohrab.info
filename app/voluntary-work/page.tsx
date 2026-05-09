@@ -1,10 +1,10 @@
 "use client"
-import { useState } from "react";
-import { Calendar, Building2, Camera } from "lucide-react";
+import { Building2, Calendar, Camera } from "lucide-react";
 import Image from "next/image";
-import Reveal from "../../components/ui/Reveal";
+import { useState } from "react";
 import ImageLightbox from "../../components/ui/ImageLightbox";
 import PageBanner from "../../components/ui/PageBanner";
+import Reveal from "../../components/ui/Reveal";
 
 const works = [
   { id: '1', title: 'Winter Relief Distribution', description: 'Organized and participated in a large-scale blanket distribution for the elderly and underprivileged people in Thakurgaon.', organization: 'Thakurgaon Govt. College Rover Scout Group', date: '2020-01-14', image: 'https://lh3.googleusercontent.com/sitesv/AA5AbUBC3eDX-izt7AFNwcnl1yMjiL0xDONAbxgxWGftORflHuqlp2xxN7gkS0rIDBYyNxLBuqVAMsgZfIUNZjyIkNNoBgHl4l24jRbRA2rsdO8pjq0I2plYhpTCkZmOiDzMns1Onp4ttUy2fxKF2Kqu9u3m-gb5ygDrZWVyR0tYEbeI4LCq9kJO0aNtZx1foPBrj_Z-HNL9r1uCkK02eOzcaco_OFEUmoj8vuCW3k=w1280' },
@@ -29,11 +29,11 @@ export default function VoluntaryWorkPage() {
         themeColor="bg-[#fff0f0]"
         textColor="text-[#721c24]"
       />
-      <div className="container mx-auto px-6 mt-12">
+      <div className="container mx-auto px-4 sm:px-6 mt-10 sm:mt-12">
         {/* Masonry Grid */}
-        <div className="mb-16">
+        <div className="mb-12 sm:mb-16">
           <Reveal>
-            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-lg sm:text-xl font-bold mb-5 sm:mb-6 flex items-center gap-3">
               <Camera className="text-pink-600" size={20} />
               Impact Gallery
             </h2>
@@ -61,19 +61,19 @@ export default function VoluntaryWorkPage() {
         </div>
 
         {/* Work Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {works.map((work, i) => (
             <Reveal key={work.id} delay={i * 0.1}>
               <div className="group border border-gray-100 rounded overflow-hidden bg-white hover:border-pink-600 transition-colors">
                 <div className="relative aspect-16/10">
                   <Image src={work.image} alt={work.title} fill className="object-cover" />
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">
+                <div className="p-5 sm:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">
                     <span className="flex items-center gap-2"><Building2 size={12} /> {work.organization}</span>
                     <span className="flex items-center gap-2"><Calendar size={12} /> {work.date}</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-2 leading-tight">{work.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 leading-tight">{work.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{work.description}</p>
                 </div>
               </div>

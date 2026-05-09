@@ -1,6 +1,6 @@
-import Reveal from "../ui/Reveal";
-import Image from "next/image";
 import { Heart } from "lucide-react";
+import Image from "next/image";
+import Reveal from "../ui/Reveal";
 
 const works = [
   {
@@ -25,17 +25,17 @@ export default async function VoluntaryWorkSection() {
 
   return (
     <section className="py-12 bg-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <Reveal>
           <div className="max-w-xl mb-8">
-            <h2 className="text-2xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter">Voluntary Work</h2>
-            <p className="text-sm text-gray-500 font-medium">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter">Voluntary Work</h2>
+            <p className="text-sm text-gray-500 font-medium max-w-prose">
               Giving back to the community through environmental and humanitarian initiatives.
             </p>
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {works.map((work, index) => (
             <Reveal key={work.id} delay={index * 0.1}>
               <div className="group">
@@ -49,7 +49,7 @@ export default async function VoluntaryWorkSection() {
                     />
                   )}
                   <div className="absolute top-3 left-3">
-                    <span className="bg-white/90 backdrop-blur-sm text-black px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5 border border-gray-100">
+                    <span className="bg-white/90 backdrop-blur-sm text-black px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest inline-flex items-center gap-1.5 border border-gray-100">
                       <Heart className="w-2.5 h-2.5 text-red-500" />
                       Social Service
                     </span>

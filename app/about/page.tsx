@@ -1,6 +1,6 @@
+import { Heart, Newspaper, Users } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
-import { Newspaper, Users, Heart } from "lucide-react";
 import PageBanner from "../../components/ui/PageBanner";
 
 export const metadata: Metadata = { title: "About Me — Sohrab Hossan" };
@@ -19,11 +19,11 @@ export default function AboutPage() {
         themeColor="bg-[#fafafa]"
         textColor="text-[#1a1a1a]"
       />
-      <div className="container mx-auto px-6 mt-12">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 mt-10 sm:mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 sm:gap-12 items-center">
           <div>
-            <h1 className="text-2xl md:text-4xl font-black text-black mb-4 uppercase tracking-tighter italic">MD. Sohrab Hossan</h1>
-            <p className="text-sm text-gray-400 leading-relaxed mb-6 font-medium">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black mb-4 uppercase tracking-tighter italic">MD. Sohrab Hossan</h1>
+            <p className="text-sm text-gray-400 leading-relaxed mb-6 font-medium max-w-prose">
               {personalInfo?.bio}
             </p>
             <div className="space-y-4">
@@ -66,13 +66,13 @@ export default function AboutPage() {
 
 function ProfilePoint({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-3 items-start sm:items-center">
       <div className="w-10 h-10 bg-[#fafafa] rounded flex items-center justify-center shrink-0 border border-gray-100">
         {icon}
       </div>
       <div>
         <h4 className="font-bold text-black text-base leading-tight">{title}</h4>
-        <p className="text-gray-400 text-xs mt-0.5">{desc}</p>
+        <p className="text-gray-400 text-xs mt-0.5 max-w-prose">{desc}</p>
       </div>
     </div>
   );

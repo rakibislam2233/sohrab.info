@@ -1,7 +1,7 @@
 "use client"
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Reveal from "../ui/Reveal";
-import { motion } from "framer-motion";
 
 const scoutStats = [
   { label: "Active Years", value: "8+" },
@@ -12,8 +12,8 @@ const scoutStats = [
 export default function ScoutingFocus() {
   return (
     <section className="py-12 bg-white overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-12 items-center">
           <Reveal>
             <div className="relative">
               <div className="aspect-square relative rounded overflow-hidden bg-gray-100 border border-gray-100 shadow-sm max-w-sm mx-auto lg:mx-0">
@@ -29,9 +29,9 @@ export default function ScoutingFocus() {
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                className="absolute -right-4 bottom-6 bg-white p-4 rounded text-black shadow-lg border border-gray-100 hidden md:block z-10"
+                className="absolute -right-4 bottom-6 bg-white p-4 rounded text-black shadow-lg border border-gray-100 hidden lg:block z-10"
               >
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-3 gap-4 xl:gap-6">
                   {scoutStats.map((stat, i) => (
                     <div key={i} className="text-center">
                       <div className="text-xl font-bold mb-0.5">{stat.value}</div>

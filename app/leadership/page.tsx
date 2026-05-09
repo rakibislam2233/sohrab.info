@@ -1,8 +1,6 @@
-import Reveal from "../../components/ui/Reveal";
-import PageBanner from "../../components/ui/PageBanner";
+import { Award, Calendar, Users } from "lucide-react";
 import { Metadata } from "next";
-import { Users, Award, Calendar } from "lucide-react";
-import Image from "next/image";
+import PageBanner from "../../components/ui/PageBanner";
 
 export const metadata: Metadata = { title: "Leadership — Sohrab Hossan" };
 
@@ -35,11 +33,11 @@ export default async function LeadershipPage() {
         themeColor="bg-[#f5f0ff]"
         textColor="text-[#3a1c5a]"
       />
-      <div className="container mx-auto px-6 mt-12">
+      <div className="container mx-auto px-4 sm:px-6 mt-10 sm:mt-12">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {scoutActivities.map((activity) => (
-            <div key={activity.id} className="group border border-gray-100 rounded p-6 hover:border-purple-600 transition-colors bg-white">
+            <div key={activity.id} className="group border border-gray-100 rounded p-5 sm:p-6 hover:border-purple-600 transition-colors bg-white">
               <div className="flex items-start justify-between mb-4">
                 <div className="w-10 h-10 bg-purple-50 rounded flex items-center justify-center">
                   <Users className="w-5 h-5 text-purple-600" />
@@ -49,12 +47,12 @@ export default async function LeadershipPage() {
                 </span>
               </div>
               
-              <h3 className="text-xl font-bold text-black mb-2">{activity.title}</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-black mb-2">{activity.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-4">
                 {activity.description}
               </p>
               
-              <div className="flex items-center gap-4 text-[10px] text-gray-400 font-black uppercase tracking-widest pt-4 border-t border-gray-100">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-[10px] text-gray-400 font-black uppercase tracking-widest pt-4 border-t border-gray-100">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-3.5 h-3.5" />
                   {new Date(activity.eventDate).toLocaleDateString("en-US", { month: "long", year: "numeric" })}

@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={notoSans.className}>
-      <body>
+      <body className="overflow-x-hidden bg-background text-foreground">
         <Navbar />
         <div>{children}</div>
       </body>

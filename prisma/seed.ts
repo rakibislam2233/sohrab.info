@@ -201,7 +201,6 @@ async function main(){
       avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400',
       socials: [
         'https://www.facebook.com/share/155DH45GhJ/',
-        'https://www.youtube.com/@sohrab49',
         'https://www.instagram.com/sohrab_shrb/',
         'https://www.linkedin.com/in/sohrab49/'
       ]
@@ -214,7 +213,6 @@ async function main(){
       avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400',
       socials: [
         'https://www.facebook.com/share/155DH45GhJ/',
-        'https://www.youtube.com/@sohrab49',
         'https://www.instagram.com/sohrab_shrb/',
         'https://www.linkedin.com/in/sohrab49/'
       ]

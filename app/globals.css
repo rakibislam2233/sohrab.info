@@ -48,13 +48,24 @@ body,
 }
 
 
+body {
+  overflow-x: hidden;
+}
+
 
 .container {
   max-width: 1200px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
 }
 
 .rounded-card {

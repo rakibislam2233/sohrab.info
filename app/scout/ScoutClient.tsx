@@ -1,11 +1,10 @@
 "use client";
-import { useState } from "react";
+import { Calendar, Camera, MapPin } from "lucide-react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Users, MapPin, Calendar, Camera } from "lucide-react";
-import Reveal from "../../components/ui/Reveal";
+import { useState } from "react";
 import ImageLightbox from "../../components/ui/ImageLightbox";
 import PageBanner from "../../components/ui/PageBanner";
+import Reveal from "../../components/ui/Reveal";
 
 const scoutActivities = [
   {
@@ -50,11 +49,11 @@ export default function ScoutClient() {
         themeColor="bg-[#f0f9f1]"
         textColor="text-[#2d4a31]"
       />
-      <div className="container mx-auto px-6 mt-12">
+      <div className="container mx-auto px-4 sm:px-6 mt-10 sm:mt-12">
         {/* Action Moments - Beautiful varied grid */}
-        <div className="mb-20">
+        <div className="mb-12 sm:mb-20">
           <Reveal>
-            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-lg sm:text-xl font-bold mb-5 sm:mb-6 flex items-center gap-3">
               <Camera className="text-blue-600" size={20} />
               Action Moments
             </h2>
@@ -89,7 +88,7 @@ export default function ScoutClient() {
         </div>
 
         {/* Activities */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {scoutActivities.map((activity, idx) => (
             <Reveal key={activity.id} delay={idx * 0.1}>
               <div className="group border border-gray-100 rounded overflow-hidden bg-white hover:border-blue-600 transition-colors">
@@ -101,8 +100,8 @@ export default function ScoutClient() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">
+                <div className="p-5 sm:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">
                     <span className="flex items-center gap-2">
                       <MapPin size={12} /> {activity.location}
                     </span>
@@ -110,7 +109,7 @@ export default function ScoutClient() {
                       <Calendar size={12} /> {activity.eventDate}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{activity.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2">{activity.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">
                     {activity.description}
                   </p>

@@ -1,12 +1,10 @@
 "use client"
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Compass, MapPin, Calendar, Camera } from "lucide-react";
+import { Calendar, Camera, MapPin } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import Reveal from "../../components/ui/Reveal";
+import { useState } from "react";
 import ImageLightbox from "../../components/ui/ImageLightbox";
 import PageBanner from "../../components/ui/PageBanner";
+import Reveal from "../../components/ui/Reveal";
 
 const stories = [
   { id: '1', title: 'Baliadangi Suryapuri Mango Tree', destination: 'Thakurgaon', travelDate: '2023-11-15', coverImage: 'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&q=80&w=1000' },
@@ -32,11 +30,11 @@ export default function TravelPage() {
         themeColor="bg-[#f0f7ff]"
         textColor="text-[#1c3d5a]"
       />
-      <div className="container mx-auto px-6 mt-12">
+      <div className="container mx-auto px-4 sm:px-6 mt-10 sm:mt-12">
         {/* Masonry Grid */}
-        <div className="mb-16">
+        <div className="mb-12 sm:mb-16">
           <Reveal>
-            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-lg sm:text-xl font-bold mb-5 sm:mb-6 flex items-center gap-3">
               <Camera className="text-pink-600" size={20} />
               Visual Journey
             </h2>
@@ -65,19 +63,19 @@ export default function TravelPage() {
         </div>
 
         {/* Stories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {stories.map((story, i) => (
             <Reveal key={story.id} delay={i * 0.1}>
               <div className="group bg-[#fafafa] rounded overflow-hidden border border-gray-100 hover:border-pink-500 transition-colors">
                 <div className="relative aspect-16/10">
                   <Image src={story.coverImage} alt={story.title} fill className="object-cover" />
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">
+                <div className="p-5 sm:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">
                     <span className="flex items-center gap-2"><MapPin size={12} /> {story.destination}</span>
                     <span className="flex items-center gap-2"><Calendar size={12} /> {story.travelDate}</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-pink-600 transition-colors leading-tight">{story.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-pink-600 transition-colors leading-tight">{story.title}</h3>
                 </div>
               </div>
             </Reveal>

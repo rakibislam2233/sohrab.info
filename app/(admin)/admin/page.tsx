@@ -23,9 +23,9 @@ export default async function AdminDashboard() {
     ]);
 
   return (
-    <main className="container py-12">
-      <h1 className="text-3xl ">Admin Dashboard</h1>
-      <div className="grid grid-cols-3 gap-4 mt-6">
+    <main className="container py-8 sm:py-12">
+      <h1 className="text-2xl sm:text-3xl">Admin Dashboard</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         <Link href="/admin/articles" className="rounded-card p-4">
           <div className="text-sm">Articles</div>
           <div className="text-2xl font-semibold">{articlesCount}</div>
@@ -39,7 +39,7 @@ export default async function AdminDashboard() {
           <div className="text-2xl font-semibold">{scoutCount}</div>
         </Link>
       </div>
-      <div className="mt-4 grid grid-cols-2 gap-4">
+      <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Link href="/admin/gallery" className="rounded-card p-4">
           Gallery ({galleryCount})
         </Link>

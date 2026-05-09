@@ -1,7 +1,6 @@
+import { ArrowRight, Compass, Newspaper, Users } from 'lucide-react';
 import Link from 'next/link';
 import Reveal from '../ui/Reveal';
-import { Compass, Newspaper, Users, ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const blocks = [
   {
@@ -30,22 +29,22 @@ const blocks = [
 export default function HomeHighlights() {
   return (
     <section className="py-12 bg-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <Reveal>
           <div className="max-w-xl mb-8">
-            <h2 className="text-2xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter">What I Focus On</h2>
-            <p className="text-sm text-gray-500 font-medium">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter">What I Focus On</h2>
+            <p className="text-sm text-gray-500 font-medium max-w-prose">
               Merging professional journalism with a lifelong commitment to scouting and a passion for travel.
             </p>
           </div>
         </Reveal>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
           {blocks.map((block, index) => (
             <Reveal key={block.title} delay={index * 0.1}>
               <Link href={block.href} className="group block h-full">
-                <div className={`h-full p-6 rounded transition-all duration-300 border border-transparent hover:border-gray-200 hover:-translate-y-1 ${block.color}`}>
-                  <div className="bg-white w-12 h-12 rounded flex items-center justify-center mb-6">
+                <div className={`h-full p-5 sm:p-6 rounded-2xl transition-all duration-300 border border-transparent hover:border-gray-200 hover:-translate-y-1 ${block.color}`}>
+                  <div className="bg-white w-12 h-12 rounded flex items-center justify-center mb-5 sm:mb-6">
                     {block.icon}
                   </div>
                   <h3 className="text-lg font-bold text-black mb-2">{block.title}</h3>

@@ -33,7 +33,7 @@ const articles = [
 export default async function FeaturedGrid() {
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
       {articles.map((article, index) => (
         <Reveal key={article.id} delay={index * 0.1}>
           <Link href={`/journalism/${article.slug}`} className="group block">
@@ -52,7 +52,7 @@ export default async function FeaturedGrid() {
                 />
               </div>
 
-              <h3 className="text-lg md:text-xl font-bold leading-tight mb-2 group-hover:text-pink-600 transition-colors">
+              <h3 className="text-lg sm:text-xl font-bold leading-tight mb-2 group-hover:text-pink-600 transition-colors">
                 {article.title}
               </h3>
 

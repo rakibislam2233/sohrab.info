@@ -1,7 +1,7 @@
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import { motion } from "framer-motion";
 
 interface GalleryItem {
   id: string;
@@ -51,12 +51,12 @@ const items: GalleryItem[] = [
 export default function GallerySection() {
   return (
     <section className="py-12 bg-white overflow-hidden">
-      <div className="container mx-auto px-6 mb-8 text-left">
+      <div className="container mx-auto px-4 sm:px-6 mb-8 text-left">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-2xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter"
+          className="text-2xl sm:text-3xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter"
         >
           Moments in Action
         </motion.h2>
@@ -65,17 +65,17 @@ export default function GallerySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-gray-500 text-sm max-w-xl font-medium"
+          className="text-gray-500 text-sm max-w-prose font-medium"
         >
           A glimpse into my journey as a journalist, scout, and traveler.
           Capturing stories that matter across Bangladesh.
         </motion.p>
       </div>
 
-      <Marquee gradient={false} speed={50} pauseOnHover={true}>
+      <Marquee gradient={false} speed={45} pauseOnHover={true}>
         {items.map((item) => (
-          <div key={item.id} className="mx-4 relative group">
-            <div className="w-64 h-80 overflow-hidden rounded border border-gray-100 relative">
+          <div key={item.id} className="mx-2 sm:mx-4 relative group">
+            <div className="w-52 sm:w-64 h-68 sm:h-80 overflow-hidden rounded border border-gray-100 relative">
               <Image
                 src={item.imageUrl}
                 alt={item.caption || "gallery image"}

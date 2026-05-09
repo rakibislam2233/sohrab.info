@@ -1,8 +1,7 @@
 "use client"
-import Reveal from "../ui/Reveal";
-import { motion } from "framer-motion";
 import { Compass, MapPin } from "lucide-react";
 import Image from "next/image";
+import Reveal from "../ui/Reveal";
 
 const destinations = [
   { 
@@ -25,22 +24,22 @@ const destinations = [
 export default function TravelHighlights() {
   return (
     <section className="py-12 bg-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <Reveal>
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-5 sm:gap-8">
             <div className="max-w-xl">
-              <h2 className="text-2xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter">Travel Diaries</h2>
-              <p className="text-sm text-gray-500 font-medium">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter">Travel Diaries</h2>
+              <p className="text-sm text-gray-500 font-medium max-w-prose">
                 Exploring the hidden gems of Northern Bangladesh, capturing stories of nature and heritage.
               </p>
             </div>
-            <div className="flex items-center gap-2 text-pink-600 font-black uppercase tracking-widest text-[10px] cursor-pointer hover:translate-x-1 transition-transform">
+            <div className="inline-flex items-center gap-2 text-pink-600 font-black uppercase tracking-widest text-[10px] cursor-pointer hover:translate-x-1 transition-transform">
               View All Stories <Compass className="w-4 h-4" />
             </div>
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
           {destinations.map((dest, i) => (
             <Reveal key={i} delay={i * 0.1}>
               <div className="group cursor-pointer">
@@ -52,7 +51,7 @@ export default function TravelHighlights() {
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[8px] font-bold uppercase tracking-widest flex items-center gap-1.5 border border-gray-100">
+                    <span className="bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[8px] font-bold uppercase tracking-widest inline-flex items-center gap-1.5 border border-gray-100">
                       <MapPin className="w-2.5 h-2.5 text-pink-600" />
                       {dest.name}
                     </span>

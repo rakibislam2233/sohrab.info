@@ -1,11 +1,10 @@
 "use client"
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Award, Calendar, CheckCircle, Camera } from "lucide-react";
+import { Award, Camera, CheckCircle } from "lucide-react";
 import Image from "next/image";
-import Reveal from "../../components/ui/Reveal";
+import { useState } from "react";
 import ImageLightbox from "../../components/ui/ImageLightbox";
 import PageBanner from "../../components/ui/PageBanner";
+import Reveal from "../../components/ui/Reveal";
 
 const achievements = [
   { id: '1', title: 'National Service Award', description: 'Highest recognition from Bangladesh Scouts for outstanding voluntary service.', issuedBy: 'Bangladesh Scouts', issuedDate: '2020-08-16' },
@@ -30,11 +29,11 @@ export default function AchievementsPage() {
         themeColor="bg-[#fffdf0]"
         textColor="text-[#856404]"
       />
-      <div className="container mx-auto px-6 mt-12">
+      <div className="container mx-auto px-4 sm:px-6 mt-10 sm:mt-12">
         {/* Masonry Grid */}
-        <div className="mb-16">
+        <div className="mb-12 sm:mb-16">
           <Reveal>
-            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-lg sm:text-xl font-bold mb-5 sm:mb-6 flex items-center gap-3">
               <Camera className="text-amber-600" size={20} />
               Honor Gallery
             </h2>
@@ -62,16 +61,16 @@ export default function AchievementsPage() {
         </div>
 
         {/* Award Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {achievements.map((achievement, i) => (
             <Reveal key={achievement.id} delay={i * 0.1}>
-              <div className="bg-[#fafafa] p-6 rounded border border-gray-100 flex flex-col h-full hover:border-amber-500 transition-colors">
+              <div className="bg-[#fafafa] p-5 sm:p-6 rounded border border-gray-100 flex flex-col h-full hover:border-amber-500 transition-colors">
                 <div className="w-10 h-10 bg-white rounded flex items-center justify-center mb-4 shadow-sm border border-gray-100">
                   <Award className="w-5 h-5 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-black mb-2">{achievement.title}</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-black mb-2">{achievement.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4 grow">{achievement.description}</p>
-                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                <div className="pt-4 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
                   <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-400">
                     <CheckCircle className="w-3.5 h-3.5 text-emerald-500" />
                     {achievement.issuedBy}

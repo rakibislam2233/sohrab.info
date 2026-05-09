@@ -1,6 +1,6 @@
-import PageBanner from "../../components/ui/PageBanner";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 import type { Metadata } from "next";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import PageBanner from "../../components/ui/PageBanner";
 
 export const metadata: Metadata = { title: "Contact — Sohrab Hossan" };
 
@@ -13,10 +13,10 @@ export default function Contact() {
         themeColor="bg-[#fff0f6]"
         textColor="text-[#7a1c4a]"
       />
-      <div className="container mx-auto px-6 mt-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="container mx-auto px-4 sm:px-6 mt-10 sm:mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Contact Info */}
-          <div className="space-y-6">
+          <div className="space-y-5 sm:space-y-6">
             <ContactMethod 
               icon={<Mail className="w-5 h-5 text-pink-600" />} 
               label="Email" 
@@ -38,7 +38,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form Placeholder */}
-          <div className="bg-[#fafafa] p-6 rounded border border-gray-100">
+          <div className="bg-[#fafafa] p-4 sm:p-6 rounded border border-gray-100">
             <form className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input 
@@ -76,13 +76,13 @@ export default function Contact() {
 
 function ContactMethod({ icon, label, value, href }: { icon: React.ReactNode, label: string, value: string, href: string }) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-start sm:items-center gap-4 group">
       <div className="w-10 h-10 bg-[#fafafa] rounded flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-gray-100">
         {icon}
       </div>
       <div>
         <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">{label}</p>
-        <p className="text-lg font-bold text-black">{value}</p>
+        <p className="text-base sm:text-lg font-bold text-black break-words">{value}</p>
       </div>
     </a>
   );
