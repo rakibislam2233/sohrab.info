@@ -1,10 +1,10 @@
+import type { ScoutActivity } from "@prisma/client";
 import Link from "next/link";
 import { prisma } from "../../../../lib/prisma";
-
 export const dynamic = "force-dynamic";
 
 export default async function AdminScout() {
-  const items = await prisma.scoutActivity.findMany({
+  const items: ScoutActivity[] = await prisma.scoutActivity.findMany({
     orderBy: { createdAt: "desc" },
   });
   return (

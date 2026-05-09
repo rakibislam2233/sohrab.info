@@ -1,3 +1,4 @@
+import type { Achievement } from "@prisma/client";
 import Link from "next/link";
 import DeleteButton from "../../../../components/admin/DeleteButton";
 import { prisma } from "../../../../lib/prisma";
@@ -5,7 +6,7 @@ import { prisma } from "../../../../lib/prisma";
 export const dynamic = "force-dynamic";
 
 export default async function AdminAchievements() {
-  const items = await prisma.achievement.findMany({
+  const items: Achievement[] = await prisma.achievement.findMany({
     orderBy: { createdAt: "desc" },
   });
   return (

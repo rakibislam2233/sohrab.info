@@ -1,3 +1,4 @@
+import type { VoluntaryWork } from "@prisma/client";
 import Link from "next/link";
 import DeleteButton from "../../../../components/admin/DeleteButton";
 import { prisma } from "../../../../lib/prisma";
@@ -5,7 +6,7 @@ import { prisma } from "../../../../lib/prisma";
 export const dynamic = "force-dynamic";
 
 export default async function AdminVoluntary() {
-  const items = await prisma.voluntaryWork.findMany({
+  const items: VoluntaryWork[] = await prisma.voluntaryWork.findMany({
     orderBy: { createdAt: "desc" },
   });
   return (
