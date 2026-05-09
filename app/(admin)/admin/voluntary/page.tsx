@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import DeleteButton from '../../../../components/admin/DeleteButton'
 import { prisma } from '../../../../lib/prisma'
 
 export const dynamic = 'force-dynamic'
@@ -13,11 +14,12 @@ export default async function AdminVoluntary(){
       </div>
       <div className="space-y-4">
         {items.map(i=> (
-          <div key={i.id} className="rounded-card p-4 flex justify-between items-center">
+          <div key={i.id} className="rounded-card p-4 flex justify-between items-center gap-4">
             <div>
               <div className="font-semibold">{i.title}</div>
               <div className="text-sm text-gray-600">{i.organization} • {new Date(i.date).toLocaleDateString()}</div>
             </div>
+            <DeleteButton endpoint="/api/admin/voluntary" id={i.id} />
           </div>
         ))}
       </div>
