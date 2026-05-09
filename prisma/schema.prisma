@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model Article {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String
+  content     String
+  coverImage  String
+  category    String
+  publishedAt DateTime @default(now())
+  isPublished Boolean  @default(false)
+  views       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model TravelStory {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  destination String
+  excerpt     String
+  content     String
+  coverImage  String
+  images      String[]
+  travelDate  DateTime
+  isPublished Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ScoutActivity {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  image       String
+  eventDate   DateTime
+  location    String
+  rank        String?
+  createdAt   DateTime @default(now())
+}
+
+model Achievement {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  image       String?
+  issuedBy    String
+  issuedDate  DateTime
+  category    String
+  createdAt   DateTime @default(now())
+}
+
+model GalleryPhoto {
+  id        String   @id @default(cuid())
+  imageUrl  String
+  caption   String?
+  category  String
+  createdAt DateTime @default(now())
+}
+
+model VoluntaryWork {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  image       String?
+  organization String
+  date        DateTime
+  createdAt   DateTime @default(now())
+}
