@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react'
-import Button from '../ui/Button'
+import { Button } from '../ui/Button'
 import ImageUploader from './ImageUploader'
 
 export default function PersonalForm(){
