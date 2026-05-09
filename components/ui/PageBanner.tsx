@@ -19,7 +19,7 @@ export default function PageBanner({
   textColor = "text-[#2d4a31]" 
 }: PageBannerProps) {
   return (
-    <section className={`relative w-full h-48 overflow-hidden flex items-center justify-center ${themeColor}`}>
+    <section className={`relative w-full h-96 overflow-hidden flex items-center justify-center ${themeColor}`}>
       
       {/* Decorative Leaves - Left */}
       <motion.div 

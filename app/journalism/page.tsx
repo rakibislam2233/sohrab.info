@@ -35,54 +35,6 @@ export default function JournalismPage() {
         textColor="text-[#721c24]"
       />
       <div className="container mx-auto px-6 mt-12">
-        {/* Featured Video Section - "Filmed instead" design */}
-        <div className="mb-16">
-          <Reveal>
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-8">
-              <div className="max-w-xl">
-                <h2 className="text-2xl md:text-4xl font-black mb-2 italic tracking-tight">Filmed instead.</h2>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Stories that came to life through the lens of professional reporting.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div className="relative aspect-video rounded overflow-hidden group cursor-pointer bg-gray-50 border border-gray-100 shadow-sm">
-              <Image 
-                src="https://images.unsplash.com/photo-1585829365234-7547076d338e?auto=format&fit=crop&q=80&w=1600"
-                alt="Journalism Spotlight"
-                fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-              
-              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
-              
-              <div className="absolute top-4 left-4 flex gap-2">
-                <span className="px-3 py-1 bg-pink-500/20 backdrop-blur-md border border-pink-500/30 text-pink-600 text-[8px] font-black uppercase tracking-[0.2em] rounded">Journalism</span>
-                <span className="px-3 py-1 bg-white/40 backdrop-blur-md border border-white/20 text-black text-[8px] font-black uppercase tracking-[0.2em] rounded">Featured Report</span>
-              </div>
-
-              <div className="absolute top-4 right-4 px-2 py-0.5 bg-white/60 backdrop-blur-md rounded text-[10px] font-mono font-bold tracking-widest text-black">
-                12:45
-              </div>
-
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded flex items-center justify-center group-hover:scale-110 transition-transform border border-white/30 shadow-2xl">
-                  <Play className="w-6 h-6 text-white fill-white ml-0.5" />
-                </div>
-              </div>
-
-              <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-xl md:text-3xl font-black mb-2 text-white group-hover:text-pink-400 transition-colors leading-tight tracking-tight">
-                  Reporting from the Frontlines of Change
-                </h3>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-
         {/* Dynamic Grid Layout */}
         <div className="mb-16">
           <Reveal>

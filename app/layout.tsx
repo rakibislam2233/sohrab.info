@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
-import BottomBar from "../components/BottomBar";
+import Navbar from "../components/Navbar";
 import "./globals.css";
 import { Nunito } from "next/font/google";
 
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={notoSans.className}>
       <body>
-        <BottomBar />
+        <Navbar />
         <div>{children}</div>
       </body>
     </html>
