@@ -26,8 +26,9 @@ export default function VoluntaryWorkPage() {
     <main className="min-h-screen bg-white pt-0 pb-20">
       <PageBanner 
         title="Voluntary Work" 
-        subtitle="Dedicated to serving humanity, environmental sustainability, and crisis response."
-        image="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1600"
+        badge="A Member of Bangladesh Scouts"
+        themeColor="bg-[#fff0f0]"
+        textColor="text-[#721c24]"
       />
       <div className="container mx-auto px-6 mt-24">
 

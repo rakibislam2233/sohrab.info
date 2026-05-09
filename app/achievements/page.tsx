@@ -26,8 +26,9 @@ export default function AchievementsPage() {
     <main className="min-h-screen bg-white pt-0 pb-20">
       <PageBanner 
         title="Achievements" 
-        subtitle="Recognition for professional excellence, humanitarian service, and community leadership."
-        image="https://images.unsplash.com/photo-1523287562758-66c7fc58967f?auto=format&fit=crop&q=80&w=1600"
+        badge="Honored & Recognized"
+        themeColor="bg-[#fffdf0]"
+        textColor="text-[#856404]"
       />
       <div className="container mx-auto px-6 mt-24">
 

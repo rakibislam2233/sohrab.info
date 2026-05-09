@@ -1,3 +1,4 @@
+import PageBanner from "../../components/ui/PageBanner";
 import type { Metadata } from "next";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
@@ -5,14 +6,14 @@ export const metadata: Metadata = { title: "Contact — Sohrab Hossan" };
 
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-white pt-32 pb-20">
-      <div className="container mx-auto px-6">
-        <div className="max-w-3xl mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-black mb-6">Get in Touch</h1>
-          <p className="text-xl text-gray-500">
-            Have a story to tell, a project to discuss, or just want to say hello? I'd love to hear from you.
-          </p>
-        </div>
+    <main className="min-h-screen bg-white pt-0 pb-20">
+      <PageBanner 
+        title="Contact" 
+        badge="Let's Connect"
+        themeColor="bg-[#fff0f6]"
+        textColor="text-[#7a1c4a]"
+      />
+      <div className="container mx-auto px-6 mt-24">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Contact Info */}

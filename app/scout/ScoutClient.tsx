@@ -25,9 +25,10 @@ export default function ScoutClient() {
   return (
     <main className="min-h-screen bg-white pt-0 pb-20">
       <PageBanner 
-        title="Scouting Spirit" 
-        subtitle="Leading through service, fostering leadership, and building community since 2015."
-        image="https://lh3.googleusercontent.com/sitesv/AA5AbUA49r2u2zriZ8SwgDWca3Pn_Ssq5qcxjyI5Z-VRjqPfVFnO9oticCL6Fo_fYESwiC436s6hMvT09u2L7FVd7K9ke3c0l8YjAVBas7JTEC_ssTNMsAF-gVqx0m6fCpuJNjgi8LbkDyPtJJpSg6ueoJ0FKF2ZF4JAZHixVLF1XrocQMM3_BzTRjp-=w16383"
+        title="Scouting" 
+        badge="Rover Scout Leader"
+        themeColor="bg-[#f0f9f1]"
+        textColor="text-[#2d4a31]"
       />
       <div className="container mx-auto px-6 mt-24">
 

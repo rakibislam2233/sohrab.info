@@ -27,9 +27,10 @@ export default function TravelPage() {
   return (
     <main className="min-h-screen bg-white pt-0 pb-20">
       <PageBanner 
-        title="Travel Diaries" 
-        subtitle="Exploring the hidden natural wonders and cultural heritage of Northern Bangladesh."
-        image="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1600"
+        title="Travel" 
+        badge="Explorer & Photographer"
+        themeColor="bg-[#f0f7ff]"
+        textColor="text-[#1c3d5a]"
       />
       <div className="container mx-auto px-6 mt-24">
 

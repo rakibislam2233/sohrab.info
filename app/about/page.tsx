@@ -15,8 +15,9 @@ export default function AboutPage() {
     <main className="min-h-screen bg-white pt-0 pb-20">
       <PageBanner 
         title="My Story" 
-        subtitle="A journey through journalism, leadership, and humanitarian service."
-        image={personalInfo.avatar}
+        badge="Journalist & Scout"
+        themeColor="bg-[#fafafa]"
+        textColor="text-[#1a1a1a]"
       />
       <div className="container mx-auto px-6 mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">

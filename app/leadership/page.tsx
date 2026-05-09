@@ -30,8 +30,9 @@ export default async function LeadershipPage() {
     <main className="min-h-screen bg-white pt-0 pb-20">
       <PageBanner 
         title="Leadership" 
-        subtitle="Leading teams with integrity, vision, and a commitment to social progress."
-        image="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1600"
+        badge="Team Coordinator"
+        themeColor="bg-[#f5f0ff]"
+        textColor="text-[#3a1c5a]"
       />
       <div className="container mx-auto px-6 mt-24">
 

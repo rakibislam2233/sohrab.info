@@ -30,8 +30,9 @@ export default function JournalismPage() {
     <main className="min-h-screen bg-white pt-0 pb-20">
       <PageBanner 
         title="Journalism" 
-        subtitle="Professional reporting and field journalism with a focus on agriculture and community impact."
-        image="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=1600"
+        badge="Staff Reporter"
+        themeColor="bg-[#fff0f0]"
+        textColor="text-[#721c24]"
       />
       <div className="container mx-auto px-6 mt-24">
 

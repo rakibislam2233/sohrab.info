@@ -8,6 +8,7 @@ import VoluntaryWorkSection from "../components/sections/VoluntaryWorkSection";
 import NewsMediaTimeline from "../components/sections/NewsMediaTimeline";
 import ScoutingFocus from "../components/sections/ScoutingFocus";
 import TravelHighlights from "../components/sections/TravelHighlights";
+import MediaHighlights from "../components/sections/MediaHighlights";
 import Reveal from "../components/ui/Reveal";
 
 export default async function Home() {
@@ -35,6 +36,7 @@ export default async function Home() {
       <AchievementSection />
       <VoluntaryWorkSection />
       <NewsMediaTimeline />
+      <MediaHighlights />
       <GallerySection />
       <Footer />
     </main>
