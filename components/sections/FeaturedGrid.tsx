@@ -33,17 +33,17 @@ const articles = [
 export default async function FeaturedGrid() {
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {articles.map((article, index) => (
         <Reveal key={article.id} delay={index * 0.1}>
           <Link href={`/journalism/${article.slug}`} className="group block">
-            <article className="h-full border-b md:border-b-0 md:border-r last:border-0 border-gray-100 pr-0 md:pr-10 pb-10 md:pb-0">
-              <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-pink-600 mb-4">
+            <article className="h-full border-b md:border-b-0 md:border-r last:border-0 border-gray-100 pr-0 md:pr-6 pb-6 md:pb-0">
+              <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-pink-600 mb-2">
                 <Newspaper className="w-3 h-3" />
                 {article.category}
               </div>
 
-              <div className="relative aspect-16/10 mb-6 overflow-hidden bg-gray-100 rounded-lg">
+              <div className="relative aspect-16/10 mb-4 overflow-hidden bg-gray-100 rounded">
                 <Image
                   src={article.coverImage}
                   alt={article.title}
@@ -52,17 +52,17 @@ export default async function FeaturedGrid() {
                 />
               </div>
 
-              <h3 className="text-2xl md:text-3xl leading-tight mb-4 group-hover:text-pink-600 transition-colors">
+              <h3 className="text-lg md:text-xl font-bold leading-tight mb-2 group-hover:text-pink-600 transition-colors">
                 {article.title}
               </h3>
 
-              <p className="text-gray-500 leading-relaxed line-clamp-3 mb-6">
+              <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-4">
                 {article.excerpt}
               </p>
 
-              <div className="flex items-center text-sm font-semibold gap-2 group-hover:translate-x-2 transition-transform">
+              <div className="flex items-center text-[10px] font-black uppercase tracking-widest gap-2 group-hover:translate-x-2 transition-transform">
                 Read Story
-                <span className="text-xl">→</span>
+                <span className="text-base">→</span>
               </div>
             </article>
           </Link>

@@ -25,7 +25,7 @@ export default function BottomBar() {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="flex items-center gap-1 p-2 bg-black/90 backdrop-blur-2xl rounded-[32px] border border-white/10 shadow-2xl pointer-events-auto overflow-x-auto no-scrollbar max-w-full sm:max-w-max"
+        className="flex items-center gap-0.5 p-1 bg-white/90 backdrop-blur-2xl rounded border border-gray-100 shadow-lg pointer-events-auto overflow-x-auto no-scrollbar max-w-full sm:max-w-max"
       >
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
@@ -35,23 +35,23 @@ export default function BottomBar() {
               href={link.href}
               className="relative group"
             >
-              <div className={`flex flex-col items-center justify-center gap-1.5 px-4 py-3 rounded-2xl transition-all duration-300 ${isActive ? 'bg-white/10 text-amber-400' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}>
-                {link.icon}
-                <span className="text-[9px] font-black tracking-widest uppercase hidden md:block">
+              <div className={`flex flex-col items-center justify-center gap-1 px-3 py-2 rounded transition-all duration-300 ${isActive ? 'bg-amber-50 text-amber-600' : 'text-gray-500 hover:text-black hover:bg-gray-50'}`}>
+                {isActive ? <div className="text-amber-600">{link.icon}</div> : link.icon}
+                <span className="text-[8px] font-black tracking-widest uppercase hidden md:block">
                   {link.name}
                 </span>
                 
                 {isActive && (
                   <motion.div 
                     layoutId="dock-active"
-                    className="absolute inset-0 border border-amber-400/30 rounded-2xl shadow-[0_0_15px_rgba(251,191,36,0.2)]"
+                    className="absolute inset-0 border border-amber-500/20 rounded shadow-[0_0_10px_rgba(251,191,36,0.1)]"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
               </div>
               
               {/* Tooltip for mobile/compact */}
-              <div className="absolute -top-12 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-black text-white text-[10px] font-bold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap border border-white/10 md:hidden">
+              <div className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-white text-black text-[8px] font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap border border-gray-100 shadow-lg md:hidden">
                 {link.name}
               </div>
             </Link>

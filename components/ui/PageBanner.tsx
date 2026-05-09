@@ -19,7 +19,7 @@ export default function PageBanner({
   textColor = "text-[#2d4a31]" 
 }: PageBannerProps) {
   return (
-    <section className={`relative h-[50vh] min-h-[400px] w-full overflow-hidden flex items-center justify-center ${themeColor}`}>
+    <section className={`relative w-full h-48 overflow-hidden flex items-center justify-center ${themeColor}`}>
       
       {/* Decorative Leaves - Left */}
       <motion.div 
@@ -66,30 +66,11 @@ export default function PageBanner({
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10 text-center">
         <Reveal>
-          <h1 className={`text-6xl md:text-9xl font-black ${textColor} uppercase tracking-tighter mb-8`}>
+          <h1 className={`text-3xl md:text-5xl font-bold ${textColor} uppercase tracking-tighter mb-4`}>
             {title}
           </h1>
         </Reveal>
-        
-        {badge && (
-          <Reveal delay={0.2}>
-            <div className="inline-flex items-center px-8 py-3 bg-[#4a7c59] text-white rounded-xl text-lg md:text-xl font-bold shadow-lg shadow-green-900/10">
-              {badge}
-            </div>
-          </Reveal>
-        )}
-
-        {subtitle && !badge && (
-          <Reveal delay={0.2}>
-            <p className={`${textColor} opacity-70 text-xl md:text-2xl max-w-2xl mx-auto font-medium`}>
-              {subtitle}
-            </p>
-          </Reveal>
-        )}
       </div>
-
-      {/* Bottom Soft Edge */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-white to-transparent" />
     </section>
   );
 }
