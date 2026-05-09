@@ -1,29 +1,119 @@
-import Image from 'next/image'
-import Reveal from '../ui/Reveal'
+"use client";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Newspaper, MapPin, Compass, Award, Users, Code, Zap, Bike } from "lucide-react";
 
-export default function Hero(){
+export default function Hero() {
   return (
-    <section className="w-full py-20" style={{background: 'linear-gradient(180deg,#FFF8F0,#FDEBD0)'}}>
-      <div className="container flex flex-col md:flex-row items-center gap-8">
-        <Reveal>
-          <div className="w-40 h-40 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white">
-            <Image src="https://picsum.photos/400" alt="Sohrab Hossan" width={300} height={300} className="object-cover" />
+    <section className="w-full min-h-screen relative overflow-hidden flex items-center bg-[#fafafa]">
+      {/* Dot Background */}
+      <div className="absolute inset-0 z-0" 
+           style={{ 
+             backgroundImage: "radial-gradient(#e5e7eb 1.5px, transparent 1.5px)", 
+             backgroundSize: "32px 32px" 
+           }}>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Content */}
+          <motion.div 
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-4"
+          >
+            <h2 className="text-4xl font-medium text-gray-400">Hi ,</h2>
+            <h1 className="text-7xl md:text-8xl font-bold tracking-tight text-black leading-none">
+              I'm Sohrab.
+            </h1>
+            <p className="max-w-md text-lg text-gray-500 leading-relaxed pt-4 font-medium">
+              A Journalist from Bangladesh 🇧🇩 who loves to capture stories 
+              and explore the beauty of our world.
+            </p>
+          </motion.div>
+
+          {/* Right Side - Polaroid Image & Floating Tags */}
+          <div className="relative flex justify-center items-center h-[500px]">
+            {/* Tilted Polaroid */}
+            <motion.div 
+              initial={{ rotate: 0, scale: 0.8, opacity: 0 }}
+              animate={{ rotate: 6, scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              whileHover={{ rotate: 0, scale: 1.05 }}
+              className="bg-white p-4 pb-12 shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-sm border border-gray-100 relative z-10"
+            >
+              <div className="relative w-72 h-80 overflow-hidden bg-gray-100">
+                <Image
+                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800"
+                  alt="Sohrab Hossan"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="absolute bottom-4 left-0 w-full text-center font-mono text-sm text-gray-400">
+                me.webp
+              </div>
+            </motion.div>
+
+            {/* Floating Tags */}
+            <FloatingTag 
+              icon={<Zap className="w-4 h-4 text-pink-500" />} 
+              text="15K+ Users Served" 
+              className="top-10 right-20"
+              delay={0.4}
+            />
+            <FloatingTag 
+              icon={<Code className="w-4 h-4 text-orange-500" />} 
+              text="Journalist" 
+              className="top-1/2 -left-10"
+              delay={0.6}
+            />
+            <FloatingTag 
+              icon={<Bike className="w-4 h-4 text-blue-500" />} 
+              text="Traveller" 
+              className="top-1/2 -right-16"
+              delay={0.8}
+            />
+            <FloatingTag 
+              icon={<Award className="w-4 h-4 text-red-500" />} 
+              text="3+ Years of Experience" 
+              className="bottom-10 left-1/4"
+              delay={1}
+            />
           </div>
-        </Reveal>
-        <Reveal delay={0.08}>
-          <div>
-            <h1 className="text-4xl md:text-6xl font-serif">Hi, I'm Sohrab Hossan 👋</h1>
-            <p className="text-xl text-gray-700 mt-2">Journalist · Traveller · Scout</p>
-            <p className="max-w-xl mt-4">Passionate, curious, and motivated individual who strives for personal growth. Believes in hard work, honesty, and continuous learning. Enjoys reading, writing, and spending time in nature.</p>
-            <div className="flex gap-3 mt-4 flex-wrap">
-              <a href="https://www.facebook.com/share/155DH45GhJ/" className="text-sm px-3 py-2 rounded-full border">Facebook</a>
-              <a href="https://www.youtube.com/@sohrab49" className="text-sm px-3 py-2 rounded-full border">YouTube</a>
-              <a href="https://www.instagram.com/sohrab_shrb/" className="text-sm px-3 py-2 rounded-full border">Instagram</a>
-              <a href="https://www.linkedin.com/in/sohrab49/" className="text-sm px-3 py-2 rounded-full border">LinkedIn</a>
-            </div>
-          </div>
-        </Reveal>
+        </div>
       </div>
     </section>
-  )
+  );
+}
+
+function FloatingTag({ icon, text, className, delay }: { icon: React.ReactNode, text: string, className: string, delay: number }) {
+  return (
+    <motion.div 
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ 
+        y: [0, -10, 0],
+        opacity: 1 
+      }}
+      transition={{ 
+        y: {
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: delay
+        },
+        opacity: {
+          duration: 0.5,
+          delay: delay
+        }
+      }}
+      className={`absolute z-20 flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm border border-gray-100 shadow-sm rounded-2xl text-[12px] font-bold text-gray-700 ${className}`}
+    >
+      {icon}
+      {text}
+    </motion.div>
+  );
 }
