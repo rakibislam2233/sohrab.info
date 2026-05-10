@@ -130,7 +130,7 @@ const TravelPage = () => {
                   href={`/travel/${story.slug}`}
                   className="group block h-full"
                 >
-                  <div className="bg-white rounded overflow-hidden border border-gray-100 shadow-sm transition-all duration-500 hover:border-pink-600 flex flex-col h-full">
+                  <div className="bg-white rounded overflow-hidden border border-gray-100 shadow-none transition-all duration-500 hover:border-pink-600 flex flex-col h-full">
                     <div className="relative aspect-16/10 overflow-hidden">
                       <Image
                         src={story.coverImage}

@@ -50,7 +50,7 @@ export default function Navbar() {
             onClick={() => setIsMobileMenuOpen((open) => !open)}
             aria-expanded={isMobileMenuOpen}
             aria-label="Toggle navigation menu"
-            className="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white size-10 text-gray-700 shadow-sm transition hover:border-black hover:text-black"
+            className="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white size-10 text-gray-700 shadow-none transition hover:border-black hover:text-black"
           >
             <motion.div
               animate={{
@@ -71,7 +71,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-              className="md:hidden absolute left-3 right-3 top-[4.4rem] overflow-hidden rounded-3xl border border-gray-100 bg-white/95 shadow-[0_20px_60px_rgba(0,0,0,0.18)] backdrop-blur-md"
+              className="md:hidden absolute left-3 right-3 top-[4.4rem] overflow-hidden rounded-md border border-gray-100 bg-white/95 shadow-none backdrop-blur-md"
             >
               <div className="grid gap-1 p-2">
                 {navLinks.map((link, index) => {
@@ -87,7 +87,7 @@ export default function Navbar() {
                       <Link
                         href={link.href}
                         onClick={handleMobileLinkClick}
-                        className={`flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-semibold transition ${isActive ? "bg-black text-white" : "text-gray-600 hover:bg-gray-50 hover:text-black"}`}
+                        className={`flex items-center justify-between rounded px-4 py-3 text-sm font-semibold transition ${isActive ? "bg-black text-white" : "text-gray-600 hover:bg-gray-50 hover:text-black"}`}
                       >
                         <span>{link.name}</span>
                       </Link>
@@ -105,7 +105,7 @@ export default function Navbar() {
             return (
               <Link key={link.href} href={link.href} className="relative group">
                 <div
-                  className={`flex items-center px-3 lg:px-4 py-2 rounded-full transition-all duration-300 ${isActive ? "bg-black text-white shadow-lg" : "text-gray-500 hover:text-black hover:bg-gray-50"}`}
+                  className={`flex items-center px-3 lg:px-4 py-2 rounded-full transition-all duration-300 ${isActive ? "bg-black text-white shadow-none" : "text-gray-500 hover:text-black hover:bg-gray-50"}`}
                 >
                   <span className="text-[10px] lg:text-[14px] font-semibold tracking-[0.09em] whitespace-nowrap">
                     {link.name}

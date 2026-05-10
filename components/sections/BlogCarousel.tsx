@@ -136,14 +136,14 @@ const BlogCarousel = () => {
             <div className="flex items-center gap-3">
               <button
                 onClick={scrollPrev}
-                className="w-12 h-12 rounded border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-pink-600 hover:text-pink-600 transition-all shadow-sm"
+                className="w-12 h-12 rounded border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-pink-600 hover:text-pink-600 transition-all shadow-none"
                 aria-label="Previous slide"
               >
                 <ArrowLeft size={20} />
               </button>
               <button
                 onClick={scrollNext}
-                className="w-12 h-12 rounded border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-pink-600 hover:text-pink-600 transition-all shadow-sm"
+                className="w-12 h-12 rounded border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-pink-600 hover:text-pink-600 transition-all shadow-none"
                 aria-label="Next slide"
               >
                 <ArrowRight size={20} />
@@ -164,7 +164,7 @@ const BlogCarousel = () => {
                     href={`${item.route}/${item.slug}`}
                     className="group block h-full"
                   >
-                    <div className="bg-white rounded overflow-hidden border border-gray-100 shadow-sm transition-all duration-500 hover:border-pink-600 flex flex-col h-full">
+                    <div className="bg-white rounded overflow-hidden border border-gray-100 shadow-none transition-all duration-500 hover:border-pink-600 flex flex-col h-full">
                       <div className="relative aspect-16/10 overflow-hidden">
                         <Image
                           src={item.image}

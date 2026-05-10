@@ -100,7 +100,7 @@ const ContactSection = () => {
 const ContactInfo = ({ icon, title, detail, href, delay }: { icon: React.ReactNode, title: string, detail: string, href: string, delay: number }) => (
   <Reveal delay={delay}>
     <a href={href} className="flex gap-6 items-start group">
-      <div className="w-12 h-12 bg-white rounded border border-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-pink-600 group-hover:text-white group-hover:border-pink-600 transition-all duration-300 shadow-sm">
+      <div className="w-12 h-12 bg-white rounded border border-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-pink-600 group-hover:text-white group-hover:border-pink-600 transition-all duration-300 shadow-none">
         {icon}
       </div>
       <div>

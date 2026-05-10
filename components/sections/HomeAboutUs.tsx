@@ -19,7 +19,7 @@ const HomeAboutUs = () => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div className="bg-white p-4 pb-10 rounded border border-gray-100 relative z-10 shadow-sm">
+            <div className="bg-white p-4 pb-10 rounded border border-gray-100 relative z-10 shadow-none">
               <div className="relative w-full h-[500px] overflow-hidden bg-gray-50 rounded cursor-pointer group">
                 <Image
                   src={heroImage.src}

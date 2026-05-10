@@ -111,7 +111,7 @@ const LeadershipPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {leadershipRoles.map((role, i) => (
               <Reveal key={role.id} delay={i * 0.1}>
-                <div className="group bg-white rounded overflow-hidden border border-gray-100 shadow-sm transition-all duration-500 hover:border-pink-600 flex flex-col h-full">
+                <div className="group bg-white rounded overflow-hidden border border-gray-100 shadow-none transition-all duration-500 hover:border-pink-600 flex flex-col h-full">
                   <div className="relative aspect-21/9 overflow-hidden">
                     <Image
                       src={role.image}
@@ -121,7 +121,7 @@ const LeadershipPage = () => {
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                     <div className="absolute bottom-4 left-6">
-                      <span className="px-2 py-0.5 bg-pink-600 text-white text-[8px] font-bold uppercase tracking-wider rounded-sm shadow-lg">
+                      <span className="px-2 py-0.5 bg-pink-600 text-white text-[8px] font-bold uppercase tracking-wider rounded-sm shadow-none">
                         {role.rank}
                       </span>
                     </div>

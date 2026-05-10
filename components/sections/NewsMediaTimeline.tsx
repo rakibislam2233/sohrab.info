@@ -46,7 +46,7 @@ export default function NewsMediaTimeline() {
             <Reveal key={index} delay={index * 0.1}>
               <div className="mb-6 relative pl-5 md:pl-12 group">
                 {/* Timeline Dot */}
-                <div className="absolute left-[-5.5px] top-1 w-2.5 h-2.5 bg-black rounded-full border-2 border-white shadow-sm group-hover:scale-150 transition-transform duration-300" />
+                <div className="absolute left-[-5.5px] top-1 w-2.5 h-2.5 bg-black rounded-full border-2 border-white shadow-none group-hover:scale-150 transition-transform duration-300" />
                 
                 <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
                   <div className="md:min-w-[100px] min-w-0 text-[10px] font-black text-gray-400 uppercase tracking-widest">

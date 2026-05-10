@@ -83,7 +83,7 @@ export default function Hero() {
               animate={{ rotate: 3, scale: 1, opacity: 1 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ rotate: 0, scale: 1.02 }}
-              className="bg-white p-3 pb-7 sm:pb-8 border border-gray-100 relative z-10 shadow-[0_20px_60px_rgba(0,0,0,0.18)] backdrop-blur-md"
+              className="bg-white p-4 pb-10 rounded border border-gray-100 relative z-10"
             >
               <div className="relative w-60 sm:w-72 h-60 sm:h-80 overflow-hidden bg-gray-50 cursor-pointer">
                 <Image
