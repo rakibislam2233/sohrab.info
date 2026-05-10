@@ -30,11 +30,11 @@ const newsItems = [
 
 export default function NewsMediaTimeline() {
   return (
-    <section className="py-12 bg-[#fafafa]">
+    <section className="py-20 bg-[#fafafa]">
       <div className="container mx-auto px-4 sm:px-6">
         <Reveal>
-          <div className="max-w-xl mb-8">
-            <h2 className="text-2xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter">Service Timeline</h2>
+          <div className="max-w-xl mb-12">
+            <h2 className="text-3xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter">Service Timeline</h2>
             <p className="text-sm text-gray-500 font-medium">
               A record of active participation in national campaigns, humanitarian relief, and scouting service.
             </p>

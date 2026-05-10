@@ -41,7 +41,7 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
     <div className="relative w-full">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest flex items-center gap-3">
-          <div className="size-8 rounded bg-black flex items-center justify-center text-white border border-black">
+          <div className="size-8 rounded-xl bg-black flex items-center justify-center text-white border border-black">
             <Play size={16} fill="currentColor" />
           </div>
           Action Moments
@@ -71,7 +71,7 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
             >
               <div
                 onClick={() => setSelectedVideo(video)}
-                className="group relative aspect-video rounded overflow-hidden border border-gray-100 bg-gray-50 cursor-pointer"
+                className="group relative aspect-video rounded-xl overflow-hidden border border-gray-100 bg-gray-50 cursor-pointer"
               >
                 <Image
                   src={video.thumbnail}
@@ -116,7 +116,7 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-5xl aspect-video rounded-lg overflow-hidden bg-black shadow-none"
+              className="relative w-full max-w-5xl aspect-video rounded-xl overflow-hidden bg-black shadow-none"
               onClick={(e) => e.stopPropagation()}
             >
               <iframe

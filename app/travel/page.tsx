@@ -115,13 +115,13 @@ const TravelPage = () => {
 
       <div className="container mx-auto px-4 mt-16">
         {/* Gallery Section */}
-        <section className="mb-24">
+        <section className="mb-20">
           <Reveal>
             <div className="flex flex-col items-start mb-10">
               <span className="text-black font-bold uppercase tracking-[0.2em] text-[10px] mb-2 border-l-2 border-black pl-3">
                 Through My Lens
               </span>
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+              <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
                 <Camera className="text-black" size={20} />
                 Visual Journey
               </h2>
@@ -132,7 +132,7 @@ const TravelPage = () => {
         </section>
 
         {/* Video Section */}
-        <section className="mb-24">
+        <section className="mb-20">
           <Reveal>
             <VideoCarousel videos={videos} />
           </Reveal>
@@ -145,7 +145,7 @@ const TravelPage = () => {
               <span className="text-black font-bold uppercase tracking-[0.2em] text-[10px] mb-2 border-l-2 border-black pl-3">
                 Travel Logs
               </span>
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+              <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
                 <Compass className="text-black" size={20} />
                 Recent Explorations
               </h2>
@@ -159,7 +159,7 @@ const TravelPage = () => {
                   href={`/travel/${story.slug}`}
                   className="group block h-full"
                 >
-                  <div className="bg-white rounded overflow-hidden border border-gray-100 shadow-none transition-all duration-500 hover:border-black flex flex-col h-full">
+                  <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-none transition-all duration-500 hover:border-black flex flex-col h-full">
                     <div className="relative aspect-16/10 overflow-hidden">
                       <Image
                         src={story.coverImage}
@@ -168,7 +168,7 @@ const TravelPage = () => {
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="px-2 py-0.5 bg-white/90 backdrop-blur-md text-black text-[8px] font-bold uppercase tracking-wider rounded-sm border border-gray-100">
+                        <span className="px-2 py-0.5 bg-white/90 backdrop-blur-md text-black text-[8px] font-bold uppercase tracking-wider rounded-md border border-gray-100">
                           <MapPin size={10} /> {story.destination}
                         </span>
                       </div>

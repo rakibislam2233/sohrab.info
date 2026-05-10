@@ -108,13 +108,13 @@ const ScoutClient = () => {
 
       <div className="container mx-auto px-4 mt-16">
         {/* Gallery Section */}
-        <section className="mb-24">
+        <section className="mb-20">
           <Reveal>
             <div className="flex flex-col items-start mb-10">
               <span className="text-black font-bold uppercase tracking-[0.3em] text-[10px] mb-2 border-l-2 border-black pl-3">
                 Scout Life
               </span>
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+              <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
                 <Compass className="text-black" size={20} />
                 Activity Gallery
               </h2>
@@ -125,7 +125,7 @@ const ScoutClient = () => {
         </section>
 
         {/* Video Section */}
-        <section className="mb-24">
+        <section className="mb-20">
           <Reveal>
             <VideoCarousel videos={scoutVideos} />
           </Reveal>
@@ -138,7 +138,7 @@ const ScoutClient = () => {
               <span className="text-black font-bold uppercase tracking-[0.3em] text-[10px] mb-2 border-l-2 border-black pl-3">
                 Milestones
               </span>
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+              <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
                 <Award className="text-black" size={20} />
                 Scout Highlights
               </h2>

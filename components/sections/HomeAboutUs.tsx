@@ -9,7 +9,7 @@ import ProfilePoint from "../ui/ProfilePoint";
 
 const HomeAboutUs = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden" id="about">
+    <section className="py-20 bg-white overflow-hidden" id="about">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20 items-center">
           <motion.div
@@ -19,8 +19,8 @@ const HomeAboutUs = () => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div className="bg-white p-4 pb-10 rounded border border-gray-100 relative z-10 shadow-none">
-              <div className="relative w-full h-[500px] overflow-hidden bg-gray-50 rounded cursor-pointer group">
+            <div className="bg-white p-4 pb-10 rounded-xl border border-gray-100 relative z-10 shadow-none">
+              <div className="relative w-full h-[350px] sm:h-[500px] overflow-hidden bg-gray-50 rounded-xl cursor-pointer group">
                 <Image
                   src={heroImage.src}
                   alt="Sohrab Hossan"
@@ -40,16 +40,16 @@ const HomeAboutUs = () => {
 
           <div className="flex flex-col">
             <Reveal>
-              <span className="text-black font-bold uppercase tracking-[0.3em] text-xs mb-4 border-l-2 border-black pl-3">Who I Am</span>
+              <span className="text-black font-bold uppercase tracking-[0.3em] text-[10px] mb-4 border-l-2 border-black pl-3">Who I Am</span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-4xl md:text-6xl font-bold text-black mb-8 leading-tight tracking-tighter">
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight tracking-tighter">
                 MD. Sohrab Hossan
               </h2>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <p className="text-lg text-gray-500 mb-10 leading-relaxed max-w-2xl">
+              <p className="text-base text-gray-500 mb-8 leading-relaxed max-w-2xl">
                 Journalist, Scout Leader, and Social Worker dedicated to community
                 development and humanitarian service in Thakurgaon. With over 8
                 years of experience in leadership and field reporting, I strive to

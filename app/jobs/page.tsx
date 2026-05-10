@@ -19,20 +19,20 @@ export default function JobsPage() {
       <div className="container mx-auto px-4 -mt-10 relative z-20">
         {/* Search & Filter Bar */}
         <Reveal>
-          <div className="bg-white p-4 rounded shadow-sm border border-gray-100 flex flex-col md:flex-row gap-4 mb-12">
+          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-4 mb-12">
             <div className="relative grow">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
               <input
                 type="text"
                 placeholder="Search for jobs..."
-                className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-100 rounded focus:outline-none focus:ring-1 focus:ring-black transition-all text-sm"
+                className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-1 focus:ring-black transition-all text-sm"
               />
             </div>
             <div className="flex gap-2">
-              <button className="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-100 rounded text-sm text-gray-600 hover:bg-gray-100 transition-colors">
+              <button className="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-100 rounded-xl text-sm text-gray-600 hover:bg-gray-100 transition-colors">
                 <Filter size={16} /> Filters
               </button>
-              <button className="px-6 py-2 bg-gray-900 text-white rounded text-sm font-bold hover:bg-black transition-colors">
+              <button className="px-6 py-2 bg-gray-900 text-white rounded-xl text-sm font-bold hover:bg-black transition-colors">
                 Search
               </button>
             </div>
@@ -43,10 +43,10 @@ export default function JobsPage() {
           {jobs.map((job, i) => (
             <Reveal key={job.id} delay={i * 0.1}>
               <Link href={`/jobs/${job.id}`} className="block group">
-                <div className="bg-white p-6 md:p-8 rounded border border-gray-100 hover:border-black transition-all duration-500 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-none hover:shadow-lg hover:shadow-black/5">
+                <div className="bg-white p-6 md:p-8 rounded-xl border border-gray-100 hover:border-black transition-all duration-500 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-none hover:shadow-lg hover:shadow-black/5">
                   <div className="grow">
                     <div className="flex flex-wrap items-center gap-3 mb-3">
-                      <span className="px-2 py-0.5 bg-black text-white text-[10px] font-bold uppercase tracking-wider rounded border border-black">
+                      <span className="px-2 py-0.5 bg-black text-white text-[10px] font-bold uppercase tracking-wider rounded-md border border-black">
                         {job.category}
                       </span>
                       <span className="flex items-center gap-1 text-[10px] text-gray-400 font-bold uppercase tracking-widest">

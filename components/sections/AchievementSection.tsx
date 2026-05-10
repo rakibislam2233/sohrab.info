@@ -47,8 +47,8 @@ export default async function AchievementSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {achievements.map((achievement, index) => (
             <Reveal key={achievement.id} delay={index * 0.1}>
-              <div className="bg-white p-6 rounded border border-gray-100 flex flex-col h-full">
-                <div className="w-10 h-10 bg-black rounded flex items-center justify-center mb-4">
+              <div className="bg-white p-6 rounded-xl border border-gray-100 flex flex-col h-full">
+                <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center mb-4">
                   <Award className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-black mb-1">

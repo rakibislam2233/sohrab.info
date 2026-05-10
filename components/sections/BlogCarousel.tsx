@@ -118,7 +118,7 @@ const BlogCarousel = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-24 bg-gray-50 overflow-hidden">
+    <section className="py-20 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <Reveal>
@@ -136,17 +136,17 @@ const BlogCarousel = () => {
             <div className="flex items-center gap-3">
               <button
                 onClick={scrollPrev}
-                className="w-12 h-12 rounded border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-black hover:text-black transition-all shadow-none"
+                className="w-10 h-10 rounded-xl border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-black hover:text-black transition-all shadow-none"
                 aria-label="Previous slide"
               >
-                <ArrowLeft size={20} />
+                <ArrowLeft size={18} />
               </button>
               <button
                 onClick={scrollNext}
-                className="w-12 h-12 rounded border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-black hover:text-black transition-all shadow-none"
+                className="w-10 h-10 rounded-xl border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-black hover:text-black transition-all shadow-none"
                 aria-label="Next slide"
               >
-                <ArrowRight size={20} />
+                <ArrowRight size={18} />
               </button>
             </div>
           </Reveal>
@@ -164,7 +164,7 @@ const BlogCarousel = () => {
                     href={`${item.route}/${item.slug}`}
                     className="group block h-full"
                   >
-                    <div className="bg-white rounded overflow-hidden border border-gray-100 shadow-none transition-all duration-500 hover:border-black flex flex-col h-full">
+                    <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-none transition-all duration-500 hover:border-black flex flex-col h-full">
                       <div className="relative aspect-16/10 overflow-hidden">
                         <Image
                           src={item.image}

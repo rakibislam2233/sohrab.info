@@ -5,15 +5,15 @@ import Reveal from '../ui/Reveal';
 
 const ContactSection = () => {
   return (
-    <section className="py-24 bg-white" id="contact">
+    <section className="py-20 bg-white" id="contact">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           {/* Left Side: Contact Info */}
           <div>
             <Reveal>
               <span className="text-black font-bold uppercase tracking-[0.3em] text-[10px] mb-4 block border-l-2 border-black pl-3">Get In Touch</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 uppercase tracking-tighter">Let's Connect</h2>
-              <p className="text-gray-500 text-lg mb-12 max-w-md">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 uppercase tracking-tighter">Let's Connect</h2>
+              <p className="text-gray-500 text-base mb-10 max-w-md">
                 Have a story to share, a project in mind, or just want to say hi? I'm always open to new opportunities and conversations.
               </p>
             </Reveal>
@@ -45,7 +45,7 @@ const ContactSection = () => {
 
           {/* Right Side: Form */}
           <Reveal delay={0.4}>
-            <div className="bg-gray-50 p-8 md:p-12 rounded border border-gray-100">
+            <div className="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-100">
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -53,7 +53,7 @@ const ContactSection = () => {
                     <input 
                       type="text" 
                       placeholder="John Doe"
-                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded text-sm focus:border-black outline-none transition-all"
+                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:border-black outline-none transition-all"
                     />
                   </div>
                   <div className="space-y-2">
@@ -61,7 +61,7 @@ const ContactSection = () => {
                     <input 
                       type="email" 
                       placeholder="john@example.com"
-                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded text-sm focus:border-black outline-none transition-all"
+                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:border-black outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -71,7 +71,7 @@ const ContactSection = () => {
                   <input 
                     type="text" 
                     placeholder="Inquiry about..."
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded text-sm focus:border-black outline-none transition-all"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:border-black outline-none transition-all"
                   />
                 </div>
 
@@ -80,11 +80,11 @@ const ContactSection = () => {
                   <textarea 
                     rows={5}
                     placeholder="Your message here..."
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded text-sm focus:border-black outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:border-black outline-none transition-all resize-none"
                   ></textarea>
                 </div>
 
-                <button className="w-full py-4 bg-black text-white rounded font-bold text-xs uppercase tracking-widest hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-3 group">
+                <button className="w-full py-3 bg-black text-white rounded-xl font-bold text-[10px] uppercase tracking-widest hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-3 group">
                   Send Message
                   <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>
@@ -99,8 +99,8 @@ const ContactSection = () => {
 
 const ContactInfo = ({ icon, title, detail, href, delay }: { icon: React.ReactNode, title: string, detail: string, href: string, delay: number }) => (
   <Reveal delay={delay}>
-    <a href={href} className="flex gap-6 items-start group">
-      <div className="w-12 h-12 bg-white rounded border border-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-black group-hover:text-white group-hover:border-black transition-all duration-300 shadow-none">
+    <a href={href} className="flex gap-4 items-start group">
+      <div className="w-10 h-10 shrink-0 bg-white rounded-xl border border-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-black group-hover:text-white group-hover:border-black transition-all duration-300 shadow-none">
         {icon}
       </div>
       <div>

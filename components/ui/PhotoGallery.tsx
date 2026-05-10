@@ -26,7 +26,7 @@ function renderNextImage(
         position: "relative",
         aspectRatio: `${width} / ${height}`,
       }}
-      className="group overflow-hidden rounded border border-gray-100 bg-gray-50 cursor-pointer shadow-none"
+      className="group overflow-hidden rounded-xl border border-gray-100 bg-gray-50 cursor-pointer shadow-none"
     >
       <Image
         fill
@@ -84,7 +84,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
   }, [index, handleNext, handlePrev]);
 
   if (!mounted)
-    return <div className="w-full aspect-video bg-gray-50 rounded" />;
+    return <div className="w-full aspect-video bg-gray-50 rounded-xl" />;
 
   return (
     <div className="w-full">
@@ -120,17 +120,17 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
             {/* Previous Button */}
             <button
               onClick={handlePrev}
-              className="absolute left-6 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 text-white hidden md:flex items-center justify-center transition-all z-110"
+              className="absolute left-2 sm:left-6 w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all z-110"
             >
-              <ChevronLeft size={32} />
+              <ChevronLeft className="size-6 sm:size-8" />
             </button>
 
             {/* Next Button */}
             <button
               onClick={handleNext}
-              className="absolute right-6 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 text-white hidden md:flex items-center justify-center transition-all z-110"
+              className="absolute right-2 sm:right-6 w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all z-110"
             >
-              <ChevronRight size={32} />
+              <ChevronRight className="size-6 sm:size-8" />
             </button>
 
             {/* Main Image Container */}

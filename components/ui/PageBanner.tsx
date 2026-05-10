@@ -16,8 +16,8 @@ export default function PageBanner({
   title,
   subtitle,
   badge,
-  themeColor = "bg-[#f0f9f1]",
-  textColor = "text-[#2d4a31]",
+  themeColor = "bg-gray-100",
+  textColor = "text-black",
   icon: Icon,
 }: PageBannerProps) {
   return (
@@ -67,7 +67,7 @@ export default function PageBanner({
         <Reveal>
           {badge && (
             <span
-              className={`inline-block px-3 py-1 ${themeColor} ${textColor} text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm mb-4 border border-current opacity-70`}
+              className={`inline-block px-3 py-1 ${themeColor} ${textColor} text-[10px] font-bold uppercase tracking-[0.2em] rounded-md mb-4 border border-current opacity-70`}
             >
               {badge}
             </span>

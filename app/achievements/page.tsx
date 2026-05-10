@@ -65,13 +65,13 @@ const AchievementsPage = () => {
 
       <div className="container mx-auto px-4 mt-16">
         {/* Gallery Section - Vertical Layout */}
-        <section className="mb-24">
+        <section className="mb-20">
           <Reveal>
             <div className="flex flex-col items-start mb-10">
               <span className="text-black font-bold uppercase tracking-[0.2em] text-[10px] mb-2 border-l-2 border-black pl-3">
                 Honor Gallery
               </span>
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+              <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
                 <Camera className="text-black" size={20} />
                 Moments of Pride
               </h2>
@@ -88,7 +88,7 @@ const AchievementsPage = () => {
               <span className="text-black font-bold uppercase tracking-[0.2em] text-[10px] mb-2 border-l-2 border-black pl-3">
                 Recognition
               </span>
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+              <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
                 <Award className="text-black" size={20} />
                 Major Awards
               </h2>
@@ -98,9 +98,9 @@ const AchievementsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {achievements.map((achievement, i) => (
               <Reveal key={achievement.id} delay={i * 0.1}>
-                <div className="bg-white p-6 rounded border border-gray-100 flex flex-col h-full hover:border-black transition-all duration-500">
-                  <div className="w-12 h-12 bg-black rounded flex items-center justify-center mb-5 border border-black">
-                    <Award className="w-6 h-6 text-white" />
+                <div className="bg-white p-6 rounded-xl border border-gray-100 flex flex-col h-full hover:border-black transition-all duration-500">
+                  <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center mb-5 border border-black">
+                    <Award className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {achievement.title}

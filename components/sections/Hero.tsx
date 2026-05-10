@@ -66,10 +66,10 @@ export default function Hero() {
                 <a
                   href="/resume.pdf"
                   download
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded font-bold text-sm tracking-widest uppercase hover:bg-gray-800 transition-all duration-300 group"
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-black text-white rounded-xl font-bold text-[10px] tracking-widest uppercase hover:bg-gray-800 transition-all duration-300 group"
                 >
                   Download CV
-                  <Zap size={16} className="group-hover:translate-x-1 transition-transform" />
+                  <Zap size={14} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function Hero() {
               animate={{ rotate: 3, scale: 1, opacity: 1 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ rotate: 0, scale: 1.02 }}
-              className="bg-white p-4 pb-10 rounded border border-gray-100 relative z-10"
+              className="bg-white p-4 pb-10 rounded-xl border border-gray-100 relative z-10"
             >
               <div className="relative w-60 sm:w-72 h-60 sm:h-80 overflow-hidden bg-gray-50 cursor-pointer">
                 <Image
@@ -101,7 +101,7 @@ export default function Hero() {
 
             {/* Static Information Tags */}
             <FloatingTag
-              icon={<Award className="size-4 text-amber-500" />}
+              icon={<Award className="size-4 text-black" />}
               text="National Service Award"
               className="top-0 right-0 hidden sm:flex"
               delay={0.4}
@@ -113,13 +113,13 @@ export default function Hero() {
               delay={0.6}
             />
             <FloatingTag
-              icon={<Zap className="size-4 text-blue-500" />}
+              icon={<Zap className="size-4 text-black" />}
               text="Education Reporter"
               className="bottom-1/4 -right-16 hidden sm:flex"
               delay={0.8}
             />
             <FloatingTag
-              icon={<Compass className="size-4 text-emerald-500" />}
+              icon={<Compass className="size-4 text-black" />}
               text="64 Districts Traveled"
               className="bottom-0 left-0 hidden sm:flex"
               delay={1}
@@ -145,7 +145,7 @@ function SocialLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-10 h-10 flex items-center justify-center bg-white border border-gray-100 rounded text-gray-400 hover:bg-black hover:text-white hover:border-black transition-all duration-300"
+      className="w-10 h-10 flex items-center justify-center bg-white border border-gray-100 rounded-xl text-gray-400 hover:bg-black hover:text-white hover:border-black transition-all duration-300"
       title={label}
     >
       {icon}

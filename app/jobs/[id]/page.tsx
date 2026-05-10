@@ -44,7 +44,7 @@ export default function JobDetailsPage() {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
             <Reveal>
-              <div className="bg-white p-8 md:p-10 rounded border border-gray-100">
+              <div className="bg-white p-8 md:p-10 rounded-xl border border-gray-100">
                 <div className="flex items-center gap-2 text-black font-bold text-[10px] uppercase tracking-widest mb-4 border-l-2 border-black pl-3">
                   <Briefcase size={14} /> Job Description
                 </div>
@@ -57,7 +57,7 @@ export default function JobDetailsPage() {
                 <ul className="space-y-4 mb-10">
                   {job.responsibilities.map((item, index) => (
                     <li key={index} className="flex gap-3 text-gray-600 text-sm md:text-base">
-                      <CheckCircle2 className="text-green-500 shrink-0" size={20} />
+                      <CheckCircle2 className="text-black shrink-0" size={20} />
                       {item}
                     </li>
                   ))}
@@ -79,12 +79,12 @@ export default function JobDetailsPage() {
           {/* Sidebar */}
           <div className="space-y-6">
             <Reveal delay={0.2}>
-              <div className="bg-white p-6 rounded border border-gray-100 sticky top-24">
+              <div className="bg-white p-6 rounded-xl border border-gray-100 sticky top-24">
                 <h3 className="text-lg font-bold text-gray-900 mb-6">Job Summary</h3>
                 
                 <div className="space-y-6 mb-8">
                   <div className="flex items-start gap-4">
-                    <div className="size-10 rounded bg-gray-50 flex items-center justify-center text-gray-400 shrink-0">
+                    <div className="size-10 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 shrink-0">
                       <Calendar size={18} />
                     </div>
                     <div>
@@ -94,7 +94,7 @@ export default function JobDetailsPage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="size-10 rounded bg-gray-50 flex items-center justify-center text-gray-400 shrink-0">
+                    <div className="size-10 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 shrink-0">
                       <Clock size={18} />
                     </div>
                     <div>
@@ -104,7 +104,7 @@ export default function JobDetailsPage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="size-10 rounded bg-gray-50 flex items-center justify-center text-gray-400 shrink-0">
+                    <div className="size-10 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 shrink-0">
                       <MapPin size={18} />
                     </div>
                     <div>
@@ -114,7 +114,7 @@ export default function JobDetailsPage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="size-10 rounded bg-gray-50 flex items-center justify-center text-gray-400 shrink-0">
+                    <div className="size-10 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 shrink-0">
                       <DollarSign size={18} />
                     </div>
                     <div>
@@ -127,7 +127,7 @@ export default function JobDetailsPage() {
                 <Link 
                   href={job.applyUrl}
                   target="_blank"
-                  className="w-full py-4 bg-black hover:bg-gray-800 text-white rounded font-bold transition-all flex items-center justify-center gap-2 group"
+                  className="w-full py-4 bg-black hover:bg-gray-800 text-white rounded-xl font-bold transition-all flex items-center justify-center gap-2 group"
                 >
                   Apply Now <ExternalLink size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>

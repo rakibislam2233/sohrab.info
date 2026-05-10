@@ -47,17 +47,17 @@ const skillCategories = [
 
 const SkillsSection = () => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="skills">
+    <section className="py-20 bg-white relative overflow-hidden" id="skills">
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50/50 z-0 skew-x-12 translate-x-1/2"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <Reveal>
-          <div className="flex flex-col items-start mb-20 max-w-2xl">
+          <div className="flex flex-col items-start mb-12 max-w-2xl">
             <span className="text-gray-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-4 border-l-2 border-black pl-4">
               Expertise
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
               Professional <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-black to-gray-400">Core Competencies</span>
             </h2>
@@ -105,5 +105,9 @@ const SkillsSection = () => {
             </Reveal>
           ))}
         </div>
+      </div>
+    </section>
+  );
+};
 
 export default SkillsSection;
