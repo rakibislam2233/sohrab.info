@@ -5,17 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
   { name: "Journalism", href: "/journalism" },
   { name: "Scouting", href: "/scout" },
   { name: "Travel", href: "/travel" },
   { name: "Leadership", href: "/leadership" },
   { name: "Achievements", href: "/achievements" },
   { name: "Voluntary", href: "/voluntary-work" },
-  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -36,10 +33,13 @@ export default function Navbar() {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="w-full max-w-[calc(100vw-1rem)] sm:max-w-4xl rounded-full border border-gray-100 bg-white/90 px-3 py-3 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
+        className="w-full sm:w-fit rounded-full border border-gray-100 bg-white/90 px-2 py-1 md:px-3 md:py-3.5 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
       >
         <div className="flex items-center justify-between gap-3 md:hidden">
-          <Link href="/" className="inline-flex items-center gap-2 rounded-full border border-gray-100 bg-white px-3 py-2 text-sm font-black tracking-tight text-black shadow-sm">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-black tracking-tight text-black "
+          >
             Sohrab.
           </Link>
 
@@ -48,13 +48,16 @@ export default function Navbar() {
             onClick={() => setIsMobileMenuOpen((open) => !open)}
             aria-expanded={isMobileMenuOpen}
             aria-label="Toggle navigation menu"
-            className="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white size-12 text-gray-700 shadow-sm transition hover:border-black hover:text-black"
+            className="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white size-10 text-gray-700 shadow-sm transition hover:border-black hover:text-black"
           >
             <motion.div
-              animate={{ rotate: isMobileMenuOpen ? 90 : 0, scale: isMobileMenuOpen ? 1.05 : 1 }}
+              animate={{
+                rotate: isMobileMenuOpen ? 90 : 0,
+                scale: isMobileMenuOpen ? 1.05 : 1,
+              }}
               transition={{ duration: 0.2 }}
             >
-              <Menu className="h-5 w-5" />
+              <Menu className="size-4" />
             </motion.div>
           </button>
         </div>
@@ -85,7 +88,6 @@ export default function Navbar() {
                         className={`flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-semibold transition ${isActive ? "bg-black text-white" : "text-gray-600 hover:bg-gray-50 hover:text-black"}`}
                       >
                         <span>{link.name}</span>
-                        {isActive && <span className="text-[10px] uppercase tracking-[0.2em] opacity-70">Active</span>}
                       </Link>
                     </motion.div>
                   );
@@ -100,8 +102,10 @@ export default function Navbar() {
             const isActive = pathname === link.href;
             return (
               <Link key={link.href} href={link.href} className="relative group">
-                <div className={`flex items-center px-3 lg:px-4 py-2 rounded-full transition-all duration-300 ${isActive ? 'bg-black text-white shadow-lg' : 'text-gray-500 hover:text-black hover:bg-gray-50'}`}>
-                  <span className="text-[10px] lg:text-xs font-semibold tracking-[0.09em] whitespace-nowrap">
+                <div
+                  className={`flex items-center px-3 lg:px-4 py-2 rounded-full transition-all duration-300 ${isActive ? "bg-black text-white shadow-lg" : "text-gray-500 hover:text-black hover:bg-gray-50"}`}
+                >
+                  <span className="text-[10px] lg:text-[14px] font-semibold tracking-[0.09em] whitespace-nowrap">
                     {link.name}
                   </span>
 
@@ -109,7 +113,11 @@ export default function Navbar() {
                     <motion.div
                       layoutId="nav-pill"
                       className="absolute inset-0 bg-black rounded-full -z-10"
-                      transition={{ type: "spring", bounce: 0.15, duration: 0.6 }}
+                      transition={{
+                        type: "spring",
+                        bounce: 0.15,
+                        duration: 0.6,
+                      }}
                     />
                   )}
                 </div>

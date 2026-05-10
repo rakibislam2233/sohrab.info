@@ -1,43 +1,22 @@
 import Footer from "../components/Footer";
 import AchievementSection from "../components/sections/AchievementSection";
-import FeaturedGrid from "../components/sections/FeaturedGrid";
 import GallerySection from "../components/sections/GallerySection";
 import Hero from "../components/sections/Hero";
-import HomeHighlights from "../components/sections/HomeHighlights";
 import MediaHighlights from "../components/sections/MediaHighlights";
 import NewsMediaTimeline from "../components/sections/NewsMediaTimeline";
-import ScoutingFocus from "../components/sections/ScoutingFocus";
+import HomeAboutUs from "../components/sections/HomeAboutUs";
 import TravelHighlights from "../components/sections/TravelHighlights";
 import VoluntaryWorkSection from "../components/sections/VoluntaryWorkSection";
-import Reveal from "../components/ui/Reveal";
 
 export default async function Home() {
   return (
     <main>
       <Hero />
-      
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <Reveal>
-            <div className="max-w-xl mb-8">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-black mb-2 uppercase tracking-tighter">Latest Journalism</h2>
-              <p className="text-sm text-gray-500 font-medium">
-                Reporting on the stories that shape our society, with a focus on education and agriculture.
-              </p>
-            </div>
-          </Reveal>
-          <FeaturedGrid />
-        </div>
-      </section>
-
-      <HomeHighlights />
-      <ScoutingFocus />
-      <TravelHighlights />
+      <HomeAboutUs />
       <AchievementSection />
       <VoluntaryWorkSection />
       <NewsMediaTimeline />
       <MediaHighlights />
-      <GallerySection />
       <Footer />
     </main>
   );
