@@ -14,12 +14,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       async authorize(credentials): Promise<{ id: string; email: string } | null> {
         const email = credentials?.email ? String(credentials.email) : ''
         const password = credentials?.password ? String(credentials.password) : ''
-        if(!email || !password) return null
-        const user = await prisma.admin.findUnique({ where: { email } })
-        if(!user) return null
-        const isValid = await compare(password, user.password)
-        if(!isValid) return null
-        return { id: user.id, email: user.email }
+        
+        // Mock login for demo purposes since database is not connected
+        if (email === 'admin@sohrab.info' && password === 'Sohrab@2026') {
+          return { id: 'admin-id', email: 'admin@sohrab.info' }
+        }
+        return null
       }
     })
   ],
