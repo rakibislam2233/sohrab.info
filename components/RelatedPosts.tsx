@@ -17,7 +17,7 @@ export default async function RelatedPosts({
     <section className="mt-12">
       <h3 className=" text-2xl mb-4">Related Posts</h3>
       <div className="grid md:grid-cols-3 gap-6">
-        {items.map((i) => (
+        {items.map((i: any) => (
           <Link
             href={`/journalism/${i.slug}`}
             key={i.id}
