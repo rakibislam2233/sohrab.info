@@ -11,9 +11,31 @@ const bricolage_grotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "Sohrab Hossan — Journalist · Traveller · Scout",
-  description:
-    "Personal portfolio of Sohrab Hossan — journalist, traveller and scout from Bangladesh.",
+  title: {
+    default: "Sohrab Hossan — Journalist · Traveller · Scout",
+    template: "%s | Sohrab Hossan"
+  },
+  description: "Personal portfolio of Sohrab Hossan — a dedicated journalist, passionate traveller, and experienced scout leader from Bangladesh capturing life's essence through stories.",
+  keywords: ["Sohrab Hossan", "Journalist Bangladesh", "Scout Leader", "Travel Blogger", "Thakurgaon", "Bangladesh Stories"],
+  authors: [{ name: "Sohrab Hossan" }],
+  creator: "Sohrab Hossan",
+  openGraph: {
+    type: "website",
+    locale: "en_BD",
+    url: "https://sohrab.info",
+    title: "Sohrab Hossan — Journalist · Traveller · Scout",
+    description: "Explore the journey of Sohrab Hossan, a journalist and scout leader from Bangladesh.",
+    siteName: "Sohrab Hossan Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sohrab Hossan — Journalist · Traveller · Scout",
+    description: "Personal portfolio of Sohrab Hossan, capturing stories across Bangladesh.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({

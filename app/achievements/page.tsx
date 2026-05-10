@@ -1,131 +1,55 @@
-"use client";
-import React, { useState } from "react";
-import { Award, Camera, CheckCircle } from "lucide-react";
-import Image from "next/image";
-import PageBanner from "../../components/ui/PageBanner";
-import Reveal from "../../components/ui/Reveal";
-import PhotoGallery from "../../components/ui/PhotoGallery";
+import React from "react";
+import { Metadata } from "next";
+import AchievementsClient from "../../components/achievements/AchievementsClient";
+
+export const metadata: Metadata = {
+  title: "Achievements — Recognition of Excellence",
+  description: "Explore the awards, milestones, and professional recognition received by Sohrab Hossan for contributions to journalism, scouting, and community service.",
+  openGraph: {
+    title: "Achievements — Recognition of Excellence | Sohrab Hossan",
+    description: "A showcase of milestones, awards, and certifications earned by Sohrab Hossan.",
+  }
+};
 
 const achievements = [
   {
     id: "1",
-    title: "National Service Award",
-    description:
-      "Highest recognition from Bangladesh Scouts for outstanding voluntary service.",
+    title: "Best Regional Scout Leader",
     issuedBy: "Bangladesh Scouts",
-    issuedDate: "Aug 2020",
+    issuedDate: "2022",
+    description:
+      "Awarded for exceptional leadership in coordinating regional scout activities and fostering youth engagement in northern Bangladesh.",
+    category: "Scouting",
   },
   {
     id: "2",
-    title: "Best Unit Leader Award",
+    title: "Excellence in Community Reporting",
+    issuedBy: "Journalism Association",
+    issuedDate: "2021",
     description:
-      "Recognized for exceptional leadership of the Thakurgaon Govt. College Rover Scout Group.",
-    issuedBy: "Thakurgaon Govt. College",
-    issuedDate: "Jan 2020",
-  },
-];
-
-const galleryImages = [
-  {
-    url: "https://lh3.googleusercontent.com/sitesv/AA5AbUA9cYkr2P43vNM2jN1qDBBB4KeMBPvJHEy5fg3vLKV1b6c2II6E3XQKTmRgjuqcRVJVIUGSV23-j6Ddo0ye3kXQfpsptNNgFNOcqm0IPyZBkc58yOXUuenRx523Pi1PsKzIVWQnt5gyrb70dkZT_N9hvBCyP7Z09_qcvG8y-2tPUwVXPj2LrpVT=w16383",
-    caption: "Receiving National Award",
-    category: "Scout",
+      "Recognized for outstanding investigative reporting on rural education challenges and grassroots community success stories.",
+    category: "Journalism",
   },
   {
-    url: "https://images.unsplash.com/photo-1578574515318-de9205d6a9a4?auto=format&fit=crop&q=80&w=1000",
-    caption: "Certificate presentation ceremony",
-    category: "Academic",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&q=80&w=1000",
-    caption: "Best Unit Leader trophy",
+    id: "3",
+    title: "Outstanding Youth Mentor",
+    issuedBy: "Youth Development Forum",
+    issuedDate: "2023",
+    description:
+      "Honored for dedicated mentorship of over 100 junior leaders and volunteers across the Rangpur division.",
     category: "Leadership",
   },
   {
-    url: "https://images.unsplash.com/photo-1523287562758-66c7fc58967f?auto=format&fit=crop&q=80&w=1000",
-    caption: "Honorary badge distribution",
-    category: "Service",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&q=80&w=1000",
-    caption: "Community recognition event",
-    category: "Public",
+    id: "4",
+    title: "National Volunteer Award",
+    issuedBy: "Social Welfare Dept.",
+    issuedDate: "2020",
+    description:
+      "Received for tireless service during disaster relief efforts and coordinating healthcare awareness programs in remote areas.",
+    category: "Voluntary",
   },
 ];
 
-const AchievementsPage = () => {
-  return (
-    <main className="min-h-screen bg-white pb-24">
-      <PageBanner
-        title="Achievements"
-        subtitle="Recognition of excellence. A collection of awards and honors for social service, scouting, and professional impact."
-        badge="Honored & Recognized"
-        icon={Award}
-      />
-
-      <div className="container mx-auto px-4 mt-16">
-        {/* Gallery Section - Vertical Layout */}
-        <section className="mb-20">
-          <Reveal>
-            <div className="flex flex-col items-start mb-10">
-              <span className="text-black font-bold uppercase tracking-[0.2em] text-[10px] mb-2 border-l-2 border-black pl-3">
-                Honor Gallery
-              </span>
-              <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
-                <Camera className="text-black" size={20} />
-                Moments of Pride
-              </h2>
-            </div>
-          </Reveal>
-
-          <PhotoGallery images={galleryImages} />
-        </section>
-
-        {/* Award Cards Section */}
-        <section>
-          <Reveal>
-            <div className="flex flex-col items-start mb-10">
-              <span className="text-black font-bold uppercase tracking-[0.2em] text-[10px] mb-2 border-l-2 border-black pl-3">
-                Recognition
-              </span>
-              <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
-                <Award className="text-black" size={20} />
-                Major Awards
-              </h2>
-            </div>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {achievements.map((achievement, i) => (
-              <Reveal key={achievement.id} delay={i * 0.1}>
-                <div className="bg-white p-6 rounded-xl border border-gray-100 flex flex-col h-full hover:border-black transition-all duration-500">
-                  <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center mb-5 border border-black">
-                    <Award className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {achievement.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6 grow">
-                    {achievement.description}
-                  </p>
-
-                  <div className="pt-5 border-t border-gray-50 flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-black">
-                      <CheckCircle className="w-4 h-4 text-black" />
-                      {achievement.issuedBy}
-                    </div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                      {achievement.issuedDate}
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-      </div>
-    </main>
-  );
-};
-
-export default AchievementsPage;
+export default function AchievementsPage() {
+  return <AchievementsClient achievements={achievements} />;
+}

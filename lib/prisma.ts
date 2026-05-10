@@ -27,21 +27,26 @@ const prismaMock = {
   },
   scoutActivity: {
     findMany: async () => [],
+    count: async () => 0,
   },
   travelStory: {
     findMany: async () => [],
+    count: async () => 0,
   },
   achievement: {
     findMany: async () => [],
+    count: async () => 0,
   },
   voluntaryWork: {
     findMany: async () => [],
+    count: async () => 0,
   },
   personalInfo: {
     findFirst: async () => null,
   },
-  galleryImage: {
+  galleryPhoto: {
     findMany: async () => [],
+    count: async () => 0,
   }
 };
 

@@ -8,6 +8,13 @@ import SkillsSection from "../components/sections/SkillsSection";
 import BlogCarousel from "../components/sections/BlogCarousel";
 import ContactSection from "../components/sections/ContactSection";
 import ActionMomentGallery from "../components/sections/ActionMomentGallery";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sohrab Hossan — Journalist · Traveller · Scout",
+  description:
+    "Official portfolio of Sohrab Hossan. Senior Journalist reporting on education and community, passionate traveller exploring Bangladesh, and dedicated Scout Leader.",
+};
 
 export default async function Home() {
   return (

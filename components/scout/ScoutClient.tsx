@@ -1,30 +1,34 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import { Compass, Calendar, MapPin, Award } from "lucide-react";
-import PageBanner from "../../components/ui/PageBanner";
-import Reveal from "../../components/ui/Reveal";
-import PhotoGallery from "../../components/ui/PhotoGallery";
-import VideoCarousel from "../../components/sections/VideoCarousel";
+import PageBanner from "../ui/PageBanner";
+import Reveal from "../ui/Reveal";
+import PhotoGallery from "../ui/PhotoGallery";
+import VideoCarousel from "../sections/VideoCarousel";
 
 const scoutVideos = [
   {
     id: "1",
     title: "Rover Scout Leadership Training Highlights",
-    thumbnail: "https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?auto=format&fit=crop&q=80&w=1000",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    thumbnail:
+      "https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?auto=format&fit=crop&q=80&w=1000",
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     id: "2",
     title: "National Scout Jamboree Experience",
-    thumbnail: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1000",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    thumbnail:
+      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1000",
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     id: "3",
     title: "Scout Community Service Impact",
-    thumbnail: "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=1000",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-  }
+    thumbnail:
+      "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=1000",
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  },
 ];
 
 const scoutActivities = [
@@ -148,7 +152,7 @@ const ScoutClient = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {scoutActivities.map((activity, i) => (
               <Reveal key={activity.id} delay={i * 0.1}>
-                <div className="group bg-white rounded overflow-hidden border border-gray-100 transition-all duration-500 hover:border-black flex flex-col md:flex-row h-full">
+                <div className="group bg-white rounded-xl overflow-hidden border border-gray-100 transition-all duration-500 hover:border-black flex flex-col md:flex-row h-full">
                   <div className="relative w-full md:w-2/5 aspect-4/3 md:aspect-auto overflow-hidden">
                     <Image
                       src={activity.image}
@@ -161,7 +165,7 @@ const ScoutClient = () => {
                   <div className="p-5 md:w-3/5 flex flex-col justify-between">
                     <div>
                       <div className="mb-3">
-                        <span className="px-2 py-0.5 bg-black text-white text-[8px] font-bold uppercase tracking-wider rounded-sm border border-black">
+                        <span className="px-2 py-0.5 bg-black text-white text-[8px] font-bold uppercase tracking-wider rounded-md border border-black">
                           {activity.rank}
                         </span>
                       </div>
