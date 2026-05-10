@@ -1,4 +1,5 @@
 import Link from "next/link";
+// Final fix for Achievement type error
 import DeleteButton from "../../../../components/admin/DeleteButton";
 export const dynamic = "force-dynamic";
 
