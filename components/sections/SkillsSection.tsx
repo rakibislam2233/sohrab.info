@@ -61,8 +61,8 @@ const SkillsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skillCategories.map((category, idx) => (
             <Reveal key={idx} delay={idx * 0.1}>
-              <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-pink-200 hover:bg-white hover:shadow-xl transition-all duration-500 group">
-                <div className="w-14 h-14 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-pink-600 group-hover:text-white transition-colors duration-300">
+              <div className="bg-gray-50 p-8 rounded border border-gray-100 hover:border-pink-200 hover:bg-white transition-all duration-500 group">
+                <div className="w-14 h-14 bg-pink-100 text-pink-600 rounded flex items-center justify-center mb-6 group-hover:bg-pink-600 group-hover:text-white transition-colors duration-300">
                   {category.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">

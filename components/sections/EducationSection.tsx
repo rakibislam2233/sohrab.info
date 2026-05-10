@@ -44,7 +44,7 @@ const EducationSection = () => {
             <Reveal key={index} delay={index * 0.1}>
               <div className="relative pl-8 pb-12 border-l-2 border-pink-100 last:pb-0 group">
                 <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-white border-2 border-pink-600 group-hover:bg-pink-600 transition-colors duration-300"></div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+                <div className="bg-white p-6 rounded shadow-sm border border-gray-100 hover:border-pink-200 transition-all duration-300">
                   <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 group-hover:text-pink-600 transition-colors duration-300">
@@ -55,7 +55,7 @@ const EducationSection = () => {
                       </p>
                     </div>
                     <div className="flex flex-col items-end text-sm text-gray-500">
-                      <span className="flex items-center gap-1 font-bold text-pink-600 bg-pink-50 px-3 py-1 rounded-full">
+                      <span className="flex items-center gap-1 font-bold text-pink-600 bg-pink-50 px-3 py-1 rounded-sm">
                         <Calendar size={14} />
                         {edu.duration}
                       </span>

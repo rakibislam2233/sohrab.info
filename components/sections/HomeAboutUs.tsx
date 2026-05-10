@@ -19,8 +19,8 @@ const HomeAboutUs = () => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div className="bg-white p-4 pb-10 rounded-2xl border border-gray-100 relative z-10 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.1)]">
-              <div className="relative w-full h-[500px] overflow-hidden bg-gray-50 rounded-xl cursor-pointer group">
+            <div className="bg-white p-4 pb-10 rounded border border-gray-100 relative z-10 shadow-sm">
+              <div className="relative w-full h-[500px] overflow-hidden bg-gray-50 rounded cursor-pointer group">
                 <Image
                   src={heroImage.src}
                   alt="Sohrab Hossan"
