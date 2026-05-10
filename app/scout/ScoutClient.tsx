@@ -1,131 +1,129 @@
 "use client";
-import { Calendar, Camera, MapPin } from "lucide-react";
+
+import React from 'react';
 import Image from "next/image";
-import { useState } from "react";
-import ImageLightbox from "../../components/ui/ImageLightbox";
+import { Compass, Calendar, MapPin, Award } from "lucide-react";
 import PageBanner from "../../components/ui/PageBanner";
 import Reveal from "../../components/ui/Reveal";
+import PhotoGallery from "../../components/ui/PhotoGallery";
 
 const scoutActivities = [
   {
-    id: "1",
-    title: "Rover Scout Leader",
-    description:
-      "Leading the Rover Scout team in coordinating social service events, awareness campaigns, and community projects.",
-    image:
-      "https://lh3.googleusercontent.com/sitesv/AA5AbUA49r2u2zriZ8SwgDWca3Pn_Ssq5qcxjyI5Z-VRjqPfVFnO9oticCL6Fo_fYESwiC436s6hMvT09u2L7FVd7K9ke3c0l8YjAVBas7JTEC_ssTNMsAF-gVqx0m6fCpuJNjgi8LbkDyPtJJpSg6ueoJ0FKF2ZF4JAZHixVLF1XrocQMM3_BzTRjp-=w16383",
-    eventDate: "2020-08-16",
-    location: "Thakurgaon",
-    rank: "Rover Scout Leader",
+    id: '1',
+    title: 'Rover Scout Leader Training',
+    description: 'Participated in advanced leadership training for Rover Scouts, focusing on community development and emergency response.',
+    image: 'https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?auto=format&fit=crop&q=80&w=1000',
+    eventDate: 'Nov 2021',
+    location: 'Dhaka, Bangladesh',
+    rank: 'Rover Scout Leader'
   },
   {
-    id: "2",
-    title: "National Vitamin A Plus Campaign",
-    description:
-      "Coordination of student volunteers for the national nutrition program.",
-    image:
-      "https://lh3.googleusercontent.com/sitesv/AA5AbUBC3eDX-izt7AFNwcnl1yMjiL0xDONAbxgxWGftORflHuqlp2xxN7gkS0rIDBYyNxLBuqVAMsgZfIUNZjyIkNNoBgHl4l24jRbRA2rsdO8pjq0I2plYhpTCkZmOiDzMns1Onp4ttUy2fxKF2Kqu9u3m-gb5ygDrZWVyR0tYEbeI4LCq9kJO0aNtZx1foPBrj_Z-HNL9r1uCkK02eOzcaco_OFEUmoj8vuCW3k=w1280",
-    eventDate: "2020-01-11",
-    location: "Thakurgaon",
-    rank: null,
+    id: '2',
+    title: 'National Scout Jamboree',
+    description: 'Represented Thakurgaon district at the National Scout Jamboree, engaging in various skill-building activities and cultural exchanges.',
+    image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1000',
+    eventDate: 'Jan 2019',
+    location: 'Gazipur, Bangladesh',
+    rank: 'District Representative'
   },
+  {
+    id: '3',
+    title: 'Community Clean-up Initiative',
+    description: 'Led a team of 50 scouts in a city-wide cleaning and waste management awareness campaign.',
+    image: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=1000',
+    eventDate: 'Mar 2020',
+    location: 'Thakurgaon',
+    rank: 'Group Leader'
+  }
 ];
 
 const galleryImages = [
-  "https://lh3.googleusercontent.com/sitesv/AA5AbUA49r2u2zriZ8SwgDWca3Pn_Ssq5qcxjyI5Z-VRjqPfVFnO9oticCL6Fo_fYESwiC436s6hMvT09u2L7FVd7K9ke3c0l8YjAVBas7JTEC_ssTNMsAF-gVqx0m6fCpuJNjgi8LbkDyPtJJpSg6ueoJ0FKF2ZF4JAZHixVLF1XrocQMM3_BzTRjp-=w16383",
-  "https://lh3.googleusercontent.com/sitesv/AA5AbUAVxk0gLpJKeeGL2iOivcsWizHT8T1crl7Fcet-S6SnwX4VJT8G3HWv8OQLBjhT6y3DYBO0aVfu_xrbJ00VCy8_WlZhucnOj7A0Fe_H0Ar7afV4hRMq_PkbOFrOnf3f1dQI7mdy-aPAggfoULnaJsxfclii6vwA3AFEQHFBy5-m7vqHjq4RMS_a0wOy4R_SppZI18NUwH2CUT75_CvNuUGUscvAJEw8czpI=w1280",
-  "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1000",
-  "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&q=80&w=1000",
+  { url: "https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?auto=format&fit=crop&q=80&w=1000", caption: "Training camp session", category: "Training" },
+  { url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1000", caption: "Camping under the stars", category: "Jamboree" },
+  { url: "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=1000", caption: "Community service day", category: "Service" },
+  { url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000", caption: "Scout parade at national day", category: "Event" },
+  { url: "https://images.unsplash.com/photo-1508873696983-2dfd5898f0c3?auto=format&fit=crop&q=80&w=1000", caption: "Knots and pioneering workshop", category: "Skills" },
+  { url: "https://images.unsplash.com/photo-1517164850339-61234907996a?auto=format&fit=crop&q=80&w=1000", caption: "First aid drill", category: "Emergency" },
 ];
 
-export default function ScoutClient() {
-  const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 });
-
+const ScoutClient = () => {
   return (
-    <main className="min-h-screen bg-white pt-0 pb-20">
-      <PageBanner
-        title="Scouting"
+    <main className="min-h-screen bg-white pb-24">
+      <PageBanner 
+        title="Scouting" 
         badge="Rover Scout Leader"
-        themeColor="bg-[#f0f9f1]"
-        textColor="text-[#2d4a31]"
+        themeColor="bg-pink-50"
+        textColor="text-pink-900"
       />
-      <div className="container mx-auto px-4 sm:px-6 mt-10 sm:mt-12">
-        {/* Action Moments - Beautiful varied grid */}
-        <div className="mb-12 sm:mb-20">
+      
+      <div className="container mx-auto px-4 mt-16">
+        {/* Gallery Section */}
+        <section className="mb-24">
           <Reveal>
-            <h2 className="text-lg sm:text-xl font-bold mb-5 sm:mb-6 flex items-center gap-3">
-              <Camera className="text-blue-600" size={20} />
-              Action Moments
-            </h2>
+            <div className="flex flex-col items-start mb-10">
+              <span className="text-pink-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-2">Scout Life</span>
+              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                <Compass className="text-pink-600" size={20} />
+                Activity Gallery
+              </h2>
+            </div>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-            {galleryImages.map((img, i) => (
-              <Reveal key={i} delay={i * 0.1} className={
-                i === 0 ? "md:col-span-7" : 
-                i === 1 ? "md:col-span-5" : 
-                i === 2 ? "md:col-span-5" : 
-                "md:col-span-7"
-              }>
-                <div
-                  className={`relative overflow-hidden rounded cursor-pointer group border border-gray-100 aspect-16/10`}
-                  onClick={() => setLightbox({ isOpen: true, index: i })}
-                >
-                  <Image
-                    src={img}
-                    alt="Scout moment"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="text-white text-[10px] font-bold uppercase tracking-widest">
-                      Preview
-                    </span>
+          
+          <PhotoGallery images={galleryImages} />
+        </section>
+
+        {/* Highlight Cards Section */}
+        <section>
+          <Reveal>
+            <div className="flex flex-col items-start mb-10">
+              <span className="text-pink-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-2">Milestones</span>
+              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                <Award className="text-pink-600" size={20} />
+                Scout Highlights
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {scoutActivities.map((activity, i) => (
+              <Reveal key={activity.id} delay={i * 0.1}>
+                <div className="group bg-white rounded overflow-hidden border border-gray-100 transition-all duration-500 hover:border-pink-600 flex flex-col md:flex-row h-full">
+                  <div className="relative w-full md:w-2/5 aspect-4/3 md:aspect-auto overflow-hidden">
+                    <Image 
+                      src={activity.image} 
+                      alt={activity.title} 
+                      fill 
+                      className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                    />
+                  </div>
+                  
+                  <div className="p-5 md:w-3/5 flex flex-col justify-between">
+                    <div>
+                      <div className="mb-3">
+                        <span className="px-2 py-0.5 bg-pink-50 text-pink-600 text-[8px] font-bold uppercase tracking-wider rounded-sm border border-pink-100">
+                          {activity.rank}
+                        </span>
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600 transition-colors leading-tight">
+                        {activity.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-3 text-[10px] text-gray-400 mb-3 font-medium uppercase tracking-wider">
+                        <span className="flex items-center gap-1"><Calendar size={12} className="text-pink-400" /> {activity.eventDate}</span>
+                        <span className="flex items-center gap-1"><MapPin size={12} className="text-pink-400" /> {activity.location}</span>
+                      </div>
+                      <p className="text-gray-500 text-xs leading-relaxed line-clamp-3">
+                        {activity.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </Reveal>
             ))}
           </div>
-        </div>
-
-        {/* Activities */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-          {scoutActivities.map((activity, idx) => (
-            <Reveal key={activity.id} delay={idx * 0.1}>
-              <div className="group border border-gray-100 rounded overflow-hidden bg-white hover:border-blue-600 transition-colors">
-                <div className="relative aspect-16/10">
-                  <Image
-                    src={activity.image}
-                    alt={activity.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-5 sm:p-6">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">
-                    <span className="flex items-center gap-2">
-                      <MapPin size={12} /> {activity.location}
-                    </span>
-                    <span className="flex items-center gap-2">
-                      <Calendar size={12} /> {activity.eventDate}
-                    </span>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2">{activity.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
-                    {activity.description}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        </section>
       </div>
-
-      <ImageLightbox
-        images={galleryImages}
-        isOpen={lightbox.isOpen}
-        initialIndex={lightbox.index}
-        onClose={() => setLightbox({ ...lightbox, isOpen: false })}
-      />
     </main>
   );
-}
+};
+
+export default ScoutClient;

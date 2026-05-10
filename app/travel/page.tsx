@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PageBanner from "../../components/ui/PageBanner";
 import Reveal from "../../components/ui/Reveal";
-import MasonryGallery from "../../components/ui/MasonryGallery";
+import PhotoGallery from "../../components/ui/PhotoGallery";
 
 const travelStories = [
   {
@@ -14,8 +14,10 @@ const travelStories = [
     slug: "suryapuri-mango-tree",
     destination: "Thakurgaon, BD",
     travelDate: "Nov 2023",
-    excerpt: "Visiting the largest and oldest mango tree in Asia, a living monument of nature.",
-    coverImage: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&q=80&w=1000",
+    excerpt:
+      "Visiting the largest and oldest mango tree in Asia, a living monument of nature.",
+    coverImage:
+      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&q=80&w=1000",
   },
   {
     id: "2",
@@ -23,8 +25,10 @@ const travelStories = [
     slug: "dinajpur-temples",
     destination: "Dinajpur, BD",
     travelDate: "May 2023",
-    excerpt: "Exploring the intricate terracotta art and spiritual history of northern Bangladesh.",
-    coverImage: "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&q=80&w=1000",
+    excerpt:
+      "Exploring the intricate terracotta art and spiritual history of northern Bangladesh.",
+    coverImage:
+      "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&q=80&w=1000",
   },
   {
     id: "3",
@@ -32,19 +36,49 @@ const travelStories = [
     slug: "sylhet-tea-gardens",
     destination: "Sylhet, BD",
     travelDate: "Feb 2024",
-    excerpt: "A peaceful retreat into the emerald hills and refreshing tea estates of the northeast.",
-    coverImage: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=1000",
+    excerpt:
+      "A peaceful retreat into the emerald hills and refreshing tea estates of the northeast.",
+    coverImage:
+      "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=1000",
   },
 ];
 
 const galleryImages = [
-  { url: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&q=80&w=1000", caption: "Oldest mango tree in Asia", category: "Nature" },
-  { url: "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&q=80&w=1000", caption: "Terracotta temple details", category: "History" },
-  { url: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=1000", caption: "Local market vibes", category: "Street" },
-  { url: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=1000", caption: "Sylhet tea gardens at dawn", category: "Landscape" },
-  { url: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1000", caption: "Road trip through the hills", category: "Travel" },
-  { url: "https://images.unsplash.com/photo-1500835595327-8307e77032a3?auto=format&fit=crop&q=80&w=1000", caption: "Sunset at the river", category: "Nature" },
-  { url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1000", caption: "Camping in the wild", category: "Adventure" }
+  {
+    url: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&q=80&w=1000",
+    caption: "Oldest mango tree in Asia",
+    category: "Nature",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&q=80&w=1000",
+    caption: "Terracotta temple details",
+    category: "History",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=1000",
+    caption: "Local market vibes",
+    category: "Street",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=1000",
+    caption: "Sylhet tea gardens at dawn",
+    category: "Landscape",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1000",
+    caption: "Road trip through the hills",
+    category: "Travel",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1500835595327-8307e77032a3?auto=format&fit=crop&q=80&w=1000",
+    caption: "Sunset at the river",
+    category: "Nature",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1000",
+    caption: "Camping in the wild",
+    category: "Adventure",
+  },
 ];
 
 const TravelPage = () => {
@@ -72,7 +106,7 @@ const TravelPage = () => {
             </div>
           </Reveal>
 
-          <MasonryGallery images={galleryImages} layout="vertical" />
+          <PhotoGallery images={galleryImages} />
         </section>
 
         {/* Story Cards Section */}
@@ -92,7 +126,10 @@ const TravelPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {travelStories.map((story, i) => (
               <Reveal key={story.id} delay={i * 0.1}>
-                <Link href={`/travel/${story.slug}`} className="group block h-full">
+                <Link
+                  href={`/travel/${story.slug}`}
+                  className="group block h-full"
+                >
                   <div className="bg-white rounded overflow-hidden border border-gray-100 shadow-sm transition-all duration-500 hover:border-pink-600 flex flex-col h-full">
                     <div className="relative aspect-16/10 overflow-hidden">
                       <Image

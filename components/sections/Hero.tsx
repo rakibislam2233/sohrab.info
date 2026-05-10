@@ -61,6 +61,17 @@ export default function Hero() {
                 />
                 <SocialLink href="#" icon={<LuTwitter size={18} />} label="X" />
               </div>
+
+              <div className="pt-4">
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded font-bold text-sm tracking-widest uppercase hover:bg-pink-600 transition-all duration-300 group"
+                >
+                  Download CV
+                  <Zap size={16} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
             </div>
           </motion.div>
 

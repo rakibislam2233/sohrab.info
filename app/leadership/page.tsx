@@ -4,7 +4,7 @@ import { Users, Calendar, Award, Trophy, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import PageBanner from "../../components/ui/PageBanner";
 import Reveal from "../../components/ui/Reveal";
-import MasonryGallery from "../../components/ui/MasonryGallery";
+import PhotoGallery from "../../components/ui/PhotoGallery";
 
 const leadershipRoles = [
   {
@@ -91,7 +91,7 @@ const LeadershipPage = () => {
             </div>
           </Reveal>
 
-          <MasonryGallery images={galleryImages} layout="default" />
+          <PhotoGallery images={galleryImages} />
         </section>
 
         {/* Roles Section */}

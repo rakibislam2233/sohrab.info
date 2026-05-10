@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PageBanner from "../../components/ui/PageBanner";
 import Reveal from "../../components/ui/Reveal";
-import MasonryGallery from "../../components/ui/MasonryGallery";
+import PhotoGallery from "../../components/ui/PhotoGallery";
 
 const articles = [
   {
@@ -106,7 +106,7 @@ const JournalismPage = () => {
             </div>
           </Reveal>
 
-          <MasonryGallery images={galleryImages} layout="horizontal" />
+          <PhotoGallery images={galleryImages} />
         </section>
 
         {/* Featured Articles Section */}

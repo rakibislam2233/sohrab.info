@@ -5,46 +5,80 @@ import Image from "next/image";
 import Link from "next/link";
 import PageBanner from "../../components/ui/PageBanner";
 import Reveal from "../../components/ui/Reveal";
-import MasonryGallery from "../../components/ui/MasonryGallery";
+import PhotoGallery from "../../components/ui/PhotoGallery";
 
 const works = [
   {
     id: "1",
     title: "Winter Relief Distribution 2020",
     slug: "winter-relief-2020",
-    description: "Organized and participated in a large-scale blanket distribution for the elderly and underprivileged people in Thakurgaon district.",
+    description:
+      "Organized and participated in a large-scale blanket distribution for the elderly and underprivileged people in Thakurgaon district.",
     organization: "Thakurgaon Govt. College Rover Scout Group",
     date: "Jan 2020",
-    image: "https://lh3.googleusercontent.com/sitesv/AA5AbUBC3eDX-izt7AFNwcnl1yMjiL0xDONAbxgxWGftORflHuqlp2xxN7gkS0rIDBYyNxLBuqVAMsgZfIUNZjyIkNNoBgHl4l24jRbRA2rsdO8pjq0I2plYhpTCkZmOiDzMns1Onp4ttUy2fxKF2Kqu9u3m-gb5ygDrZWVyR0tYEbeI4LCq9kJO0aNtZx1foPBrj_Z-HNL9r1uCkK02eOzcaco_OFEUmoj8vuCW3k=w1280",
+    image:
+      "https://lh3.googleusercontent.com/sitesv/AA5AbUBC3eDX-izt7AFNwcnl1yMjiL0xDONAbxgxWGftORflHuqlp2xxN7gkS0rIDBYyNxLBuqVAMsgZfIUNZjyIkNNoBgHl4l24jRbRA2rsdO8pjq0I2plYhpTCkZmOiDzMns1Onp4ttUy2fxKF2Kqu9u3m-gb5ygDrZWVyR0tYEbeI4LCq9kJO0aNtZx1foPBrj_Z-HNL9r1uCkK02eOzcaco_OFEUmoj8vuCW3k=w1280",
   },
   {
     id: "2",
     title: "Environmental Service Campaign",
     slug: "environmental-service",
-    description: "Actively involved in tree plantation campaigns and waste management awareness programs across Thakurgaon.",
+    description:
+      "Actively involved in tree plantation campaigns and waste management awareness programs across Thakurgaon.",
     organization: "Bangladesh Scouts",
     date: "Jul 2020",
-    image: "https://lh3.googleusercontent.com/sitesv/AA5AbUAVxk0gLpJKeeGL2iOivcsWizHT8T1crl7Fcet-S6SnwX4VJT8G3HWv8OQLBjhT6y3DYBO0aVfu_xrbJ00VCy8_WlZhucnOj7A0Fe_H0Ar7afV4hRMq_PkbOFrOnf3f1dQI7mdy-aPAggfoULnaJsxfclii6vwA3AFEQHFBy5-m7vqHjq4RMS_a0wOy4R_SppZI18NUwH2CUT75_CvNuUGUscvAJEw8czpI=w1280",
+    image:
+      "https://lh3.googleusercontent.com/sitesv/AA5AbUAVxk0gLpJKeeGL2iOivcsWizHT8T1crl7Fcet-S6SnwX4VJT8G3HWv8OQLBjhT6y3DYBO0aVfu_xrbJ00VCy8_WlZhucnOj7A0Fe_H0Ar7afV4hRMq_PkbOFrOnf3f1dQI7mdy-aPAggfoULnaJsxfclii6vwA3AFEQHFBy5-m7vqHjq4RMS_a0wOy4R_SppZI18NUwH2CUT75_CvNuUGUscvAJEw8czpI=w1280",
   },
   {
     id: "3",
     title: "Health Awareness & Medical Camp",
     slug: "health-camp",
-    description: "Assisting medical professionals in providing basic health checkups and distributing medicines to rural communities.",
+    description:
+      "Assisting medical professionals in providing basic health checkups and distributing medicines to rural communities.",
     organization: "Voluntary Service Group",
     date: "Mar 2021",
-    image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=1000",
+    image:
+      "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=1000",
   },
 ];
 
 const galleryImages = [
-  { url: "https://lh3.googleusercontent.com/sitesv/AA5AbUBC3eDX-izt7AFNwcnl1yMjiL0xDONAbxgxWGftORflHuqlp2xxN7gkS0rIDBYyNxLBuqVAMsgZfIUNZjyIkNNoBgHl4l24jRbRA2rsdO8pjq0I2plYhpTCkZmOiDzMns1Onp4ttUy2fxKF2Kqu9u3m-gb5ygDrZWVyR0tYEbeI4LCq9kJO0aNtZx1foPBrj_Z-HNL9r1uCkK02eOzcaco_OFEUmoj8vuCW3k=w1280", caption: "Relief distribution in progress", category: "Social Work" },
-  { url: "https://lh3.googleusercontent.com/sitesv/AA5AbUAVxk0gLpJKeeGL2iOivcsWizHT8T1crl7Fcet-S6SnwX4VJT8G3HWv8OQLBjhT6y3DYBO0aVfu_xrbJ00VCy8_WlZhucnOj7A0Fe_H0Ar7afV4hRMq_PkbOFrOnf3f1dQI7mdy-aPAggfoULnaJsxfclii6vwA3AFEQHFBy5-m7vqHjq4RMS_a0wOy4R_SppZI18NUwH2CUT75_CvNuUGUscvAJEw8czpI=w1280", caption: "Planting trees for a greener future", category: "Environment" },
-  { url: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1000", caption: "Supporting local children with education", category: "Education" },
-  { url: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=1000", caption: "Medical aid camp coordination", category: "Health" },
-  { url: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb8?auto=format&fit=crop&q=80&w=1000", caption: "Fundraising event for rural schools", category: "Community" },
-  { url: "https://images.unsplash.com/photo-1459183885447-df53d1f0ed95?auto=format&fit=crop&q=80&w=1000", caption: "Workshop on skill development", category: "Education" },
-  { url: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&q=80&w=1000", caption: "Community clean-up drive", category: "Environment" }
+  {
+    url: "https://lh3.googleusercontent.com/sitesv/AA5AbUBC3eDX-izt7AFNwcnl1yMjiL0xDONAbxgxWGftORflHuqlp2xxN7gkS0rIDBYyNxLBuqVAMsgZfIUNZjyIkNNoBgHl4l24jRbRA2rsdO8pjq0I2plYhpTCkZmOiDzMns1Onp4ttUy2fxKF2Kqu9u3m-gb5ygDrZWVyR0tYEbeI4LCq9kJO0aNtZx1foPBrj_Z-HNL9r1uCkK02eOzcaco_OFEUmoj8vuCW3k=w1280",
+    caption: "Relief distribution in progress",
+    category: "Social Work",
+  },
+  {
+    url: "https://lh3.googleusercontent.com/sitesv/AA5AbUAVxk0gLpJKeeGL2iOivcsWizHT8T1crl7Fcet-S6SnwX4VJT8G3HWv8OQLBjhT6y3DYBO0aVfu_xrbJ00VCy8_WlZhucnOj7A0Fe_H0Ar7afV4hRMq_PkbOFrOnf3f1dQI7mdy-aPAggfoULnaJsxfclii6vwA3AFEQHFBy5-m7vqHjq4RMS_a0wOy4R_SppZI18NUwH2CUT75_CvNuUGUscvAJEw8czpI=w1280",
+    caption: "Planting trees for a greener future",
+    category: "Environment",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1000",
+    caption: "Supporting local children with education",
+    category: "Education",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=1000",
+    caption: "Medical aid camp coordination",
+    category: "Health",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb8?auto=format&fit=crop&q=80&w=1000",
+    caption: "Fundraising event for rural schools",
+    category: "Community",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1459183885447-df53d1f0ed95?auto=format&fit=crop&q=80&w=1000",
+    caption: "Workshop on skill development",
+    category: "Education",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&q=80&w=1000",
+    caption: "Community clean-up drive",
+    category: "Environment",
+  },
 ];
 
 const VoluntaryWorkPage = () => {
@@ -72,7 +106,7 @@ const VoluntaryWorkPage = () => {
             </div>
           </Reveal>
 
-          <MasonryGallery images={galleryImages} layout="scattered" />
+          <PhotoGallery images={galleryImages} />
         </section>
 
         {/* Work Cards Section */}
