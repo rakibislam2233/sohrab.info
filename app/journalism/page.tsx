@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Newspaper, Send, ArrowRight } from "lucide-react";
+import { Newspaper, Send, ArrowRight, PenTool } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import PageBanner from "../../components/ui/PageBanner";
@@ -86,9 +86,9 @@ const JournalismPage = () => {
     <main className="min-h-screen bg-white pb-24">
       <PageBanner
         title="Journalism"
-        badge="Staff Reporter & Writer"
-        themeColor="bg-pink-50"
-        textColor="text-pink-900"
+        subtitle="Truth through the lens. Reporting on education, community, and the heart of Bangladesh since 2016."
+        badge="Senior Reporter"
+        icon={PenTool}
       />
 
       <div className="container mx-auto px-4 mt-16">

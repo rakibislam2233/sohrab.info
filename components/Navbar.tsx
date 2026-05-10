@@ -6,15 +6,12 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/#about" },
   { name: "Journalism", href: "/journalism" },
   { name: "Scouting", href: "/scout" },
   { name: "Travel", href: "/travel" },
   { name: "Leadership", href: "/leadership" },
   { name: "Achievements", href: "/achievements" },
   { name: "Voluntary", href: "/voluntary-work" },
-  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -35,7 +32,7 @@ export default function Navbar() {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="w-full sm:w-fit rounded-full border border-gray-100 bg-white/90 px-2 py-1 md:px-3 md:py-3.5 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
+        className="w-full sm:w-fit rounded-full border border-gray-100 bg-white/90 px-2 py-1 md:px-3 md:py-2.5 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
       >
         <div className="flex items-center justify-between gap-3 md:hidden">
           <Link
@@ -100,6 +97,12 @@ export default function Navbar() {
         </AnimatePresence>
 
         <div className="hidden md:flex items-center justify-center gap-1 overflow-x-auto no-scrollbar">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-[20px] font-bold tracking-tight text-black "
+          >
+            Sohrab.
+          </Link>
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (

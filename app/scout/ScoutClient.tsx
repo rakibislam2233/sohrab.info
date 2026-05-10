@@ -1,6 +1,4 @@
 "use client";
-
-import React from 'react';
 import Image from "next/image";
 import { Compass, Calendar, MapPin, Award } from "lucide-react";
 import PageBanner from "../../components/ui/PageBanner";
@@ -9,66 +7,98 @@ import PhotoGallery from "../../components/ui/PhotoGallery";
 
 const scoutActivities = [
   {
-    id: '1',
-    title: 'Rover Scout Leader Training',
-    description: 'Participated in advanced leadership training for Rover Scouts, focusing on community development and emergency response.',
-    image: 'https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?auto=format&fit=crop&q=80&w=1000',
-    eventDate: 'Nov 2021',
-    location: 'Dhaka, Bangladesh',
-    rank: 'Rover Scout Leader'
+    id: "1",
+    title: "Rover Scout Leader Training",
+    description:
+      "Participated in advanced leadership training for Rover Scouts, focusing on community development and emergency response.",
+    image:
+      "https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?auto=format&fit=crop&q=80&w=1000",
+    eventDate: "Nov 2021",
+    location: "Dhaka, Bangladesh",
+    rank: "Rover Scout Leader",
   },
   {
-    id: '2',
-    title: 'National Scout Jamboree',
-    description: 'Represented Thakurgaon district at the National Scout Jamboree, engaging in various skill-building activities and cultural exchanges.',
-    image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1000',
-    eventDate: 'Jan 2019',
-    location: 'Gazipur, Bangladesh',
-    rank: 'District Representative'
+    id: "2",
+    title: "National Scout Jamboree",
+    description:
+      "Represented Thakurgaon district at the National Scout Jamboree, engaging in various skill-building activities and cultural exchanges.",
+    image:
+      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1000",
+    eventDate: "Jan 2019",
+    location: "Gazipur, Bangladesh",
+    rank: "District Representative",
   },
   {
-    id: '3',
-    title: 'Community Clean-up Initiative',
-    description: 'Led a team of 50 scouts in a city-wide cleaning and waste management awareness campaign.',
-    image: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=1000',
-    eventDate: 'Mar 2020',
-    location: 'Thakurgaon',
-    rank: 'Group Leader'
-  }
+    id: "3",
+    title: "Community Clean-up Initiative",
+    description:
+      "Led a team of 50 scouts in a city-wide cleaning and waste management awareness campaign.",
+    image:
+      "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=1000",
+    eventDate: "Mar 2020",
+    location: "Thakurgaon",
+    rank: "Group Leader",
+  },
 ];
 
 const galleryImages = [
-  { url: "https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?auto=format&fit=crop&q=80&w=1000", caption: "Training camp session", category: "Training" },
-  { url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1000", caption: "Camping under the stars", category: "Jamboree" },
-  { url: "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=1000", caption: "Community service day", category: "Service" },
-  { url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000", caption: "Scout parade at national day", category: "Event" },
-  { url: "https://images.unsplash.com/photo-1508873696983-2dfd5898f0c3?auto=format&fit=crop&q=80&w=1000", caption: "Knots and pioneering workshop", category: "Skills" },
-  { url: "https://images.unsplash.com/photo-1517164850339-61234907996a?auto=format&fit=crop&q=80&w=1000", caption: "First aid drill", category: "Emergency" },
+  {
+    url: "https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?auto=format&fit=crop&q=80&w=1000",
+    caption: "Training camp session",
+    category: "Training",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1000",
+    caption: "Camping under the stars",
+    category: "Jamboree",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=1000",
+    caption: "Community service day",
+    category: "Service",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000",
+    caption: "Scout parade at national day",
+    category: "Event",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1508873696983-2dfd5898f0c3?auto=format&fit=crop&q=80&w=1000",
+    caption: "Knots and pioneering workshop",
+    category: "Skills",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1517164850339-61234907996a?auto=format&fit=crop&q=80&w=1000",
+    caption: "First aid drill",
+    category: "Emergency",
+  },
 ];
 
 const ScoutClient = () => {
   return (
     <main className="min-h-screen bg-white pb-24">
-      <PageBanner 
-        title="Scouting" 
+      <PageBanner
+        title="Scouting"
+        subtitle="Be Prepared. A life dedicated to service, leadership, and the global scouting movement."
         badge="Rover Scout Leader"
-        themeColor="bg-pink-50"
-        textColor="text-pink-900"
+        icon={Compass}
       />
-      
+
       <div className="container mx-auto px-4 mt-16">
         {/* Gallery Section */}
         <section className="mb-24">
           <Reveal>
             <div className="flex flex-col items-start mb-10">
-              <span className="text-pink-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-2">Scout Life</span>
+              <span className="text-pink-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-2">
+                Scout Life
+              </span>
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
                 <Compass className="text-pink-600" size={20} />
                 Activity Gallery
               </h2>
             </div>
           </Reveal>
-          
+
           <PhotoGallery images={galleryImages} />
         </section>
 
@@ -76,7 +106,9 @@ const ScoutClient = () => {
         <section>
           <Reveal>
             <div className="flex flex-col items-start mb-10">
-              <span className="text-pink-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-2">Milestones</span>
+              <span className="text-pink-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-2">
+                Milestones
+              </span>
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
                 <Award className="text-pink-600" size={20} />
                 Scout Highlights
@@ -89,14 +121,14 @@ const ScoutClient = () => {
               <Reveal key={activity.id} delay={i * 0.1}>
                 <div className="group bg-white rounded overflow-hidden border border-gray-100 transition-all duration-500 hover:border-pink-600 flex flex-col md:flex-row h-full">
                   <div className="relative w-full md:w-2/5 aspect-4/3 md:aspect-auto overflow-hidden">
-                    <Image 
-                      src={activity.image} 
-                      alt={activity.title} 
-                      fill 
-                      className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                    <Image
+                      src={activity.image}
+                      alt={activity.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                  
+
                   <div className="p-5 md:w-3/5 flex flex-col justify-between">
                     <div>
                       <div className="mb-3">
@@ -108,8 +140,14 @@ const ScoutClient = () => {
                         {activity.title}
                       </h3>
                       <div className="flex flex-wrap gap-3 text-[10px] text-gray-400 mb-3 font-medium uppercase tracking-wider">
-                        <span className="flex items-center gap-1"><Calendar size={12} className="text-pink-400" /> {activity.eventDate}</span>
-                        <span className="flex items-center gap-1"><MapPin size={12} className="text-pink-400" /> {activity.location}</span>
+                        <span className="flex items-center gap-1">
+                          <Calendar size={12} className="text-pink-400" />{" "}
+                          {activity.eventDate}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <MapPin size={12} className="text-pink-400" />{" "}
+                          {activity.location}
+                        </span>
                       </div>
                       <p className="text-gray-500 text-xs leading-relaxed line-clamp-3">
                         {activity.description}

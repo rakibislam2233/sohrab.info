@@ -71,9 +71,9 @@ const LeadershipPage = () => {
     <main className="min-h-screen bg-white pb-24">
       <PageBanner
         title="Leadership"
-        badge="Strategic Leader & Coordinator"
-        themeColor="bg-pink-50"
-        textColor="text-pink-900"
+        subtitle="Leading by example. Empowering youth and coordinating social impact across regional and national platforms."
+        badge="Strategic Leader"
+        icon={Trophy}
       />
 
       <div className="container mx-auto px-4 mt-16">

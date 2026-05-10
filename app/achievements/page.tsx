@@ -58,9 +58,9 @@ const AchievementsPage = () => {
     <main className="min-h-screen bg-white pb-24">
       <PageBanner
         title="Achievements"
+        subtitle="Recognition of excellence. A collection of awards and honors for social service, scouting, and professional impact."
         badge="Honored & Recognized"
-        themeColor="bg-amber-50"
-        textColor="text-amber-900"
+        icon={Award}
       />
 
       <div className="container mx-auto px-4 mt-16">

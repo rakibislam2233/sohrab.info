@@ -86,9 +86,9 @@ const VoluntaryWorkPage = () => {
     <main className="min-h-screen bg-white pb-24">
       <PageBanner
         title="Voluntary Work"
-        badge="A Member of Bangladesh Scouts"
-        themeColor="bg-pink-50"
-        textColor="text-pink-900"
+        subtitle="Giving back to the heart of Bangladesh. Dedicated to community service, pandemic relief, and social welfare."
+        badge="Social Servant"
+        icon={Heart}
       />
 
       <div className="container mx-auto px-4 mt-16">

@@ -106,13 +106,13 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm px-4 py-10"
+            className="fixed inset-0 z-100 flex items-center justify-center bg-black/95 backdrop-blur-sm px-4 py-10"
             onClick={() => setIndex(-1)}
           >
             {/* Close Button */}
             <button
               onClick={() => setIndex(-1)}
-              className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all z-[110]"
+              className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all z-110"
             >
               <X size={24} />
             </button>
@@ -120,7 +120,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
             {/* Previous Button */}
             <button
               onClick={handlePrev}
-              className="absolute left-6 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 text-white hidden md:flex items-center justify-center transition-all z-[110]"
+              className="absolute left-6 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 text-white hidden md:flex items-center justify-center transition-all z-110"
             >
               <ChevronLeft size={32} />
             </button>
@@ -128,7 +128,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
             {/* Next Button */}
             <button
               onClick={handleNext}
-              className="absolute right-6 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 text-white hidden md:flex items-center justify-center transition-all z-[110]"
+              className="absolute right-6 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 text-white hidden md:flex items-center justify-center transition-all z-110"
             >
               <ChevronRight size={32} />
             </button>

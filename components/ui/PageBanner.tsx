@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Leaf, Sparkles } from "lucide-react";
+import { Leaf, LucideIcon, Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
 
 interface PageBannerProps {
@@ -9,6 +9,7 @@ interface PageBannerProps {
   badge?: string;
   themeColor?: string; // e.g., "bg-[#e8f5e9]"
   textColor?: string; // e.g., "text-[#1b5e20]"
+  icon?: LucideIcon;
 }
 
 export default function PageBanner({
@@ -17,6 +18,7 @@ export default function PageBanner({
   badge,
   themeColor = "bg-[#f0f9f1]",
   textColor = "text-[#2d4a31]",
+  icon: Icon,
 }: PageBannerProps) {
   return (
     <section className="w-full h-96 relative overflow-hidden flex items-center bg-[#fafafa] pt-28 sm:pt-32 pb-16 sm:pb-20 lg:py-0">
@@ -28,57 +30,58 @@ export default function PageBanner({
           backgroundSize: "24px 24px",
         }}
       ></div>
-
-      {/* Decorative Leaves - Left */}
-      <motion.div
-        animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -left-20 -top-10 text-green-200/50 opacity-40 select-none pointer-events-none hidden lg:block"
-      >
-        <Leaf size={300} fill="currentColor" />
-      </motion.div>
-
-      <motion.div
-        animate={{ y: [0, 15, 0], rotate: [0, -8, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -left-10 bottom-0 text-green-200/40 opacity-30 select-none pointer-events-none hidden lg:block"
-      >
-        <Leaf size={250} fill="currentColor" />
-      </motion.div>
-
-      {/* Decorative Leaves - Right */}
-      <motion.div
-        animate={{ y: [0, -25, 0], rotate: [0, -10, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -right-20 -top-20 text-green-200/50 opacity-40 select-none pointer-events-none rotate-180 hidden lg:block"
-      >
-        <Leaf size={350} fill="currentColor" />
-      </motion.div>
-
-      {/* Sparkles */}
-      <motion.div
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 3, repeat: Infinity }}
-        className="absolute top-1/4 left-1/4 text-yellow-400 hidden md:block"
-      >
-        <Sparkles size={24} fill="currentColor" />
-      </motion.div>
-      <motion.div
-        animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] }}
-        transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-        className="absolute bottom-1/3 right-1/4 text-yellow-400 hidden md:block"
-      >
-        <Sparkles size={32} fill="currentColor" />
-      </motion.div>
+      {/* Floating Category Icon */}
+      {Icon && (
+        <>
+          <motion.div
+            animate={{
+              y: [0, -15, 0],
+              rotate: [0, 10, 0],
+              scale: [1, 1.05, 1],
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/4 left-[15%] text-gray-200/30 select-none pointer-events-none hidden xl:block"
+          >
+            <Icon size={120} />
+          </motion.div>
+          <motion.div
+            animate={{
+              y: [0, 20, 0],
+              rotate: [0, -10, 0],
+            }}
+            transition={{
+              duration: 9,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5,
+            }}
+            className="absolute bottom-1/4 right-[15%] text-gray-200/30 select-none pointer-events-none hidden xl:block"
+          >
+            <Icon size={100} />
+          </motion.div>
+        </>
+      )}
 
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center">
         <Reveal>
+          {badge && (
+            <span
+              className={`inline-block px-3 py-1 ${themeColor} ${textColor} text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm mb-4 border border-current opacity-70`}
+            >
+              {badge}
+            </span>
+          )}
           <h1
             className={`text-2xl sm:text-3xl md:text-5xl font-bold ${textColor} uppercase tracking-tighter mb-4`}
           >
             {title}
           </h1>
+          {subtitle && (
+            <p className="text-gray-500 text-sm md:text-base max-w-xl mx-auto font-medium opacity-80">
+              {subtitle}
+            </p>
+          )}
         </Reveal>
       </div>
     </section>

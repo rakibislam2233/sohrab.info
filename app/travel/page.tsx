@@ -1,11 +1,33 @@
 "use client";
 import React from "react";
-import { Camera, MapPin, Calendar, Compass, ArrowRight } from "lucide-react";
+import { Camera, MapPin, Calendar, Compass, ArrowRight, Map } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import PageBanner from "../../components/ui/PageBanner";
 import Reveal from "../../components/ui/Reveal";
 import PhotoGallery from "../../components/ui/PhotoGallery";
+import VideoCarousel from "../../components/sections/VideoCarousel";
+
+const videos = [
+  {
+    id: "1",
+    title: "Suryapuri Mango Tree Documentary",
+    thumbnail: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&q=80&w=1000",
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  },
+  {
+    id: "2",
+    title: "Exploring Dinajpur Temples",
+    thumbnail: "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&q=80&w=1000",
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  },
+  {
+    id: "3",
+    title: "Sylhet Tea Gardens Aerial View",
+    thumbnail: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=1000",
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  }
+];
 
 const travelStories = [
   {
@@ -85,10 +107,10 @@ const TravelPage = () => {
   return (
     <main className="min-h-screen bg-white pb-24">
       <PageBanner
-        title="Travel Stories"
-        badge="Explorer & Storyteller"
-        themeColor="bg-pink-50"
-        textColor="text-pink-900"
+        title="Travel"
+        subtitle="Exploring the beauty of 64 districts. Capturing the diverse landscapes and cultures of Bangladesh."
+        badge="Avid Explorer"
+        icon={Map}
       />
 
       <div className="container mx-auto px-4 mt-16">
@@ -107,6 +129,13 @@ const TravelPage = () => {
           </Reveal>
 
           <PhotoGallery images={galleryImages} />
+        </section>
+
+        {/* Video Section */}
+        <section className="mb-24">
+          <Reveal>
+            <VideoCarousel videos={videos} />
+          </Reveal>
         </section>
 
         {/* Story Cards Section */}
