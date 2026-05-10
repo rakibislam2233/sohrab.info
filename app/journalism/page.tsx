@@ -1,107 +1,174 @@
-"use client"
-import { Image as ImageIcon, Newspaper } from "lucide-react";
+"use client";
+import React from "react";
+import { Newspaper, Send, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import ImageLightbox from "../../components/ui/ImageLightbox";
 import PageBanner from "../../components/ui/PageBanner";
 import Reveal from "../../components/ui/Reveal";
+import MasonryGallery from "../../components/ui/MasonryGallery";
 
 const articles = [
-  { id: '1', title: 'Transformation of Primary Education', slug: 'primary-education', category: 'Education', publishedAt: '2023-11-10', image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=1000' },
-  { id: '2', title: 'Commercial Mango Farming Success', slug: 'mango-farming', category: 'Agriculture', publishedAt: '2023-09-15', image: 'https://images.unsplash.com/photo-1553134839-89d81d421da1?auto=format&fit=crop&q=80&w=1000' },
-  { id: '3', title: 'Relief Distribution to 4,700 Families', slug: 'relief-2020', category: 'Social', publishedAt: '2020-05-06', image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1000' },
+  {
+    id: "1",
+    title: "Transformation of Primary Education: A Journey to the Roots",
+    slug: "primary-education",
+    category: "Education",
+    publishedAt: "2023-11-10",
+    excerpt:
+      "Exploring how grassroots initiatives are reshaping the landscape of primary education in rural Bangladesh.",
+    image:
+      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=1000",
+  },
+  {
+    id: "2",
+    title: "Commercial Mango Farming Success in Northern Districts",
+    slug: "mango-farming",
+    category: "Agriculture",
+    publishedAt: "2023-09-15",
+    excerpt:
+      "A deep dive into how modern techniques are helping local farmers achieve record-breaking yields.",
+    image:
+      "https://images.unsplash.com/photo-1553134839-89d81d421da1?auto=format&fit=crop&q=80&w=1000",
+  },
+  {
+    id: "3",
+    title: "Relief Distribution to 4,700 Families During Crisis",
+    slug: "relief-2020",
+    category: "Social Impact",
+    publishedAt: "2020-05-06",
+    excerpt:
+      "Documenting the coordinated effort to provide essential supplies to those hardest hit by the pandemic.",
+    image:
+      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1000",
+  },
 ];
 
 const galleryImages = [
-  "https://lh3.googleusercontent.com/sitesv/AA5AbUCY_v3Y0eY8m74xK4Y93m5I_v39_z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z=w1280",
-  "https://lh3.googleusercontent.com/sitesv/AA5AbUBC3eDX-izt7AFNwcnl1yMjiL0xDONAbxgxWGftORflHuqlp2xxN7gkS0rIDBYyNxLBuqVAMsgZfIUNZjyIkNNoBgHl4l24jRbRA2rsdO8pjq0I2plYhpTCkZmOiDzMns1Onp4ttUy2fxKF2Kqu9u3m-gb5ygDrZWVyR0tYEbeI4LCq9kJO0aNtZx1foPBrj_Z-HNL9r1uCkK02eOzcaco_OFEUmoj8vuCW3k=w1280",
-  "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=80&w=1000",
-  "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=1000",
-  "https://images.unsplash.com/photo-1476242906366-d8eb64c2f661?auto=format&fit=crop&q=80&w=1000",
-  "https://images.unsplash.com/photo-1585829365234-7547076d338e?auto=format&fit=crop&q=80&w=1000"
+  {
+    url: "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=80&w=1000",
+    caption: "Field reporting at a remote location",
+    category: "In Action",
+  },
+  {
+    url: "https://lh3.googleusercontent.com/sitesv/AA5AbUCY_v3Y0eY8m74xK4Y93m5I_v39_z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z8f9z=w1280",
+    caption: "Interviewing local community leaders",
+    category: "Interviews",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=1000",
+    caption: "Breaking news coverage",
+    category: "Live",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1476242906366-d8eb64c2f661?auto=format&fit=crop&q=80&w=1000",
+    caption: "Documentation of local culture",
+    category: "Culture",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1585829365234-7547076d338e?auto=format&fit=crop&q=80&w=1000",
+    caption: "Journalist workspace and tools",
+    category: "Behind the Scenes",
+  },
+  {
+    url: "https://lh3.googleusercontent.com/sitesv/AA5AbUBC3eDX-izt7AFNwcnl1yMjiL0xDONAbxgxWGftORflHuqlp2xxN7gkS0rIDBYyNxLBuqVAMsgZfIUNZjyIkNNoBgHl4l24jRbRA2rsdO8pjq0I2plYhpTCkZmOiDzMns1Onp4ttUy2fxKF2Kqu9u3m-gb5ygDrZWVyR0tYEbeI4LCq9kJO0aNtZx1foPBrj_Z-HNL9r1uCkK02eOzcaco_OFEUmoj8vuCW3k=w1280",
+    caption: "Community outreach program",
+    category: "Social",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1579532566591-943b1904803b?auto=format&fit=crop&q=80&w=1000",
+    caption: "Press conference at city hall",
+    category: "Press",
+  },
 ];
 
-export default function JournalismPage() {
-  const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 });
-
+const JournalismPage = () => {
   return (
-    <main className="min-h-screen bg-white pt-0 pb-20">
-      <PageBanner 
-        title="Journalism" 
-        badge="Staff Reporter"
-        themeColor="bg-[#fff0f0]"
-        textColor="text-[#721c24]"
+    <main className="min-h-screen bg-white pb-24">
+      <PageBanner
+        title="Journalism"
+        badge="Staff Reporter & Writer"
+        themeColor="bg-pink-50"
+        textColor="text-pink-900"
       />
-      <div className="container mx-auto px-4 sm:px-6 mt-10 sm:mt-12">
-        {/* Dynamic Grid Layout */}
-        <div className="mb-12 sm:mb-16">
-          <Reveal>
-            <h2 className="text-lg sm:text-xl font-bold mb-5 sm:mb-6 flex items-center gap-3">
-              <ImageIcon className="text-pink-600" size={20} />
-              Field Gallery
-            </h2>
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-            {galleryImages.map((img, i) => (
-              <Reveal key={i} delay={i * 0.1} className={
-                i % 4 === 0 ? "md:col-span-8" : 
-                i % 4 === 1 ? "md:col-span-4" : 
-                i % 4 === 2 ? "md:col-span-4" : 
-                "md:col-span-8"
-              }>
-                <div 
-                  className={`relative overflow-hidden rounded cursor-pointer group border border-gray-100 aspect-video md:aspect-auto md:h-64`}
-                  onClick={() => setLightbox({ isOpen: true, index: i })}
-                >
-                  <Image
-                    src={img}
-                    alt="Journalism moment"
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="text-white text-[10px] font-bold uppercase tracking-widest">View Image</span>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
 
-        {/* News Articles */}
-        <div className="mb-12 sm:mb-16">
+      <div className="container mx-auto px-4 mt-16">
+        {/* Gallery Section */}
+        <section className="mb-24">
           <Reveal>
-            <h2 className="text-lg sm:text-xl font-bold mb-5 sm:mb-6 flex items-center gap-3">
-              <Newspaper className="text-pink-600" size={20} />
-              Featured Articles
-            </h2>
+            <div className="flex flex-col items-start mb-12">
+              <span className="text-pink-600 font-bold uppercase tracking-[0.2em] text-xs mb-3">
+                Visual Stories
+              </span>
+              <h2 className="text-3xl font-bold text-gray-900 flex items-center gap-3">
+                <Send className="text-pink-600" size={24} />
+                Field Gallery
+              </h2>
+            </div>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
-            {articles.map((a, i) => (
-              <Reveal key={a.id} delay={i * 0.1}>
-                <Link href={`/journalism/${a.slug}`} className="group block">
-                  <div className="relative aspect-16/10 mb-3 overflow-hidden rounded bg-gray-100 border border-gray-100">
-                    <Image src={a.image} alt={a.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+
+          <MasonryGallery images={galleryImages} />
+        </section>
+
+        {/* Featured Articles Section */}
+        <section>
+          <Reveal>
+            <div className="flex flex-col items-start mb-12">
+              <span className="text-pink-600 font-bold uppercase tracking-[0.2em] text-xs mb-3">
+                Published Works
+              </span>
+              <h2 className="text-3xl font-bold text-gray-900 flex items-center gap-3">
+                <Newspaper className="text-pink-600" size={24} />
+                Featured Articles
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {articles.map((article, i) => (
+              <Reveal key={article.id} delay={i * 0.1}>
+                <Link
+                  href={`/journalism/${article.slug}`}
+                  className="group block h-full"
+                >
+                  <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-2 flex flex-col h-full">
+                    <div className="relative aspect-16/10 overflow-hidden">
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="px-3 py-1 bg-white/90 backdrop-blur-md text-pink-600 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-pink-100 shadow-sm">
+                          {article.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="p-6 flex flex-col grow">
+                      <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">
+                        {article.publishedAt}
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors leading-tight">
+                        {article.title}
+                      </h3>
+                      <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-2">
+                        {article.excerpt}
+                      </p>
+
+                      <div className="mt-auto pt-4 border-t border-gray-50 flex items-center text-pink-600 text-sm font-bold group-hover:gap-3 gap-2 transition-all">
+                        Read Full Story <ArrowRight size={16} />
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[8px] font-black uppercase tracking-widest text-gray-400 mb-2">
-                    <span className="text-pink-600">{a.category}</span>
-                    <span>{a.publishedAt}</span>
-                  </div>
-                  <h3 className="text-lg font-bold group-hover:text-pink-600 transition-colors leading-tight">{a.title}</h3>
                 </Link>
               </Reveal>
             ))}
           </div>
-        </div>
+        </section>
       </div>
-
-      <ImageLightbox 
-        images={galleryImages} 
-        isOpen={lightbox.isOpen} 
-        initialIndex={lightbox.index} 
-        onClose={() => setLightbox({ ...lightbox, isOpen: false })} 
-      />
     </main>
   );
-}
+};
+
+export default JournalismPage;
