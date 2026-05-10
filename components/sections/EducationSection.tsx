@@ -38,7 +38,7 @@ const EducationSection = () => {
           </div>
         </Reveal>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto space-y-5">
           {educationData.map((edu, index) => (
             <Reveal key={index} delay={index * 0.1}>
               <div className="relative pl-8 pb-12 border-l-2 border-gray-200 last:pb-0 group">

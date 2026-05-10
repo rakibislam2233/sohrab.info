@@ -1,21 +1,42 @@
-import type { Achievement } from "@prisma/client";
 import Link from "next/link";
 import DeleteButton from "../../../../components/admin/DeleteButton";
-import { prisma } from "../../../../lib/prisma";
-
 export const dynamic = "force-dynamic";
 
+const demoAchievements = [
+  {
+    id: "1",
+    title: "Best Regional Scout Leader",
+    issuedBy: "Bangladesh Scouts",
+    issuedDate: "2022",
+    category: "Scouting",
+  },
+  {
+    id: "2",
+    title: "Excellence in Community Reporting",
+    issuedBy: "Journalism Association",
+    issuedDate: "2021",
+    category: "Journalism",
+  },
+  {
+    id: "3",
+    title: "Outstanding Youth Mentor",
+    issuedBy: "Youth Development Forum",
+    issuedDate: "2023",
+    category: "Leadership",
+  },
+];
+
 export default async function AdminAchievements() {
-  const items: Achievement[] = await prisma.achievement.findMany({
-    orderBy: { createdAt: "desc" },
-  });
+  // Using demo data since database is not connected
+  const items = demoAchievements;
+
   return (
     <main className="container py-12">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl ">Achievements</h1>
         <Link
           href="/admin/achievements/new"
-          className="bg-blush text-white px-4 py-2 rounded-full"
+          className="bg-black text-white px-4 py-2 rounded-full text-sm font-bold"
         >
           New Achievement
         </Link>
@@ -24,16 +45,16 @@ export default async function AdminAchievements() {
         {items.map((i) => (
           <div
             key={i.id}
-            className="rounded-card p-4 flex justify-between items-center gap-4"
+            className="bg-white rounded-xl p-4 flex justify-between items-center gap-4 border border-gray-100"
           >
             <div>
-              <div className="font-semibold">{i.title}</div>
-              <div className="text-sm text-gray-600">
-                {i.issuedBy} • {new Date(i.issuedDate).toLocaleDateString()}
+              <div className="font-bold text-gray-900">{i.title}</div>
+              <div className="text-xs text-gray-500">
+                {i.issuedBy} • {i.issuedDate}
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="text-sm">{i.category}</div>
+              <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{i.category}</div>
               <DeleteButton endpoint="/api/admin/achievements" id={i.id} />
             </div>
           </div>
