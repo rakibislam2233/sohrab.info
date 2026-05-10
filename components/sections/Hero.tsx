@@ -66,7 +66,7 @@ export default function Hero() {
                 <a
                   href="/resume.pdf"
                   download
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded font-bold text-sm tracking-widest uppercase hover:bg-pink-600 transition-all duration-300 group"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded font-bold text-sm tracking-widest uppercase hover:bg-gray-800 transition-all duration-300 group"
                 >
                   Download CV
                   <Zap size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -107,7 +107,7 @@ export default function Hero() {
               delay={0.4}
             />
             <FloatingTag
-              icon={<MapPin className="size-4 text-pink-500" />}
+              icon={<MapPin className="size-4 text-black" />}
               text="Based in Dhaka"
               className="top-1/5 -left-10 hidden sm:flex"
               delay={0.6}

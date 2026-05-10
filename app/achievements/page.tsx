@@ -68,11 +68,11 @@ const AchievementsPage = () => {
         <section className="mb-24">
           <Reveal>
             <div className="flex flex-col items-start mb-10">
-              <span className="text-amber-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-2">
+              <span className="text-black font-bold uppercase tracking-[0.2em] text-[10px] mb-2 border-l-2 border-black pl-3">
                 Honor Gallery
               </span>
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                <Camera className="text-amber-600" size={20} />
+                <Camera className="text-black" size={20} />
                 Moments of Pride
               </h2>
             </div>
@@ -85,11 +85,11 @@ const AchievementsPage = () => {
         <section>
           <Reveal>
             <div className="flex flex-col items-start mb-10">
-              <span className="text-amber-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-2">
+              <span className="text-black font-bold uppercase tracking-[0.2em] text-[10px] mb-2 border-l-2 border-black pl-3">
                 Recognition
               </span>
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                <Award className="text-amber-600" size={20} />
+                <Award className="text-black" size={20} />
                 Major Awards
               </h2>
             </div>
@@ -98,9 +98,9 @@ const AchievementsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {achievements.map((achievement, i) => (
               <Reveal key={achievement.id} delay={i * 0.1}>
-                <div className="bg-white p-6 rounded border border-gray-100 flex flex-col h-full hover:border-amber-500 transition-all duration-500">
-                  <div className="w-12 h-12 bg-amber-50 rounded flex items-center justify-center mb-5 border border-amber-100">
-                    <Award className="w-6 h-6 text-amber-600" />
+                <div className="bg-white p-6 rounded border border-gray-100 flex flex-col h-full hover:border-black transition-all duration-500">
+                  <div className="w-12 h-12 bg-black rounded flex items-center justify-center mb-5 border border-black">
+                    <Award className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {achievement.title}
@@ -110,8 +110,8 @@ const AchievementsPage = () => {
                   </p>
 
                   <div className="pt-5 border-t border-gray-50 flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-amber-600">
-                      <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-black">
+                      <CheckCircle className="w-4 h-4 text-black" />
                       {achievement.issuedBy}
                     </div>
                     <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400">

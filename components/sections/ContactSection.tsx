@@ -11,7 +11,7 @@ const ContactSection = () => {
           {/* Left Side: Contact Info */}
           <div>
             <Reveal>
-              <span className="text-pink-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Get In Touch</span>
+              <span className="text-black font-bold uppercase tracking-[0.3em] text-[10px] mb-4 block border-l-2 border-black pl-3">Get In Touch</span>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 uppercase tracking-tighter">Let's Connect</h2>
               <p className="text-gray-500 text-lg mb-12 max-w-md">
                 Have a story to share, a project in mind, or just want to say hi? I'm always open to new opportunities and conversations.
@@ -53,7 +53,7 @@ const ContactSection = () => {
                     <input 
                       type="text" 
                       placeholder="John Doe"
-                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded text-sm focus:border-pink-600 outline-none transition-all"
+                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded text-sm focus:border-black outline-none transition-all"
                     />
                   </div>
                   <div className="space-y-2">
@@ -61,7 +61,7 @@ const ContactSection = () => {
                     <input 
                       type="email" 
                       placeholder="john@example.com"
-                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded text-sm focus:border-pink-600 outline-none transition-all"
+                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded text-sm focus:border-black outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -71,7 +71,7 @@ const ContactSection = () => {
                   <input 
                     type="text" 
                     placeholder="Inquiry about..."
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded text-sm focus:border-pink-600 outline-none transition-all"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded text-sm focus:border-black outline-none transition-all"
                   />
                 </div>
 
@@ -80,11 +80,11 @@ const ContactSection = () => {
                   <textarea 
                     rows={5}
                     placeholder="Your message here..."
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded text-sm focus:border-pink-600 outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded text-sm focus:border-black outline-none transition-all resize-none"
                   ></textarea>
                 </div>
 
-                <button className="w-full py-4 bg-black text-white rounded font-bold text-xs uppercase tracking-widest hover:bg-pink-600 transition-all duration-300 flex items-center justify-center gap-3 group">
+                <button className="w-full py-4 bg-black text-white rounded font-bold text-xs uppercase tracking-widest hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-3 group">
                   Send Message
                   <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>
@@ -100,12 +100,12 @@ const ContactSection = () => {
 const ContactInfo = ({ icon, title, detail, href, delay }: { icon: React.ReactNode, title: string, detail: string, href: string, delay: number }) => (
   <Reveal delay={delay}>
     <a href={href} className="flex gap-6 items-start group">
-      <div className="w-12 h-12 bg-white rounded border border-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-pink-600 group-hover:text-white group-hover:border-pink-600 transition-all duration-300 shadow-none">
+      <div className="w-12 h-12 bg-white rounded border border-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-black group-hover:text-white group-hover:border-black transition-all duration-300 shadow-none">
         {icon}
       </div>
       <div>
         <h4 className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">{title}</h4>
-        <p className="text-gray-900 font-bold group-hover:text-pink-600 transition-colors">{detail}</p>
+        <p className="text-gray-900 font-bold group-hover:text-black transition-colors">{detail}</p>
       </div>
     </a>
   </Reveal>

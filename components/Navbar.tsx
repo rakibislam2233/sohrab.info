@@ -12,6 +12,7 @@ const navLinks = [
   { name: "Leadership", href: "/leadership" },
   { name: "Achievements", href: "/achievements" },
   { name: "Voluntary", href: "/voluntary-work" },
+  { name: "Jobs", href: "/jobs" },
 ];
 
 export default function Navbar() {

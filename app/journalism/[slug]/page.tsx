@@ -25,7 +25,7 @@ const JournalismDetail = () => {
       <h2 className="text-2xl font-bold mb-4 text-gray-900">Breaking the Barriers</h2>
       <p className="mb-6">For decades, access to quality primary education was a luxury reserved for those in urban centers. However, through grassroots coordination and dedicated reporting on the ground, we've documented a significant shift in resource allocation and teaching methodologies.</p>
       
-      <blockquote className="border-l-4 border-pink-600 pl-6 py-2 italic text-gray-700 text-lg mb-8 bg-pink-50 rounded-r-xl">
+      <blockquote className="border-l-4 border-black pl-6 py-2 italic text-gray-700 text-lg mb-8 bg-gray-50 rounded-r-xl">
         "Education is not just about literacy; it's about empowering the next generation to dream beyond their immediate surroundings."
       </blockquote>
 
@@ -58,7 +58,7 @@ const JournalismDetail = () => {
             </Link>
           </Reveal>
           <Reveal delay={0.1}>
-            <span className="px-3 py-1 bg-pink-600 text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 inline-block">
+            <span className="px-3 py-1 bg-black text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 inline-block">
               {article.category}
             </span>
           </Reveal>
@@ -69,8 +69,8 @@ const JournalismDetail = () => {
           </Reveal>
           <Reveal delay={0.3}>
             <div className="flex flex-wrap items-center gap-6 text-white/70 text-sm">
-              <span className="flex items-center gap-2"><User size={16} className="text-pink-400" /> {article.author}</span>
-              <span className="flex items-center gap-2"><Calendar size={16} className="text-pink-400" /> {article.date}</span>
+              <span className="flex items-center gap-2"><User size={16} className="text-gray-400" /> {article.author}</span>
+              <span className="flex items-center gap-2"><Calendar size={16} className="text-gray-400" /> {article.date}</span>
             </div>
           </Reveal>
         </div>
@@ -81,7 +81,7 @@ const JournalismDetail = () => {
         <div className="max-w-3xl mx-auto">
           <Reveal>
             <div 
-              className="prose prose-lg prose-pink max-w-none text-gray-600 leading-relaxed"
+              className="prose prose-lg prose-neutral max-w-none text-gray-600 leading-relaxed"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
           </Reveal>
@@ -95,7 +95,7 @@ const JournalismDetail = () => {
                   <span className="px-3 py-1 bg-gray-50 text-gray-500 text-xs rounded-full">Community</span>
                 </div>
               </div>
-              <button className="p-2 rounded-full bg-pink-50 text-pink-600 hover:bg-pink-600 hover:text-white transition-all duration-300">
+              <button className="p-2 rounded-full bg-gray-100 text-black hover:bg-black hover:text-white transition-all duration-300">
                 <Share2 size={20} />
               </button>
             </div>

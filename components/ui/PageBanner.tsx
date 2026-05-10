@@ -1,14 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
-import { Leaf, LucideIcon, Sparkles } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 import Reveal from "./Reveal";
 
 interface PageBannerProps {
   title: string;
   subtitle?: string;
   badge?: string;
-  themeColor?: string; // e.g., "bg-[#e8f5e9]"
-  textColor?: string; // e.g., "text-[#1b5e20]"
+  themeColor?: string;
+  textColor?: string;
   icon?: LucideIcon;
 }
 

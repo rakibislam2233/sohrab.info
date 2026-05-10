@@ -40,7 +40,7 @@ export default function Footer() {
               <input 
                 type="email" 
                 placeholder="Your email" 
-                className="w-full bg-white border border-gray-200 rounded-full py-3 pl-4 pr-12 sm:px-6 text-sm focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all"
+                className="w-full bg-white border border-gray-200 rounded-full py-3 pl-4 pr-12 sm:px-6 text-sm focus:outline-none focus:ring-2 focus:ring-black transition-all"
               />
               <button className="absolute right-1 top-1 bg-black hover:bg-gray-800 text-white p-2 rounded-full transition-colors">
                 <Send className="w-4 h-4" />

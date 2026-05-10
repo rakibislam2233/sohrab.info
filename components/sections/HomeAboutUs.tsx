@@ -34,13 +34,13 @@ const HomeAboutUs = () => {
               </div>
             </div>
             {/* Background elements */}
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-pink-50 rounded-full z-0 blur-3xl opacity-60"></div>
-            <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-pink-100/50 rounded-full z-0 blur-3xl opacity-60"></div>
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-gray-100 rounded-full z-0 blur-3xl opacity-60"></div>
+            <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-gray-200/50 rounded-full z-0 blur-3xl opacity-60"></div>
           </motion.div>
 
           <div className="flex flex-col">
             <Reveal>
-              <span className="text-pink-600 font-bold uppercase tracking-[0.3em] text-xs mb-4">Who I Am</span>
+              <span className="text-black font-bold uppercase tracking-[0.3em] text-xs mb-4 border-l-2 border-black pl-3">Who I Am</span>
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="text-4xl md:text-6xl font-bold text-black mb-8 leading-tight tracking-tighter">

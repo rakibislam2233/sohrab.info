@@ -118,11 +118,11 @@ const TravelPage = () => {
         <section className="mb-24">
           <Reveal>
             <div className="flex flex-col items-start mb-10">
-              <span className="text-pink-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-2">
+              <span className="text-black font-bold uppercase tracking-[0.2em] text-[10px] mb-2 border-l-2 border-black pl-3">
                 Through My Lens
               </span>
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                <Camera className="text-pink-600" size={20} />
+                <Camera className="text-black" size={20} />
                 Visual Journey
               </h2>
             </div>
@@ -142,11 +142,11 @@ const TravelPage = () => {
         <section>
           <Reveal>
             <div className="flex flex-col items-start mb-10">
-              <span className="text-pink-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-2">
+              <span className="text-black font-bold uppercase tracking-[0.2em] text-[10px] mb-2 border-l-2 border-black pl-3">
                 Travel Logs
               </span>
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                <Compass className="text-pink-600" size={20} />
+                <Compass className="text-black" size={20} />
                 Recent Explorations
               </h2>
             </div>
@@ -159,7 +159,7 @@ const TravelPage = () => {
                   href={`/travel/${story.slug}`}
                   className="group block h-full"
                 >
-                  <div className="bg-white rounded overflow-hidden border border-gray-100 shadow-none transition-all duration-500 hover:border-pink-600 flex flex-col h-full">
+                  <div className="bg-white rounded overflow-hidden border border-gray-100 shadow-none transition-all duration-500 hover:border-black flex flex-col h-full">
                     <div className="relative aspect-16/10 overflow-hidden">
                       <Image
                         src={story.coverImage}
@@ -168,7 +168,7 @@ const TravelPage = () => {
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="px-2 py-0.5 bg-white/90 backdrop-blur-md text-pink-600 text-[8px] font-bold uppercase tracking-wider rounded-sm border border-pink-100">
+                        <span className="px-2 py-0.5 bg-white/90 backdrop-blur-md text-black text-[8px] font-bold uppercase tracking-wider rounded-sm border border-gray-100">
                           <MapPin size={10} /> {story.destination}
                         </span>
                       </div>
@@ -178,14 +178,14 @@ const TravelPage = () => {
                       <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
                         <Calendar size={12} /> {story.travelDate}
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors leading-tight">
+                      <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-black transition-colors leading-tight">
                         {story.title}
                       </h3>
                       <p className="text-gray-500 text-xs leading-relaxed mb-6 line-clamp-2">
                         {story.excerpt}
                       </p>
 
-                      <div className="mt-auto pt-4 border-t border-gray-50 flex items-center text-pink-600 text-[10px] font-bold group-hover:gap-3 gap-2 transition-all uppercase tracking-widest">
+                      <div className="mt-auto pt-4 border-t border-gray-50 flex items-center text-black text-[10px] font-bold group-hover:gap-3 gap-2 transition-all uppercase tracking-widest">
                         Read Story <ArrowRight size={14} />
                       </div>
                     </div>

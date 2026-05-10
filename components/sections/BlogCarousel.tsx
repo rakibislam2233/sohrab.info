@@ -123,7 +123,7 @@ const BlogCarousel = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <Reveal>
             <div>
-              <span className="text-pink-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-2 block">
+              <span className="text-black font-bold uppercase tracking-[0.2em] text-[10px] mb-2 block border-l-2 border-black pl-3">
                 Latest Stories
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 uppercase tracking-tighter">
@@ -136,14 +136,14 @@ const BlogCarousel = () => {
             <div className="flex items-center gap-3">
               <button
                 onClick={scrollPrev}
-                className="w-12 h-12 rounded border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-pink-600 hover:text-pink-600 transition-all shadow-none"
+                className="w-12 h-12 rounded border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-black hover:text-black transition-all shadow-none"
                 aria-label="Previous slide"
               >
                 <ArrowLeft size={20} />
               </button>
               <button
                 onClick={scrollNext}
-                className="w-12 h-12 rounded border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-pink-600 hover:text-pink-600 transition-all shadow-none"
+                className="w-12 h-12 rounded border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:border-black hover:text-black transition-all shadow-none"
                 aria-label="Next slide"
               >
                 <ArrowRight size={20} />
@@ -164,7 +164,7 @@ const BlogCarousel = () => {
                     href={`${item.route}/${item.slug}`}
                     className="group block h-full"
                   >
-                    <div className="bg-white rounded overflow-hidden border border-gray-100 shadow-none transition-all duration-500 hover:border-pink-600 flex flex-col h-full">
+                    <div className="bg-white rounded overflow-hidden border border-gray-100 shadow-none transition-all duration-500 hover:border-black flex flex-col h-full">
                       <div className="relative aspect-16/10 overflow-hidden">
                         <Image
                           src={item.image}
@@ -173,7 +173,7 @@ const BlogCarousel = () => {
                           className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute top-4 left-4">
-                          <span className="px-2 py-0.5 bg-white/90 backdrop-blur-md text-pink-600 text-[8px] font-bold uppercase tracking-wider rounded-sm border border-pink-100">
+                          <span className="px-2 py-0.5 bg-white/90 backdrop-blur-md text-black text-[8px] font-bold uppercase tracking-wider rounded-sm border border-gray-100">
                             {item.category}
                           </span>
                         </div>
@@ -183,11 +183,11 @@ const BlogCarousel = () => {
                         <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">
                           {item.date}
                         </div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-6 group-hover:text-pink-600 transition-colors leading-tight line-clamp-2">
+                        <h3 className="text-lg font-bold text-gray-900 mb-6 group-hover:text-black transition-colors leading-tight line-clamp-2">
                           {item.title}
                         </h3>
 
-                        <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between text-pink-600 text-[10px] font-bold uppercase tracking-widest">
+                        <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between text-black text-[10px] font-bold uppercase tracking-widest">
                           Read Story <ArrowUpRight size={14} />
                         </div>
                       </div>
@@ -206,7 +206,7 @@ const BlogCarousel = () => {
               key={index}
               onClick={() => scrollTo(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === selectedIndex ? "bg-pink-600 w-8" : "bg-gray-300"
+                index === selectedIndex ? "bg-black w-8" : "bg-gray-300"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

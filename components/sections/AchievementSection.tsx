@@ -48,8 +48,8 @@ export default async function AchievementSection() {
           {achievements.map((achievement, index) => (
             <Reveal key={achievement.id} delay={index * 0.1}>
               <div className="bg-white p-6 rounded border border-gray-100 flex flex-col h-full">
-                <div className="w-10 h-10 bg-amber-50 rounded flex items-center justify-center mb-4">
-                  <Award className="w-5 h-5 text-amber-600" />
+                <div className="w-10 h-10 bg-black rounded flex items-center justify-center mb-4">
+                  <Award className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-black mb-1">
                   {achievement.title}
@@ -58,7 +58,7 @@ export default async function AchievementSection() {
                   {achievement.description}
                 </p>
                 <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-400">
-                  <CheckCircle className="w-3 h-3 text-emerald-500" />
+                  <CheckCircle className="w-3 h-3 text-black" />
                   {achievement.issuedBy}
                 </div>
               </div>

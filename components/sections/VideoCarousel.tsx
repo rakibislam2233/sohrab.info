@@ -41,7 +41,7 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
     <div className="relative w-full">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest flex items-center gap-3">
-          <div className="size-8 rounded bg-pink-50 flex items-center justify-center text-pink-600 border border-pink-100">
+          <div className="size-8 rounded bg-black flex items-center justify-center text-white border border-black">
             <Play size={16} fill="currentColor" />
           </div>
           Action Moments

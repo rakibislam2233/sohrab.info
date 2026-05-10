@@ -56,7 +56,7 @@ export default function NewsMediaTimeline() {
                     <span className="inline-block px-2 py-0.5 rounded bg-black text-white text-[8px] font-black uppercase tracking-widest mb-1">
                       {item.category}
                     </span>
-                    <h3 className="text-lg font-bold text-black mb-1 group-hover:text-pink-600 transition-colors">
+                    <h3 className="text-lg font-bold text-black mb-1 group-hover:text-gray-600 transition-colors">
                       {item.title}
                     </h3>
                     <p className="text-gray-500 text-sm max-w-2xl leading-relaxed">

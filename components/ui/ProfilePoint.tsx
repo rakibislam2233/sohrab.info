@@ -17,7 +17,7 @@ const ProfilePoint: React.FC<ProfilePointProps> = ({
 }) => (
   <Reveal delay={delay}>
     <div className="flex gap-6 items-start">
-      <div className="w-14 h-14 bg-pink-50 text-pink-600 rounded flex items-center justify-center shrink-0 border border-pink-100 shadow-none">
+      <div className="w-14 h-14 bg-black text-white rounded flex items-center justify-center shrink-0 border border-black shadow-none">
         {icon}
       </div>
       <div>

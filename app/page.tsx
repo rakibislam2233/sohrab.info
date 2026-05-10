@@ -7,6 +7,7 @@ import EducationSection from "../components/sections/EducationSection";
 import SkillsSection from "../components/sections/SkillsSection";
 import BlogCarousel from "../components/sections/BlogCarousel";
 import ContactSection from "../components/sections/ContactSection";
+import ActionMomentGallery from "../components/sections/ActionMomentGallery";
 
 export default async function Home() {
   return (
@@ -14,6 +15,7 @@ export default async function Home() {
       <Hero />
       <HomeAboutUs />
       <SkillsSection />
+      <ActionMomentGallery />
       <EducationSection />
       <BlogCarousel />
       <AchievementSection />
